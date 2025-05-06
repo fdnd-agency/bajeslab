@@ -1,19 +1,25 @@
 :root {
-  /*-----------------
-        Colours
-  -----------------*/
-  
+	/*-----------------
+	COLOURS
+	-----------------*/
+	/* Primary */
 
-  /*-----------------
-          Fonts
-  -----------------*/
+	/* Secondary */
 
+	/* Tertiary */
 
-  /*-----------------
-      Design tokens
-  -----------------*/
+	/*-----------------
+	FONTS	
+	-----------------*/
+	/* Title */
 
-  /* Spacings */
+	/* Bodytext */
+
+	/*-----------------
+    DESIGN TOKENS
+	-----------------*/
+
+  	/* Spacings */
 	--spacing-xxs: 0.25rem;
 	--spacing-xs: 0.5rem;
 	--spacing-sm: 1rem;
@@ -51,12 +57,41 @@
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
 	font-size: 16px;
 	line-height: 1.2;
+}
+
+/*-----------------
+LAYOUT UTILS	
+-----------------*/
+
+/*-----------------
+A11Y UTILS	
+-----------------*/
+
+/*-----------------
+QUERIES
+-----------------*/
+
+/* Tablet */
+@media screen and (min-width: 400px) {
+	/* insert properties */
+}
+
+
+/* Desktop */
+@media screen and (min-width: 800px) {
+	/* insert properties */
+}
+
+
+/* Large desktop */
+@media screen and (min-width: 800px) {
+	/* insert properties */
 }
