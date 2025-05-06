@@ -1,9 +1,62 @@
 :root {
+  /*-----------------
+        Colours
+  -----------------*/
+  
 
+  /*-----------------
+          Fonts
+  -----------------*/
+
+
+  /*-----------------
+      Design tokens
+  -----------------*/
+
+  /* Spacings */
+	--spacing-xxs: 0.25rem;
+	--spacing-xs: 0.5rem;
+	--spacing-sm: 1rem;
+	--spacing-md: 2rem;
+	--spacing-lg: 4rem;
+	--spacing-xl: 8rem;
+	--spacing-xxl: 16rem;
+
+	/* Font scale - 1.200 Minor Third */
+	--font-size-xs: 0.694rem;
+	--font-size-sm: 0.833rem;
+	--font-size-md: 1rem;
+	--font-size-lg: 1.2rem;
+	--font-size-xl: 1.44rem;
+	--font-size-xxl: 1.728rem;
+
+	--font-size-title-sm: 2.074rem;
+	--font-size-title-md: 2.488rem;
+	--font-size-title-lg: 2.986rem;
+	--font-size-title-xl: 3.583rem;
+	--font-size-title-xxl: 4.299rem;
+
+	/* Font weights */
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+
+	/* Border radius */
+	--border-radius-sm: 0.25rem;
+	--border-radius-md: 0.5rem;
+	--border-radius-lg: 1rem;
+	--border-radius-xl: 2rem;
+	--border-radius-pill: 9999px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.2;
 }
