@@ -15,14 +15,6 @@ export async function load({ fetch }) {
 					'description', 
 					'type', 
 					'partners',
-					{
-						images: [{directus_files_id: [
-							'filename_disk', 
-							'description', 
-							'height', 
-							'width'
-						]}]
-					},
 				] 
 			})),
 		};
