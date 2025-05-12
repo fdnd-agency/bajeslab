@@ -1,10 +1,15 @@
 import getDirectusInstance from '$lib/directus';
 import { readItems } from '@directus/sdk';
-export async function load({ fetch }) {
+export async function load({ fetch, params }) {
 	try {
 		const directus = getDirectusInstance(fetch);
 		return {
 			projects: await directus.request(readItems('hull_projects', {
+				filter: {
+					slug: {
+						_eq: params.slug
+					}
+				},
 				fields: [
 					'id', 
 					'slug', 
