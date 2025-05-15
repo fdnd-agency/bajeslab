@@ -67,6 +67,10 @@ body {
 	line-height: 1.2;
 }
 
+section {
+	border: 1px solid red;
+}
+
 /*-----------------
 LAYOUT UTILS	
 -----------------*/
