@@ -1,5 +1,6 @@
 <script>
-    import ThemaLijnen from "$lib/molecules/ThemaLijnen.svelte";
+    import DirectusImages from "$lib/atoms/DirectusImages.svelte";
+    import ThemaLijnen from "$lib/molecules/ThemaLijn.svelte";
 
     let { data } = $props()
     let { projects } = data
@@ -9,7 +10,7 @@
         return string.split(' ').slice(0, numberWords).join(' ') + (string.split(' ').length > numberWords ? '...' : '');
     }
 
-    console.log(projects)
+    console.log(data.projects[0].cover_image?.id)
 </script>
 
 <main>
@@ -32,17 +33,15 @@
         <ul>
             {#each projects as project}
                 <li>
-                    <h3>{project.title}</h3>
-                    <img src="{project.cover_image.filename_disk}" alt="">
+                    <h3>{project.title}</h3>    
+                    <DirectusImages  />
+                    <!-- <img src="{project.cover_image?.filename_disk}" alt=""> -->
                     {@html truncateWords(project.description, 15)}
                     <a href="/projecten/{project.slug}">zie meer</a>
                 </li>
             {/each}
         </ul>
     </section>
-
-
-    
 </main>
 
 <style>
