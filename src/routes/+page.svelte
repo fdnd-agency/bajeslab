@@ -1,4 +1,6 @@
 <script>
+    import ThemaLijnen from "$lib/molecules/ThemaLijnen.svelte";
+
     let { data } = $props()
     let { projects } = data
 
@@ -7,7 +9,7 @@
         return string.split(' ').slice(0, numberWords).join(' ') + (string.split(' ').length > numberWords ? '...' : '');
     }
 
-    console.log(projects?.cover_image)
+    console.log(projects)
 </script>
 
 <main>
@@ -20,28 +22,7 @@
     </section>
     <section>
         <h2>Thema lijnen</h2>
-        <ul>
-            <li>
-                <img src="" alt="">
-                <h2>Community building/gemeenschapsontwikkeling</h2>
-                <p></p>
-            </li>
-            <li>
-                <img src="" alt="">
-                <h2>(Semi-) openbare (groene) ruimten: </h2>
-                <p>gebruik en collectieve beheervormen​ </p>
-            </li>
-            <li>
-                <img src="" alt="">
-                <h2>Fysieke en sociale interventies:</h2>
-                <p>gebruik en effect op gezondheid en welzijn​ </p>
-            </li>
-            <li>
-                <img src="" alt="">
-                <h2>Rol van sport en bewegen voor de buurt</h2>
-                <p></p>
-            </li>
-        </ul>
+        <ThemaLijnen />
     </section>
     <section>
         <!-- insert carrousel -->
