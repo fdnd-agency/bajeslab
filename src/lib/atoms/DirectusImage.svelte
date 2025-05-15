@@ -1,6 +1,8 @@
 <!-- This component should be used when rendering an image from the Directus backend to automatically optimise it -->
 
 <script>
+    import DirectusImage from '$lib/atoms/DirectusImage.svelte';
+    
 	let { 
     imageId = "", 
     alt = "Placeholder", 
