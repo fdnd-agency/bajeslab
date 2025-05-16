@@ -6,7 +6,7 @@
     imageAlt,
 		width,
 		height,
-    href,
+    href = null,
 		itemClass = '',
     contentClass = '',
     children,
@@ -14,11 +14,20 @@
 	} = $props();
 </script>
 
-<li class={itemClass}>
-  <a {href}>
-    <DirectusImage imageId={image.filename_disk} {width} {height} alt={imageAlt} {loading} />
+{#if href}
+  <li class={itemClass}>
+    <a {href}>
+      <DirectusImage imageId={image?.filename_disk ?? ""} {width} {height} alt={imageAlt} {loading} />
+		<div class={contentClass}>
+      {@render children()}
+      </div>
+    </a>
+  </li>
+{:else}
+  <li class={itemClass}>
+    <DirectusImage imageId={image?.filename_disk ?? ""} {width} {height} alt={imageAlt} {loading} />
 		<div class={contentClass}>
       {@render children()}
     </div>
-	</a>
-</li>
+  </li>
+{/if}
