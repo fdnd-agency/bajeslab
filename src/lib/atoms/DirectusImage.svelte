@@ -12,12 +12,14 @@
   } = $props()
 
   const URL = "https://fdnd-agency.directus.app/assets/"
+  const colorBg = "321f07"
+  const colorText = "12ddef"
 </script>
 
 {#if imageId === ""}
 <!-- Use placehold.co API to generate a custom placeholder image -->
 	<img
-		src="https://placehold.co/{width}x{height}/c29f9d/3e2518?text=Geen+foto+beschikbaar"
+		src="https://placehold.co/{width}x{height}/{colorBg}/{colorText}?text=Geen+foto+beschikbaar"
 		{width}
 		{height}
 		{alt}
