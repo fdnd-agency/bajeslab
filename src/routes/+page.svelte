@@ -1,16 +1,15 @@
 <script>
-    import DirectusImages from "$lib/atoms/DirectusImages.svelte";
+    import DirectusImage from '$lib/atoms/DirectusImage.svelte';
     import ThemaLijnen from "$lib/molecules/ThemaLijn.svelte";
+    import ProjectsOverview from "$lib/organisms/ProjectsOverview.svelte";
 
     let { data } = $props()
     let { projects } = data
 
-    function truncateWords(string, numberWords) {
-        if (!string) return '';
-        return string.split(' ').slice(0, numberWords).join(' ') + (string.split(' ').length > numberWords ? '...' : '');
-    }
-
     console.log(data.projects[0].cover_image?.id)
+
+    
+
 </script>
 
 <main>
@@ -30,17 +29,7 @@
     </section>
     <section>
         <h2>Uitgelichte projecten</h2>
-        <ul>
-            {#each projects as project}
-                <li>
-                    <h3>{project.title}</h3>    
-                    <DirectusImages  />
-                    <!-- <img src="{project.cover_image?.filename_disk}" alt=""> -->
-                    {@html truncateWords(project.description, 15)}
-                    <a href="/projecten/{project.slug}">zie meer</a>
-                </li>
-            {/each}
-        </ul>
+        <ProjectsOverview projects={data.projects} truncate={true}/>
     </section>
 </main>
 
