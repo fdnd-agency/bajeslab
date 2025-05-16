@@ -10,9 +10,11 @@
 			<OverviewItem
 				image={project.cover_image}
         imageAlt={project.title}
+        width={project.cover_image?.width}
+        height={project.cover_image?.height}
 				href={`/projecten/${project.slug}`}
-        itemClass="project-card"
-        contentClass="project-card-content"
+        itemClass={$css("project-card")}
+        contentClass={$css("project-card-content")}
 			>
         <h2>{project.title}</h2>
         <p>{@html project.description}</p>
@@ -24,3 +26,8 @@
 {:else}
 	<p>Geen projecten gevonden. Probeer het later opnieuw.</p>
 {/if}
+
+<style>
+  .project-card {}
+  .project-card-content {}
+</style>
