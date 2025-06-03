@@ -53,21 +53,26 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<!-- screenshots project -->
+<!-- screenshots project design -->
 <!-- samenvatting project -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Directus][Directus.io]][Directus-url]
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Directus.io]: https://img.shields.io/badge/Directus-6644FF?style=for-the-badge&logo=directus&logoColor=white
+[Directus-url]: https://directus.io
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
@@ -87,17 +92,12 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm install
    ```
-3. Create a `.env` file using `example.env` as a guide.
-4. `PROTECTED_PASSWORD` will be the password required to see the site. This is to protect the preview branch
-   ```env
-   PROTECTED_PASSWORD = ""
-   ```
-5. Change git remote url to avoid accidental pushes to base project
+6. Change git remote url to avoid accidental pushes to base project
    ```sh
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
    ```
-6. Run local dev server
+7. Run local dev server
    ```sh
    npm run dev
    ```
@@ -116,6 +116,17 @@ Want to contribute as someone outside of the FDND organisation? Follow these ste
 
 When contributing, make sure to follow the <a href="https://github.com/fdnd-agency/.github/wiki/Conventions"><strong>FDND Conventions »</strong></a>
 
+<!-- IMPORTEND DATA -->
+## Importend data
+* Figma prototype · <a href="https://www.figma.com/design/cEjjEQCAEYbJp9kQnbpzmz/Website-Living-Lab-Bajeskwartier?node-id=0-1&t=s3x0x3PTJk21DIHn-1"><strong>File »</strong></a>
+* Debriefing · <a href="https://docs.google.com/document/d/15KW3vCtn82DhpegmeVyKXG7heXib_31wnBXTT9zh0Bs/edit?tab=t.0#heading=h.oea9euf0y1rh"><strong>File »</strong></a>
+* Deskresearch · <a href="https://drive.google.com/file/d/1RNBQqSZ-jSI8pTuEsEQOJoprIoXffzuH/view?usp=sharing"><strong>File »</strong></a>  
+<!-- 
+  * Design rationale · *insert design rationale » * 
+  * Fieldresearch · *insert fieldresearch » * 
+--> 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LICENSE -->
 ## License
 
@@ -125,48 +136,18 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 
 <!-- TEAM MEMBERS -->
 ## Team
-
 - Anna-Kyra Strik · <i>Developer</i> · <a href="https://github.com/Anna-Kyra"><strong>Github »</strong></a>
 - Robin van der Heijden · <i>Developer</i> · <a href="https://github.com/Robin1224"><strong>Github »</strong></a> 
 - Sarah Bouziane Bouziane · <i>Designer</i> · <a href="https://github.com/saarrxb"><strong>Github »</strong></a>
 - Cassidy Starke · <i>Designer</i> · <a href="https://github.com/CassidyStarke"><strong>Github »</strong></a>
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+* svelte-css-rune library · <a href="https://github.com/JanNitschke/svelte-css-rune"><strong>Github »</strong></a>
+* Healthy Urban Livinglab, HvA site · <a href="https://www.hva.nl/samenwerken/labs/bajeskwartier"><strong>Github »</strong></a> 
+* Directus · <a href="https://directus.io/docs/"><strong>Docs »</strong></a>
+* Directus SDK · <a href="https://directus.io/docs/guides/connect/sdk"><strong>Docs »</strong></a>
+* Gitmoji · <a href="https://gitmoji.dev/"><strong>Cheat sheet »</strong></a>
+* FDND Conventions · <a href="https://github.com/fdnd-agency/.github/wiki/Conventions"><strong>Link »</strong></a>
 
-# sv
-
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
