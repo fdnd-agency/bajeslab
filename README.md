@@ -10,14 +10,10 @@
   <p align="center">
     <!-- intro stukje -->
     <br />
-    <!-- Live site 
-    <a href=" "><strong>Live site »</strong></a>
-    -->
+    <a href="https://bajeslab-agency.netlify.app/"><strong>Live site »</strong></a>
     <br />
     <br />
-    <!-- Dev site 
-    <a href=" ">Dev site</a>
-    -->
+    <a href="https://bajeslab-dev.netlify.app/">Dev site</a>
     &middot;
     <a href="https://github.com/orgs/fdnd-agency/projects/75">Project Board</a>
     &middot;
