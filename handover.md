@@ -44,5 +44,83 @@ There are several pages created. The content page shows the website. The compone
 
 
 
+# What still needs to be done (design wise):
 
+
+## General
+
+<ins>Header</ins>
+- Replace the current hook with a platform (Think of a hook holding a concrete slab).
+
+<ins>Footer</ins>
+- Try to optimize this; it still feels a bit empty. Consider playing with the layout.
+
+## Home Page
+
+<ins>Improve the parallax</ins>
+- Use better photos
+- Add more greenery
+- Try to use more of the “cut-and-paste” effect to create more depth
+- Consider sparring with the client about this
+
+<ins>Theme Lines</ins>
+- The client wants to keep an animation – look into how you can improve the current one
+- Create your own icons; the current ones are placeholders
+
+<ins>Projects</ins>
+- Replace the photos here as well; ask the client for more images if needed
+
+## About Us Page
+
+<ins>Our Team</ins>
+- Ask the client for photos and additional info about the internal team
+
+<ins>Theme Line</ins>
+- Replace placeholder text and icons
+
+<ins>Prevent</ins>
+- See if this can be further optimized and iterated on
+  
+## Projects Page
+
+<ins>Photo Collage</ins>
+- Replace placeholders with real photos and project titles
+
+## Project Detail Page
+
+<ins>Project info Text</ins>
+- Replace placeholders with actual text and titles
+
+<ins>Photo Collage</ins>
+- Replace placeholders with real photos and project titles
+
+<ins>3D Map</ins>
+- Create a real 3D map of the Bajesbuurt (discuss this with the client first)
+Try to optimize this feature in a way that is also clear to the client
+
+## Network Page
+
+<ins>Intro Text</ins>
+- Ask the client for a short introduction about the network
+
+<ins>Icons and Info</ins>
+- Ask the client for photos to replace the placeholders
+The actual names are listed in the Word content document
+
+<ins>Quotes</ins>
+- The client wanted to add quotes to some icons,follow up on this in further conversations
+
+## News Page
+
+<ins>Content</ins>
+- Discuss this further with the client and try to iterate on a layout
+
+## Contact Page
+
+<ins>Content</ins>
+- Try to complete the current page using the correct color palette
+- Ask the client for more information
+
+
+- [Design]: Design Rationale · <a href="https://drive.google.com/drive/folders/1gpmt_0UbyqpQA0I5XgzTo3RPMcVzsSTd"><strong>Link »</strong></a>
 
