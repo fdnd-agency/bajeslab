@@ -116,7 +116,8 @@ When contributing, make sure to follow the <a href="https://github.com/fdnd-agen
 ## Importend data
 * Figma prototype · <a href="https://www.figma.com/design/cEjjEQCAEYbJp9kQnbpzmz/Website-Living-Lab-Bajeskwartier?node-id=0-1&t=s3x0x3PTJk21DIHn-1"><strong>File »</strong></a>
 * Debriefing · <a href="https://docs.google.com/document/d/15KW3vCtn82DhpegmeVyKXG7heXib_31wnBXTT9zh0Bs/edit?tab=t.0#heading=h.oea9euf0y1rh"><strong>File »</strong></a>
-* Deskresearch · <a href="https://drive.google.com/file/d/1RNBQqSZ-jSI8pTuEsEQOJoprIoXffzuH/view?usp=sharing"><strong>File »</strong></a>  
+* Deskresearch · <a href="https://drive.google.com/file/d/1RNBQqSZ-jSI8pTuEsEQOJoprIoXffzuH/view?usp=sharing"><strong>File »</strong></a>
+* Design Rationale · <a href="https://drive.google.com/drive/folders/1gpmt_0UbyqpQA0I5XgzTo3RPMcVzsSTd"><strong>File »</strong></a>  
 <!-- 
   * Design rationale · *insert design rationale » * 
   * Fieldresearch · *insert fieldresearch » * 
