@@ -13,6 +13,8 @@
     <a href="https://bajeslab-agency.netlify.app/"><strong>Live site »</strong></a>
     <br />
     <br />
+    <a href="https://github.com/fdnd-agency/bajeslab/wiki/Design-Challenge">Design Challenge</a>
+    &middot;
     <a href="https://bajeslab-dev.netlify.app/">Dev site</a>
     &middot;
     <a href="https://github.com/orgs/fdnd-agency/projects/75">Project Board</a>
