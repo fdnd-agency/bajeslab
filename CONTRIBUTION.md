@@ -111,3 +111,6 @@ Before delivery, make sure:
 - All code reviewed and tested (lighthouse-, accessibility-, browser/device-, usertests).
 - No open pull requests remain.
 - Code is clean: unused files/code removed, structure refactored.
+
+# Retrospective
+- [Campfire session 10-10-20025](https://github.com/orgs/fdnd-agency/projects/92/views/8?pane=issue&itemId=133149085&issue=fdnd-agency%7Cbajeslab%7C126)
