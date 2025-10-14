@@ -139,3 +139,45 @@ body {
 	font-size: clamp(1rem, 1.5vw, 1.125rem); /* min 16px, schaal met 1.5vw, max 18px */
 	line-height: 1.6875; /* 27px */
 }
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Buttons */
+.button {
+	display: flex;
+	justify-content: center;
+	width: 200px;
+	text-align: center;
+	text-decoration: none;
+	color: var(--color-primary-base);
+	font-weight: 700;
+	border-radius: 7px;
+	padding: var(--spacing-sm);
+	margin: var(--spacing-sm);
+	background-color: var(--color-accent3-l2);
+	position: relative;
+	transition: all 0.3 ease-in-out;
+}
+.button svg {
+	position: absolute;
+	right: var(--spacing-sm);
+}
+
+.button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.button:active {
+	transform: translateY(0);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+	background-color: var(--color-accent3-l3);
+}
+
+@media (min-width: 768px) {
+	.button {
+		width: 30%;
+	}
+}
