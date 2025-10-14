@@ -1,7 +1,7 @@
 <script>
 	import Hero from '$lib/components/homepage/Hero.svelte';
-	import Themalijnen from '$lib/components/homepage/Themalijnen.svelte';
+	import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
 </script>
 
 <Hero />
-<Themalijnen />
+<ThemalijnenBlock />
