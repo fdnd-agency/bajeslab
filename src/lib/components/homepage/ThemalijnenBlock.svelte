@@ -8,11 +8,11 @@
 	import Button from '../ui/Button.svelte';
 </script>
 
-<section class="container theme-lines">
-	<h2 class="theme-line-title">{title}</h2>
-	<ul class="theme-line-list">
+<section class="container">
+	<h2>{title}</h2>
+	<ul>
 		{#each themes as theme}
-			<li class="theme-item">
+			<li>
 				<img src={theme.icon} alt={theme.alt} />
 				<p>{theme.text}</p>
 				<div class="stripe {theme.accent}"></div>
@@ -23,29 +23,28 @@
 </section>
 
 <style>
-	/* Theme Lines */
-	.theme-lines {
+	section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 0 1em;
 	}
-	.theme-line-title {
+	section h2 {
 		font-size: 2.5em;
 		margin-top: var(--spacing-md);
 	}
-	.theme-line-list {
+	section ul {
 		display: flex;
 		flex-direction: column;
 		margin-top: var(--spacing-md);
 		margin-bottom: var(--spacing-md);
 		gap: 3em;
 	}
-	.theme-item {
+	section ul li {
 		text-align: center;
 		list-style-type: none;
 	}
-	.theme-item p {
+	section ul li p {
 		width: 80%;
 		margin: 0 auto;
 		margin-top: var(--spacing-md);
@@ -71,13 +70,17 @@
 	}
 
 	@media (min-width: 768px) {
-		/* Theme Lines */
-		.theme-line-list {
+		section h2 {
+			font-size: var(--spacing-lg);
+			margin-bottom: var(--spacing-sm);
+			align-self: start;
+		}
+		section ul {
 			margin: 0 1em;
 			gap: 5px;
 			flex-direction: row;
 		}
-		.theme-item:nth-child(2) {
+		section ul :nth-child(2) {
 			margin-top: var(--spacing-lg);
 		}
 	}
