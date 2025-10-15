@@ -13,7 +13,7 @@
 	<ul>
 		{#each themes as theme}
 			<li>
-				<img src={theme.icon} alt={theme.alt} />
+				<img src={theme.icon} alt={theme.alt} fetchpriority="high"/>
 				<p>{theme.text}</p>
 				<div class="stripe {theme.accent}"></div>
 			</li>
@@ -43,6 +43,10 @@
 	section ul li {
 		text-align: center;
 		list-style-type: none;
+	}
+	section ul li img {
+		width: 150px;
+		height: 150px;
 	}
 	section ul li p {
 		width: 80%;
