@@ -1,7 +1,7 @@
 <script>
 	export let href = '';
 	export let text = 'Lees meer';
-	export let position = 'center'; 
+	export let position = 'center';
 	export let className = '';
 
 	import ArrowIcon from '../icons/ArrowIcon.svelte';

@@ -1,27 +1,25 @@
 <script>
+	export let title = 'Themalijnen';
+	export let themes = [];
+	export let buttonText = 'Lees meer';
+	export let buttonLink = '/over-ons#theme-line';
+	export let buttonPosition = 'center';
+
 	import Button from '../ui/Button.svelte';
 </script>
 
 <section class="container theme-lines">
-	<h2 class="theme-line-title">Themalijnen</h2>
+	<h2 class="theme-line-title">{title}</h2>
 	<ul class="theme-line-list">
-		<li class="theme-item">
-			<img src="/icons/theme-line-amico-1.svg" alt="Icoon themalijn ​" />
-			<p>Community building / gemeenschapsontwikkeling​</p>
-			<div class="stripe"></div>
-		</li>
-		<li class="theme-item">
-			<img src="/icons/theme-line-amico-2.svg" alt="Icoon themalijn​" />
-			<p>(Semi-) openbare (groene) ruimten: gebruik en collectieve beheervormen​</p>
-			<div class="stripe accent1"></div>
-		</li>
-		<li class="theme-item">
-			<img src="/icons/theme-line-amico-3.svg" alt="Icoon themalijn​" />
-			<p>Rol van sport en bewegen voor de buurt</p>
-			<div class="stripe accent2"></div>
-		</li>
+		{#each themes as theme}
+			<li class="theme-item">
+				<img src={theme.icon} alt={theme.alt} />
+				<p>{theme.text}</p>
+				<div class="stripe {theme.accent}"></div>
+			</li>
+		{/each}
 	</ul>
-	<Button href="/over-ons#theme-line" text="Lees meer" position="flex-end" />
+	<Button href={buttonLink} text={buttonText} position={buttonPosition} />
 </section>
 
 <style>
