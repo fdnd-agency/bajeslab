@@ -149,7 +149,7 @@ body {
 .button {
 	display: flex;
 	justify-content: center;
-	width: 200px;
+	width: 90%;
 	text-align: center;
 	text-decoration: none;
 	color: var(--color-primary-base);
@@ -178,6 +178,7 @@ body {
 
 @media (min-width: 768px) {
 	.button {
-		width: 30%;
+		width: 200px;
 	}
 }
+

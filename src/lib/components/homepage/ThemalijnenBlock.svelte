@@ -1,5 +1,5 @@
 <script>
-	import ArrowIcon from '../icons/ArrowIcon.svelte';
+	import Button from '../ui/Button.svelte';
 </script>
 
 <section class="container theme-lines">
@@ -21,7 +21,7 @@
 			<div class="stripe accent2"></div>
 		</li>
 	</ul>
-	<a class="button" href="/over-ons#theme-line">Lees meer <ArrowIcon /></a>
+	<Button href="/over-ons#theme-line" text="Lees meer" position="flex-end" />
 </section>
 
 <style>
@@ -72,11 +72,6 @@
 		background-color: var(--color-neutral1-base);
 	}
 
-	/* Buttons */
-	.button {
-		width: 90%;
-	}
-
 	@media (min-width: 768px) {
 		/* Theme Lines */
 		.theme-line-list {
@@ -86,11 +81,6 @@
 		}
 		.theme-item:nth-child(2) {
 			margin-top: var(--spacing-lg);
-		}
-		/* Buttons */
-		.button {
-			width: 200px;
-			align-self: flex-end;
 		}
 	}
 </style>
