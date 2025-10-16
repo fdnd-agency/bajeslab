@@ -107,8 +107,6 @@ body {
 	font-family: Urbanist, sans-serif;
 	font-size: 1rem;
 	line-height: 1.2;
-	color: var(--color-primary-base);
-	background-color: var(--color-neutral1-l3);
 }
 
 /* Voorbeeld gebruik: class="hero", class="title", class="subtitle", class="text" */
