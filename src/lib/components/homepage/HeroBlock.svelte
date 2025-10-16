@@ -1,10 +1,10 @@
 <script>
-
+    export let title = " Samen bouwen aan een gezonde wijk";
 </script>
 
 <section>
     <h1 class="hero">
-      Samen bouwen aan een gezonde wijk
+        {title}
     </h1>
 </section>
 
@@ -35,6 +35,7 @@
         inset: 0; 
         background: rgba(0, 0, 0, 0.45);
         z-index: 0; 
+        height: 75vh;
     }
 
     h1{
@@ -64,6 +65,9 @@
             );
             min-height: 100vh;
             background-position: center;
+        }
+        section::before{
+            min-height: 100vh;
         }
     }
 </style>
