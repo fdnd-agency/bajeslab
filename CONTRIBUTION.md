@@ -65,6 +65,21 @@ We prioritise issues with the `MoSCoW` method:
 - `Could have:` nice to have extras.
 - `Wont have (for now):` not included this sprint.
 
+## Definition of Ready (DoR)
+- The story has a clear title and description  
+- Includes a checklist with acceptance criteria
+- All required information and files are available
+- Poker planning has been completed
+- Everyone in the team understands the story
+
+## Definition of Done (DoD)
+- Code runs without errors
+- All acceptance criteria of the story are met
+- Code has been reviewed by a team member
+- Functionally tested
+- Merged into the `dev` branch
+- Deployed to the test environment
+
 ## `Teamcanvas & collaboration rules`
 <img width="912" height="649" alt="Scherm­afbeelding 2025-09-24 om 14 25 34" src="https://github.com/user-attachments/assets/82b8100d-b7d3-4d11-a189-2e93a2eb660e" />
 
