@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="/src/app.css" />
+	<link rel="stylesheet" href="/css/app.css" />
 	<title>Healthy Urban Living Lab</title>
 	<meta
 		name="description"
