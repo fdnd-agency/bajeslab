@@ -116,6 +116,7 @@ body {
 		Tilt Warp,
 		sans-serif;
 	font-size: clamp(3rem, 8vw, 6rem); /* min 48px, schaal met 8vw, max 96px */
+	color: white;
 }
 
 .title {
