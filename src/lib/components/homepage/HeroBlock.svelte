@@ -11,14 +11,12 @@
 <style>
     section {
         /* fallback voor alle browsers die image-set niet ondersteunen */
-        background-image: url("../images/hero-mobile.jpg");
+        background-image: url("/images/hero-mobile.jpg");
 
-        /* moderne browsers kiezen automatisch het beste formaat */
         background-image: image-set(
-            url("../images/hero-mobile.webp") type("image/webp"),
-            url("../images/hero-mobile.avif") type("image/avif")
+        url("/images/hero-mobile.webp") type("image/webp"),
+        url("/images/hero-mobile.avif") type("image/avif")
         );
-
         background-size: cover;
         background-position: top;
         background-repeat: no-repeat;
