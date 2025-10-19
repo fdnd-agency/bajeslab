@@ -19,7 +19,7 @@
 			</li>
 		{/each}
 	</ul>
-	<Button href={buttonLink} text={buttonText}/>
+	<Button href={buttonLink} text={buttonText} position={buttonPosition} />
 </section>
 
 <style>
