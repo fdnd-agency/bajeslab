@@ -1,71 +1,93 @@
 <script>
   export let projects = [];
+  export let title = 'Projecten';
 
   const ASSETS_URL = "https://fdnd-agency.directus.app/assets"
+
+  import Button from '../ui/Button.svelte';
+  export let buttonText = 'Bekijk alle projecten';
+	export let buttonLink = '/projecten';
+	export let buttonPosition = 'flex-end';
 </script>
 
-<div>
-    {#each projects as project}
-      <a href={project.link}>
-        <picture>
-          <source 
-            type="image/webp"
-            srcset={`
-              ${ASSETS_URL}/${project.cover_image}?format=webp&width=250&quality=80&fit=cover 250w,
-              ${ASSETS_URL}/${project.cover_image}?format=webp&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=webp&width=800&quality=80&fit=cover 800w
-            `}
-            sizes="
-            (max-width: 500px) 100vw,
-            (max-width: 1000px) 50vw,
-            33vw
-          "
-          />
+<section class="container">
+  <h2 class="title">{title}</h2>
+  <div>
+      {#each projects as project}
+        <a href={project.link}>
+          <picture>
+            <source 
+              type="image/webp"
+              srcset={`
+                ${ASSETS_URL}/${project.cover_image}?format=webp&width=250&quality=80&fit=cover 250w,
+                ${ASSETS_URL}/${project.cover_image}?format=webp&width=400&quality=80&fit=cover 400w,
+                ${ASSETS_URL}/${project.cover_image}?format=webp&width=800&quality=80&fit=cover 800w
+              `}
+              sizes="
+              (max-width: 500px) 100vw,
+              (max-width: 1000px) 50vw,
+              33vw
+            "
+            />
 
-          <source 
-            type="image/avif"
-            srcset={`
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=250&quality=80&fit=cover 250w,
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=800&quality=80&fit=cover 800w
-            `}
-            sizes="
-            (max-width: 500px) 100vw,
-            (max-width: 1000px) 50vw,
-            33vw
-          "
-          />
-  
-          <img 
-            src={`${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover`} 
-            srcset={`
-              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=250&quality=80&fit=cover 250w,
-              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=800&quality=80&fit=cover 800w
-            `}
-            sizes="
-            (max-width: 500px) 100vw,
-            (max-width: 1000px) 50vw,
-            33vw
-          "
-            loading="lazy"
-            alt={project.title}
-          />
-        </picture>
-  
-        <div class="overlay">
-          <p>{project.title}</p>
-          <span class="arrow"></span>
-        </div>
-      </a>
-    {/each}
-</div>
+            <source 
+              type="image/avif"
+              srcset={`
+                ${ASSETS_URL}/${project.cover_image}?format=avif&width=250&quality=80&fit=cover 250w,
+                ${ASSETS_URL}/${project.cover_image}?format=avif&width=400&quality=80&fit=cover 400w,
+                ${ASSETS_URL}/${project.cover_image}?format=avif&width=800&quality=80&fit=cover 800w
+              `}
+              sizes="
+              (max-width: 500px) 100vw,
+              (max-width: 1000px) 50vw,
+              33vw
+            "
+            />
+    
+            <img 
+              src={`${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover`} 
+              srcset={`
+                ${ASSETS_URL}/${project.cover_image}?format=jpg&width=250&quality=80&fit=cover 250w,
+                ${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover 400w,
+                ${ASSETS_URL}/${project.cover_image}?format=jpg&width=800&quality=80&fit=cover 800w
+              `}
+              sizes="
+              (max-width: 500px) 100vw,
+              (max-width: 1000px) 50vw,
+              33vw
+            "
+              loading="lazy"
+              alt={project.title}
+            />
+          </picture>
+    
+          <div class="overlay">
+            <p>{project.title}</p>
+            <span class="arrow"></span>
+          </div>
+        </a>
+      {/each}
+  </div>
+
+  <Button href={buttonLink} text={buttonText} position={buttonPosition} />
+</section>
       
 <style>
   div {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 0.5rem;
+  }
+
+  section{
+    padding: 0 1em;
+
+    h2{
+      display: flex;
+      justify-content: center;
+      margin-top: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
   }
 
   div a {
@@ -149,5 +171,11 @@
       opacity: 1;
       pointer-events: auto;
     }
+  }
+
+  @media (min-width: 768px) {
+		section h2 {
+			justify-content: flex-start;
+		}
   }
 </style>
