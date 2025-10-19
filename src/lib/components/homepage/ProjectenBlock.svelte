@@ -9,33 +9,45 @@
       <a href={project.link}>
         <picture>
           <source 
-            type="image/avif"
-            srcset={`
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=800&quality=80&fit=cover 800w,
-              ${ASSETS_URL}/${project.cover_image}?format=avif&width=1200&quality=80&fit=cover 1200w
-            `}
-            sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw"
-          />
-  
-          <source 
             type="image/webp"
             srcset={`
+              ${ASSETS_URL}/${project.cover_image}?format=webp&width=250&quality=80&fit=cover 250w,
               ${ASSETS_URL}/${project.cover_image}?format=webp&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=webp&width=800&quality=80&fit=cover 800w,
-              ${ASSETS_URL}/${project.cover_image}?format=webp&width=1200&quality=80&fit=cover 1200w
+              ${ASSETS_URL}/${project.cover_image}?format=webp&width=800&quality=80&fit=cover 800w
             `}
-            sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw"
+            sizes="
+            (max-width: 500px) 100vw,
+            (max-width: 1000px) 50vw,
+            33vw
+          "
+          />
+
+          <source 
+            type="image/avif"
+            srcset={`
+              ${ASSETS_URL}/${project.cover_image}?format=avif&width=250&quality=80&fit=cover 250w,
+              ${ASSETS_URL}/${project.cover_image}?format=avif&width=400&quality=80&fit=cover 400w,
+              ${ASSETS_URL}/${project.cover_image}?format=avif&width=800&quality=80&fit=cover 800w
+            `}
+            sizes="
+            (max-width: 500px) 100vw,
+            (max-width: 1000px) 50vw,
+            33vw
+          "
           />
   
           <img 
             src={`${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover`} 
             srcset={`
+              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=250&quality=80&fit=cover 250w,
               ${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover 400w,
-              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=800&quality=80&fit=cover 800w,
-              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=1200&quality=80&fit=cover 1200w
+              ${ASSETS_URL}/${project.cover_image}?format=jpg&width=800&quality=80&fit=cover 800w
             `}
-            sizes="(max-width: 600px) 50vw, (max-width: 1000px) 33vw, 25vw"
+            sizes="
+            (max-width: 500px) 100vw,
+            (max-width: 1000px) 50vw,
+            33vw
+          "
             loading="lazy"
             alt={project.title}
           />
@@ -52,7 +64,7 @@
 <style>
   div {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 0.5rem;
   }
 
@@ -65,7 +77,7 @@
 
   div img {
       width: 100%;
-      height: 150px;
+      height: clamp(150px, 20vw, 300px);
       object-fit: cover;
       display: block;
       border-radius: 8px;
@@ -137,21 +149,5 @@
       opacity: 1;
       pointer-events: auto;
     }
-  }
-
-/* Responsive */
-  @media (min-width: 500px) {
-      div {
-          grid-template-columns: repeat(3, 1fr);
-      }
-      div img {
-          height: 200px;
-      }
-  }
-
-  @media (min-width: 1000px) {
-      div img {
-          height: 300px;
-      }
   }
 </style>
