@@ -1,5 +1,10 @@
 <script>
-    import Hero from '$lib/components/homepage/Hero.svelte';
+    import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
+    import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
+
+    export let data; // komt van +page.server.js
+    const { projects } = data;
 </script>
 
-<Hero />
+<HeroBlock />
+<ProjectenBlock {projects}/>
