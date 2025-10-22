@@ -1,6 +1,16 @@
 <script>
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
+
+	// Loading zit standaard uit
+	let loading = false;
+
+	// Blijf loading tonen tot de form klaar is
+	$: if ($page.form?.success !== undefined) {
+		setTimeout(() => {
+			loading = false;
+		}, 1000);
+	}
 </script>
 
 <section class="container">
@@ -8,21 +18,22 @@
 	<div class="newsletter-content">
 		<h3>Inside informatie?</h3>
 		<p>Ontvang onze nieuwsbrief en mis geen enkel update.</p>
-		<form method="post" use:enhance>
+		<form method="post" use:enhance on:submit={() => (loading = true)}>
 			<label>
 				<input type="email" name="email" placeholder="Uw e-mail adres hier..." required />
 			</label>
-			<button type="submit">Aboneer</button>
+
+			<button type="submit" disabled={loading || $page.form?.success}>
+				{#if loading}
+					<span class="loader"></span>
+				{:else if $page.form?.success}
+					{$page.form?.message}
+				{:else}
+					{$page.form?.message || 'Aboneer'}
+				{/if}
+			</button>
 		</form>
 		<p>We zullen je niet spammen!</p>
-
-		{#if $page.form?.success === true}
-			<p>Ingeschreven!</p>
-		{/if}
-
-		{#if $page.form?.success === false}
-			<p>Mislukt!</p>
-		{/if}
 	</div>
 </section>
 
@@ -54,7 +65,7 @@
 		margin: 1em 0;
 		border: none;
 	}
-	form input {
+	form label input {
 		padding: 1em;
 		border-radius: 7px 0px 0px 7px;
 		border: none;
@@ -67,6 +78,11 @@
 		font-weight: 700;
 		font-family: 'Urbanist';
 		border: none;
+		cursor: pointer;
+	}
+
+	.loader {
+		display: inline-block;
 	}
 
 	@media (min-width: 768px) {
@@ -95,6 +111,12 @@
 	@media (min-width: 1024px) {
 		section {
 			margin: 2em auto;
+		}
+		form label input {
+			width: 400px;
+		}
+		form button {
+			padding: 1em 3em;
 		}
 	}
 </style>

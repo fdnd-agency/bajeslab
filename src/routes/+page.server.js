@@ -24,7 +24,7 @@ export const actions = {
 			);
 
 			if (apiResponse.ok) {
-				return { success: true, message: "Ingeschreven!"};
+				return { success: true, message: "✓ Ingeschreven!"};
 			} else {
 				return { success: false, message: "Mislukt!"};
 			}
