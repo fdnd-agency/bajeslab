@@ -14,7 +14,7 @@
   <h2 class="title">{title}</h2>
   <div>
       {#each projects as project}
-        <a href={project.link}>
+        <a href={`/projecten/${project.slug}`}>
           <picture>
             <source 
               type="image/webp"
