@@ -44,10 +44,10 @@
     /* Tablet */
     @media (min-width: 750px) {
         section {
-            background-image: url("../images/hero-tablet.jpg"); /* fallback */
+            background-image: url("/images/hero-tablet.jpg"); /* fallback */
             background-image: image-set(
-            url("../images/hero-tablet.webp") type("image/webp"),
-            url("../images/hero-tablet.avif") type("image/avif")
+            url("/images/hero-tablet.webp") type("image/webp"),
+            url("/images/hero-tablet.avif") type("image/avif")
             );
             background-position: center;
         }
@@ -56,10 +56,10 @@
     /* Desktop */
     @media (min-width: 1200px) {
         section {
-            background-image: url("../images/hero-desktop.jpg"); /* fallback */
+            background-image: url("/images/hero-desktop.jpg"); /* fallback */
             background-image: image-set(
-            url("../images/hero-desktop.webp") type("image/webp"),
-            url("../images/hero-desktop.avif") type("image/avif")
+            url("/images/hero-desktop.webp") type("image/webp"),
+            url("/images/hero-desktop.avif") type("image/avif")
             );
             min-height: 100vh;
             background-position: center;
