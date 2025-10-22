@@ -4,9 +4,9 @@
 
 <header>
   <a href="/" class="logo"><span>Healthy Urban</span>Living Lab</a>
-  <button popovertarget="menu">☰</button>
+  <button popovertarget="menu" class="menu-toggle">☰</button>
   <nav id="menu" popover>
-    <button popovertarget="menu" popovertargetaction="hide">✕</button>  
+    <button popovertarget="menu" popovertargetaction="hide" class="menu-close">✕</button>  
       <ul>
         <li><a href="/over-ons">Over ons</a></li>
         <li><a href="/projecten">Projecten</a></li>
@@ -44,5 +44,17 @@ span {
   line-height: 1.1;
   white-space: nowrap;
   font-weight: 400;
+}
+
+.menu-toggle,
+.menu-close {
+  font-size: 2rem;
+  color: var(--color-accent2-d1);
+}
+
+.menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 </style>
