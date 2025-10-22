@@ -135,5 +135,10 @@ a {
   a {
     color: black;
   }
+
+  #menu a:hover {
+      color: var(--color-accent2-d1);
+      text-decoration: underline;
+    }
 }
 </style>
