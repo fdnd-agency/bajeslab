@@ -11,13 +11,16 @@
 			loading = false;
 		}, 1000);
 	}
+
+	export let title = 'Inside informatie?';
+	export let description = 'Ontvang onze nieuwsbrief en mis geen enkel update.';
 </script>
 
 <section class="container">
 	<img src="/icons/newsletter-amico-1.svg" alt="Newsletter amico" fetchpriority="high" />
 	<div class="newsletter-content">
-		<h3>Inside informatie?</h3>
-		<p>Ontvang onze nieuwsbrief en mis geen enkel update.</p>
+		<h3>{title}</h3>
+		<p>{description}</p>
 		<form method="post" use:enhance on:submit={() => (loading = true)}>
 			<label>
 				<input type="email" name="email" placeholder="Uw e-mail adres hier..." required />

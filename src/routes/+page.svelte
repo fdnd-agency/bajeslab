@@ -33,4 +33,7 @@
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
 />
-<NieuwsbriefBlock />
+<NieuwsbriefBlock
+	title="Inside informatie?"
+	description="Ontvang onze nieuwsbrief en mis geen enkel update."
+/>
