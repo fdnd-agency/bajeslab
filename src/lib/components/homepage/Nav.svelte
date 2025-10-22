@@ -46,6 +46,7 @@ span {
   font-weight: 400;
 }
 
+/* ---- MOBILE MENU BUTTONS  ---- */
 .menu-toggle,
 .menu-close {
   font-size: 2rem;
@@ -56,5 +57,45 @@ span {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+/* ---- POPOVER MENU ---- */
+[popover] {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: min(60dvh, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 350ms ease, opacity 200ms ease;
+  pointer-events: none;
+}
+
+[popover]:popover-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+ul {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border-bottom: 2px solid var(--color-accent2-d1);
+}
+
+a {
+  display: block;
+  padding: 1rem;
+  color: var(--color-accent2-d1);
+  font-size: 1.2rem;
 }
 </style>
