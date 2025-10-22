@@ -98,4 +98,42 @@ a {
   color: var(--color-accent2-d1);
   font-size: 1.2rem;
 }
+
+/* ---- DESKTOP MENU ---- */
+
+@media (min-width: 960px) {
+  .menu-toggle,
+  .menu-close {
+    display: none;
+  }
+
+  [popover] {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  li {
+    border: none;
+  }
+
+  a {
+    color: black;
+  }
+}
 </style>
