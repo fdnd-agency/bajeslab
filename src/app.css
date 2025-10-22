@@ -107,6 +107,22 @@ body {
 	background-color: var(--color-neutral1-l3);
 }
 
+a {
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul, ol, li {
+	list-style: none;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
 /* Voorbeeld gebruik: class="hero", class="title", class="subtitle", class="text" */
 /* mobile font-sizes kunnen beter! */
 .hero{
