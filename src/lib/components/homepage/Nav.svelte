@@ -8,10 +8,10 @@
   <nav id="menu" popover>
     <button popovertarget="menu" popovertargetaction="hide" class="menu-close">✕</button>  
       <ul>
-        <li><a href="/over-ons">Over ons</a></li>
-        <li><a href="/projecten">Projecten</a></li>
-        <li><a href="/netwerk">Netwerk</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/over-ons" class="text">Over ons</a></li>
+        <li><a href="/projecten" class="text">Projecten</a></li>
+        <li><a href="/netwerk" class="text">Netwerk</a></li>
+        <li><a href="/contact" class="text">Contact</a></li>
       </ul>
   </nav>
 </header>
