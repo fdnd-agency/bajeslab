@@ -1,9 +1,13 @@
 <script>
-import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
-import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
+    import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
+    import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
+    import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
 
-	// Content //
-	const myThemes = [
+    export let data; // komt van +page.server.js
+    const { projects } = data;
+  
+    // Content //
+	  const myThemes = [
 		{
 			icon: '/icons/theme-line-amico-1.svg',
 			alt: 'Icoon themalijn 1',
@@ -32,3 +36,4 @@ import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
 />
+<ProjectenBlock {projects}/>
