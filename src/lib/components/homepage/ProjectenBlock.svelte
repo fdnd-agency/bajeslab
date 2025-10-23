@@ -81,6 +81,8 @@
 
   section{
     padding: 0 1em;
+    display: flex;
+    flex-direction: column;
 
     h2{
       display: flex;
