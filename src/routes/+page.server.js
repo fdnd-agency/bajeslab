@@ -1,6 +1,5 @@
-/** @satisfies {import('./$types').Actions} */
 export const actions = {
-	default: async ({ request, fetch }) => {
+	default: async ({ request }) => {
 		const data = await request.formData();
 		const email = data.get('email');
 
@@ -24,9 +23,9 @@ export const actions = {
 			);
 
 			if (apiResponse.ok) {
-				return { success: true, message: "✓ Ingeschreven!"};
+				return { success: true, message: '✓ Ingeschreven!' };
 			} else {
-				return { success: false, message: "Mislukt!"};
+				return { success: false, message: 'Mislukt!' };
 			}
 		} catch (error) {
 			console.error(error);
