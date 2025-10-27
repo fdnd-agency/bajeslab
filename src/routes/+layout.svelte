@@ -1,5 +1,7 @@
 <script>
 	let { children } = $props();
+
+	import Footer from '$lib/components/layout/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -10,5 +12,21 @@
 		content="Healthy Urban Living Lab is een living lab van de Hogeschool van Amsterdam, dat samen met haar partners de ontwikkeling van het Bajeskwartier in Amsterdam ondersteunt door middel van onderzoeksprojecten met studenten en partners."
 	/>
 </svelte:head>
+<div class="layout">
+	<main>
+		{@render children()}
+	</main>
+	<Footer />
+</div>
 
-{@render children()}
+<style>
+	.layout {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	main {
+		flex: 1;
+	}
+</style>
