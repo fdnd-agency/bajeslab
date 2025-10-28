@@ -26,7 +26,7 @@
 <footer>
 	<div class="footer-wrapper">
 		<h3>Healthy Urban Living Lab</h3>
-		<div class="footer-content">
+		<nav>
 			<ul>
 				<h4>Navigatie</h4>
 				<li><a href="/">Home</a></li>
@@ -82,7 +82,7 @@
 					<p>Algemeen email</p>
 				</div>
 			</div>
-		</div>
+		</nav>
 		<div class="newsletter-section">
 			<h3>Blijf op de hoogte!</h3>
 			<p>Schrijf je in voor onze nieuwsbrief</p>
@@ -237,18 +237,18 @@
 	}
 
 	/* Footer content */
-	.footer-content {
+	nav {
 		display: flex;
 		justify-content: space-evenly;
 		margin-top: 4em;
 	}
-	.footer-content ul {
+	nav ul {
 		list-style: none;
 	}
-	.footer-content ul li {
+	nav ul li {
 		margin-top: 10px;
 	}
-	.footer-content ul li a {
+	nav ul li a {
 		text-decoration: none;
 		color: white;
 	}
@@ -335,7 +335,7 @@
 			padding: 2em 3em 0em 3em;
 		}
 
-		.footer-content {
+		nav {
 			display: contents;
 			margin: 0;
 		}
@@ -364,12 +364,12 @@
 			text-align: left;
 			justify-self: left;
 		}
-		.footer-content ul {
+		nav ul {
 			grid-area: nav;
 			text-align: left;
 		}
 
-		.footer-content .contact-info {
+		nav .contact-info {
 			grid-area: contact;
 			text-align: left;
 			align-items: flex-start;
