@@ -2,14 +2,24 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	// Loading zit standaard uit
+	// Loading en showFeedback zit standaard uit
 	let loading = false;
+	let showFeedback = false;
 
-	// Blijf loading tonen tot de form klaar is
+	// Reset en toon feedback bij nieuwe form submission
+	// Als form gesubmit is zet showFeeback en verwijder na 4 seconden
+	$: if ($page.form) {
+		showFeedback = true;
+		setTimeout(() => {
+			showFeedback = false;
+		}, 4000);
+	}
+
+	// Stop loading
 	$: if ($page.form?.success !== undefined) {
 		setTimeout(() => {
 			loading = false;
-		}, 1000);
+		}, 500);
 	}
 </script>
 
@@ -77,19 +87,28 @@
 		<p>Schrijf je in voor onze nieuwsbrief</p>
 		<form method="post" use:enhance on:submit={() => (loading = true)}>
 			<label>
-				<input type="email" name="email" placeholder="Uw e-mail adres hier..." required />
+				<input type="email" name="email" placeholder="vul uw email adres in" required />
 			</label>
 
-			<button type="submit" disabled={loading || $page.form?.success}>
+			<button type="submit" disabled={loading}>
 				{#if loading}
 					<span class="loader"></span>
-				{:else if $page.form?.success}
-					{$page.form?.message}
 				{:else}
-					{$page.form?.message || 'Aboneer'}
+					<p>Aboneer</p>
 				{/if}
 			</button>
 		</form>
+
+		<!-- Als form is gesubmit en feedback is shown, check of form succes is dan show message -->
+		<div class="form-status">
+			{#if $page.form && showFeedback}
+				{#if $page.form?.success}
+					<p>{$page.form?.message}</p>
+				{:else}
+					<p>{$page.form?.message} Probeer het opnieuw.</p>
+				{/if}
+			{/if}
+		</div>
 		<div class="footer-copyright">
 			<svg
 				width="351"
@@ -247,7 +266,7 @@
 	/* Newsletter section */
 	.newsletter-section {
 		text-align: center;
-		padding-top: 2em;
+		margin-top: 4em;
 	}
 
 	.newsletter-section h3 {
@@ -268,6 +287,7 @@
 		padding: 1em;
 		border-radius: 7px 0px 0px 7px;
 		border: none;
+		height: 42px;
 	}
 	form button {
 		padding: 1em;
@@ -278,10 +298,20 @@
 		font-family: 'Urbanist';
 		border: none;
 		cursor: pointer;
+		min-width: max-content;
+		height: 42px;
+	}
+	/* Form Status */
+	.form-status {
+		height: 30px;
 	}
 
+	/* Footer Copyright */
 	.footer-copyright {
 		margin-top: 3em;
+	}
+	.footer-copyright svg {
+		width: min(100%, 20em);
 	}
 	.footer-copyright p {
 		margin-top: 1em;
