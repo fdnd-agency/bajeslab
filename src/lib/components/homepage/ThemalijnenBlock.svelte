@@ -9,7 +9,7 @@
 </script>
 
 <section class="container">
-	<h2>{title}</h2>
+	<h2 class="title">{title}</h2>
 	<ul>
 		{#each themes as theme}
 			<li>
@@ -30,7 +30,6 @@
 		padding: 0 1em;
 	}
 	section h2 {
-		font-size: 2.5em;
 		margin-top: var(--spacing-md);
 	}
 	section ul {
@@ -75,7 +74,6 @@
 
 	@media (min-width: 768px) {
 		section h2 {
-			font-size: var(--spacing-lg);
 			margin-bottom: var(--spacing-sm);
 			align-self: start;
 		}
