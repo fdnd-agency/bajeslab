@@ -140,8 +140,14 @@ body {
 }
 
 .container {
-	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 1rem;
+}
+@media (min-width: 1024px) {
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
 }
 
 /* Buttons */
@@ -178,5 +184,27 @@ body {
 @media (min-width: 768px) {
 	.button {
 		width: 250px;
+	}
+}
+
+/* Loader */
+.loader {
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid var(--color-accent2-base);
+	border-radius: 50%;
+	align-self: center;
+	width: 15px;
+	height: 15px;
+	animation: spin 0.4s linear infinite;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

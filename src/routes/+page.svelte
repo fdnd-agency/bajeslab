@@ -1,6 +1,7 @@
 <script>
-    import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
-    import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
+	  import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
+	  import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
+	  import NieuwsbriefBlock from '$lib/components/homepage/NieuwsbriefBlock.svelte';
     import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
 
     export let data; // komt van +page.server.js
@@ -35,5 +36,9 @@
 	buttonText="Lees meer"
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
+/>
+<NieuwsbriefBlock
+	title="Benieuwd naar nog meer projecten?"
+	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
 />
 <ProjectenBlock {projects}/>
