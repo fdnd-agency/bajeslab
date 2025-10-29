@@ -2,6 +2,7 @@
     import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
     import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
     import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
+	import Overons from '$lib/components/homepage/Overons.svelte';
 
     export let data; // komt van +page.server.js
     const { projects } = data;
@@ -29,6 +30,7 @@
 </script>
 
 <HeroBlock title="Samen bouwen aan een gezonde wijk" />
+<Overons />
 <ThemalijnenBlock
 	title="Themalijnen"
 	themes={myThemes}
