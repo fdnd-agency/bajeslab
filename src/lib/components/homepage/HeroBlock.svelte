@@ -25,6 +25,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        position: relative;
     }
 
     section::before {
@@ -33,7 +34,6 @@
         inset: 0; 
         background: rgba(0, 0, 0, 0.45);
         z-index: 0; 
-        height: 75vh;
     }
 
     h1{
