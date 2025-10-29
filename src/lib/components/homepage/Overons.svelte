@@ -10,7 +10,9 @@
   <h2 class="title">{title}</h2>
   <img src={image} alt="Bord met de tekst Welkom bij de Bajestuin" />
   <p class="text">{description}</p>
-  <Button href={buttonLink} />
+  <div class="button-wrapper">
+    <Button href={buttonLink} />
+  </div>
 </section>
 
 <style>
@@ -45,7 +47,7 @@ img {
   grid-area: text;
 }
 
-.button {
+.button-wrapper {
   grid-area: button;
 }
 
@@ -54,7 +56,6 @@ img {
   section {
     grid-template-columns: 1fr 1.1fr;
     align-items: center;
-    gap: var(--spacing-lg);
     grid-template-areas:
       "title image"
       "text image"
@@ -70,7 +71,7 @@ img {
     aspect-ratio: 4 / 3;
   }
 
-  :global(.button) {
+  .button-wrapper {
     justify-self: end;
   }
 }
