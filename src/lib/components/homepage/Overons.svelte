@@ -12,3 +12,40 @@
   <p class="text">{description}</p>
   <Button href={buttonLink} />
 </section>
+
+<style>
+/* MOBILE LAYOUT */
+section {
+  display: grid;
+  gap: var(--spacing-sm);
+  padding-inline: var(--spacing-sm);
+  margin-block-start: var(--spacing-md);
+  text-align: left;
+  grid-template-areas:
+    "title"
+    "image"
+    "text"
+    "button";
+}
+
+h2 {
+  grid-area: title;
+  text-align: center;
+}
+
+img {
+  grid-area: image;
+  width: 100%;
+  height: auto;
+  border-radius: var(--spacing-xs);
+  object-fit: cover;
+}
+
+.text {
+  grid-area: text;
+}
+
+.button {
+  grid-area: button;
+}
+</style>
