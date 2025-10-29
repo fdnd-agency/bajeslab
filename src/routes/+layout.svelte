@@ -1,9 +1,9 @@
 <script>
-	let { children } = $props();
-
-	import Footer from '$lib/components/layout/Footer.svelte';
+  let { children } = $props();
+  import Nav from '$lib/components/homepage/Nav.svelte';
+  import Footer from '$lib/components/layout/Footer.svelte';
 </script>
-
+<Nav />
 <svelte:head>
 	<link rel="stylesheet" href="/css/app.css" />
 	<title>Healthy Urban Living Lab</title>
