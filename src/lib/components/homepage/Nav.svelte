@@ -4,9 +4,9 @@
 
 <header>
   <a href="/" class="logo"><span>Healthy Urban</span>Living Lab</a>
-  <button popovertarget="menu" class="menu-toggle">☰</button>
+  <button popovertarget="menu" class="menu-toggle" aria-label="Open menu">☰</button>
   <nav id="menu" popover>
-    <button popovertarget="menu" popovertargetaction="hide" class="menu-close">✕</button>  
+    <button popovertarget="menu" popovertargetaction="hide" class="menu-close" aria-label="Sluit menu">✕</button>  
       <ul>
         <li><a href="/over-ons" class="text">Over ons</a></li>
         <li><a href="/projecten" class="text">Projecten</a></li>
