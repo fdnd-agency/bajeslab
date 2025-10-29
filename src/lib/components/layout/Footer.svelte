@@ -36,7 +36,11 @@
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 			<div class="contact-info">
-				<div class="contact-info-item">
+				<a
+					class="contact-info-item"
+					href="https://www.google.com/maps/search/Bijlmerbajes,+H.J.E.+Wenckebachweg+48,+1096+AH+Amsterdam/@52.3369631,4.9225222,17z?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D"
+					target="_blank"
+				>
 					<svg
 						width="27"
 						height="29"
@@ -50,8 +54,8 @@
 						/>
 					</svg>
 					<p>1096 AH Amsterdam</p>
-				</div>
-				<div class="contact-info-item">
+				</a>
+				<a class="contact-info-item" href="tel:+030 609 7222">
 					<svg
 						width="27"
 						height="29"
@@ -65,8 +69,8 @@
 						/>
 					</svg>
 					<p>030 609 7222</p>
-				</div>
-				<div class="contact-info-item">
+				</a>
+				<a class="contact-info-item" href="mailto:Hull@hva.nl">
 					<svg
 						width="22"
 						height="22"
@@ -79,8 +83,8 @@
 							fill="currentColor"
 						/>
 					</svg>
-					<p>Algemeen email</p>
-				</div>
+					<p>Hull@hva.nl</p>
+				</a>
 			</div>
 		</nav>
 		<div class="newsletter-section">
@@ -95,7 +99,7 @@
 					{#if loading}
 						<span class="loader"></span>
 					{:else}
-						<p>Aboneer</p>
+						<p>Abboneer</p>
 					{/if}
 				</button>
 			</form>
@@ -249,10 +253,13 @@
 		margin-top: 10px;
 	}
 	nav ul li a {
-		text-decoration: none;
 		color: white;
+		transition: all 0.1s ease;
 	}
-
+	nav ul li a:hover,
+	nav ul li a:focus {
+		color: var(--color-accent2-base);
+	}
 	.contact-info {
 		display: flex;
 		flex-direction: column;
@@ -261,6 +268,12 @@
 		display: flex;
 		gap: 1em;
 		padding: 0.5em 0em;
+		color: white;
+		transition: all 0.1s ease;
+	}
+	.contact-info-item:hover,
+	.contact-info-item:focus {
+		color: var(--color-accent2-base);
 	}
 	.contact-info-item svg {
 		width: 30px;
@@ -276,11 +289,6 @@
 
 	.newsletter-section h3 {
 		margin-bottom: 0.5em;
-	}
-
-	.newsletter-section p {
-		margin-bottom: 1.5em;
-		opacity: 0.9;
 	}
 	form {
 		display: flex;
