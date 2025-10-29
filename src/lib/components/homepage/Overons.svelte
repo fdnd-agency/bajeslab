@@ -48,4 +48,30 @@ img {
 .button {
   grid-area: button;
 }
+
+/*  DESKTOP LAYOUT */
+@media (min-width: 768px) {
+  section {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    gap: var(--spacing-lg);
+    grid-template-areas:
+      "title image"
+      "text image"
+      "button image";
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  img {
+    border-radius: var(--spacing-sm);
+    aspect-ratio: 4 / 3;
+  }
+
+  :global(.button) {
+    justify-self: end;
+  }
+}
 </style>
