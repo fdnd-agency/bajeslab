@@ -1,7 +1,7 @@
 <script>
 	import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
 	import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
-	import NieuwsbriefBlock from '$lib/components/homepage/NieuwsbriefBlock/NieuwsbriefBlock.svelte';
+	import NieuwsbriefBlock from '$lib/components/homepage/NieuwsbriefBlock.svelte';
 
 	// Content //
 	const myThemes = [
