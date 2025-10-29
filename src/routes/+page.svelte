@@ -39,8 +39,8 @@
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
 />
+<ProjectenBlock {projects}/>
 <NieuwsbriefBlock
 	title="Benieuwd naar nog meer projecten?"
 	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
 />
-<ProjectenBlock {projects}/>
