@@ -31,7 +31,12 @@
 </script>
 
 <HeroBlock title="Samen bouwen aan een gezonde wijk" />
-<Overons />
+<Overons
+  buttonLink = "/over-ons"
+  title = "Over ons"
+  description = "In de voormalige Bijlmer Bajes werken gebiedsontwikkelaar AM, de HvA en verschillende partners sinds 2018 samen in het Healthy Urban Living Lab Bajeskwartier. Het doel is een groene, gezonde en inclusieve buurt voor alle bewoners. Onderzoekers en studenten bekijken samen met bewoners en gebruikers hoe het gebied zo ingericht kan worden dat het bewegen en ontmoeten stimuleert. Dit is belangrijk voor gezondheid en welzijn ..."
+  image = "/images/over-ons.png"
+/>
 <ThemalijnenBlock
 	title="Themalijnen"
 	themes={myThemes}
