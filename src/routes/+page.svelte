@@ -34,6 +34,6 @@
 	buttonPosition="flex-end"
 />
 <NieuwsbriefBlock
-	title="Inside informatie?"
-	description="Ontvang onze nieuwsbrief en mis geen enkel update."
+	title="Benieuwd naar nog meer projecten?"
+	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
 />

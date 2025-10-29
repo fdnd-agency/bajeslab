@@ -2,14 +2,24 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	// Loading zit standaard uit
+	// Loading en showFeedback zit standaard uit
 	let loading = false;
+	let showFeedback = false;
 
-	// Blijf loading tonen tot de form klaar is
+	// Reset en toon feedback bij nieuwe form submission
+	// Als form gesubmit is zet showFeeback en verwijder na 4 seconden
+	$: if ($page.form) {
+		showFeedback = true;
+		setTimeout(() => {
+			showFeedback = false;
+		}, 4000);
+	}
+
+	// Stop loading
 	$: if ($page.form?.success !== undefined) {
 		setTimeout(() => {
 			loading = false;
-		}, 1000);
+		}, 500);
 	}
 
 	export let title = 'Inside informatie?';
@@ -18,25 +28,32 @@
 
 <section class="container">
 	<img src="/icons/newsletter-amico-1.svg" alt="Newsletter amico" fetchpriority="high" />
-	<div class="newsletter-content">
+	<div class="newsletter-section">
 		<h3>{title}</h3>
 		<p>{description}</p>
 		<form method="post" use:enhance on:submit={() => (loading = true)}>
 			<label>
-				<input type="email" name="email" placeholder="Uw e-mail adres hier..." required />
+				<input type="email" name="email" placeholder="vul uw email adres in" required />
 			</label>
-
-			<button type="submit" disabled={loading || $page.form?.success}>
+			<button type="submit" disabled={loading}>
 				{#if loading}
 					<span class="loader"></span>
-				{:else if $page.form?.success}
-					{$page.form?.message}
 				{:else}
-					{$page.form?.message || 'Aboneer'}
+					<span>Abboneer</span>
 				{/if}
 			</button>
 		</form>
-		<p>We zullen je niet spammen!</p>
+
+		<!-- Als form is gesubmit en feedback is shown, check of form succes is dan show message -->
+		<div class="form-status">
+			{#if $page.form && showFeedback}
+				{#if $page.form?.success}
+					<p>{$page.form?.message}</p>
+				{:else}
+					<p>{$page.form?.message} Probeer het opnieuw.</p>
+				{/if}
+			{/if}
+		</div>
 	</div>
 </section>
 
@@ -54,13 +71,14 @@
 		width: 150px;
 		height: 150px;
 	}
-	.newsletter-content p:last-child {
-		margin-top: -1em;
-		margin-bottom: 1em;
-	}
+
+	/* Newsletter section */
 	h3 {
 		font-size: 32px;
 		font-weight: 700;
+	}
+	.newsletter-section p:first-of-type {
+		margin-top: 1em;
 	}
 	form {
 		display: flex;
@@ -72,6 +90,7 @@
 		padding: 1em;
 		border-radius: 7px 0px 0px 7px;
 		border: none;
+		height: 42px;
 	}
 	form button {
 		padding: 1em;
@@ -82,6 +101,13 @@
 		font-family: 'Urbanist';
 		border: none;
 		cursor: pointer;
+		min-width: max-content;
+		height: 42px;
+	}
+
+	/* Form Status */
+	.form-status {
+		height: 30px;
 	}
 
 	.loader {
@@ -100,12 +126,12 @@
 			width: 300px;
 			height: 300px;
 		}
-		.newsletter-content {
+		.newsletter-section {
 			align-content: center;
 			text-align: start;
 		}
-		.newsletter-content p:last-child {
-			margin: 0em;
+		.newsletter-section p {
+			margin-top: 0.5em;
 		}
 		form {
 			justify-content: flex-start;
