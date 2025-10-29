@@ -1,34 +1,27 @@
-export const actions = {
-	default: async ({ request }) => {
-		const data = await request.formData();
-		const email = data.get('email');
-
-		const ANON_KEY =
-			'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnY2lrZ2p5a3dldXRlZmV4d2xtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MDA4MjgsImV4cCI6MjA2ODA3NjgyOH0.PJYtzz6nUErRhJZnck2dugwcjnJ6p2dBqpZsJfbK7aU';
-
-		try {
-			const apiResponse = await fetch(
-				'https://lgcikgjykweutefexwlm.supabase.co/rest/v1/hull_newsletter_subscriptions',
-				{
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-						apikey: ANON_KEY,
-						Authorization: `Bearer ${ANON_KEY}`
-					},
-					body: JSON.stringify({
-						email: email
-					})
-				}
-			);
-
-			if (apiResponse.ok) {
-				return { success: true, message: '✓ Ingeschreven!' };
-			} else {
-				return { success: false, message: 'Mislukt!' };
-			}
-		} catch (error) {
-			console.error(error);
-		}
-	}
-};
+// Deze functie draait op de server en haalt de juiste data op voor deze productpagina.
+export async function load({ params, fetch }) {
+    const id = Number(params.id); // Huidig product-ID uit de URL
+  
+    // --- Huidig product ophalen ---
+    const res = await fetch(`https://fdnd-agency.directus.app/items/hull_projects/${id}`);
+    const { data: projects } = await res.json();
+  
+    // --- Vorige product (id kleiner dan huidig) ---
+    const prevRes = await fetch(
+      `https://fdnd-agency.directus.app/items/hull_projects?filter[id][_lt]=${id}&sort=-id&limit=1`
+    );
+    const { data: prev } = await prevRes.json();
+  
+    // --- Volgende product (id groter dan huidig) ---
+    const nextRes = await fetch(
+      `https://fdnd-agency.directus.app/items/hull_projects?filter[id][_gt]=${id}&sort=id&limit=1`
+    );
+    const { data: next } = await nextRes.json();
+  
+    // We geven alles terug aan de Svelte page
+    return {
+      projects,
+      prev: prev?.[0] ? { id: prev[0].id, title: prev[0].title } : null,
+      next: next?.[0] ? { id: next[0].id, title: next[0].title } : null
+    };
+}
