@@ -3,6 +3,7 @@
 	  import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
 	  import NieuwsbriefBlock from '$lib/components/homepage/NieuwsbriefBlock.svelte';
     import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
+	import Overons from '$lib/components/homepage/Overons.svelte';
 
     export let data; // komt van +page.server.js
     const { projects } = data;
@@ -30,6 +31,12 @@
 </script>
 
 <HeroBlock title="Samen bouwen aan een gezonde wijk" />
+<Overons
+  buttonLink = "/over-ons"
+  title = "Over ons"
+  description = "In de voormalige Bijlmer Bajes werken gebiedsontwikkelaar AM, de HvA en verschillende partners sinds 2018 samen in het Healthy Urban Living Lab Bajeskwartier. Het doel is een groene, gezonde en inclusieve buurt voor alle bewoners. Onderzoekers en studenten bekijken samen met bewoners en gebruikers hoe het gebied zo ingericht kan worden dat het bewegen en ontmoeten stimuleert. Dit is belangrijk voor gezondheid en welzijn ..."
+  image = "/images/over-ons.png"
+/>
 <ThemalijnenBlock
 	title="Themalijnen"
 	themes={myThemes}
@@ -37,8 +44,8 @@
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
 />
+<ProjectenBlock {projects}/>
 <NieuwsbriefBlock
 	title="Benieuwd naar nog meer projecten?"
 	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
 />
-<ProjectenBlock {projects}/>
