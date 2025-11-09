@@ -1,0 +1,5 @@
+title: "Bajes Lab"
+status: "in progress"
+main_link: "https://bajeslab.agency.fdnd.nl/"
+dev_link: "https://bajeslab.dev.fdnd.nl/"
+tech_stack: ["SvelteKit", "Directus"]
