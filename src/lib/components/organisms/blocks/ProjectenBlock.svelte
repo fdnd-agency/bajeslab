@@ -4,7 +4,7 @@
 
   const ASSETS_URL = "https://fdnd-agency.directus.app/assets"
 
-  import Button from '../ui/Button.svelte';
+	import Button from "$lib/components/atoms/ui/Button.svelte";
   export let buttonText = 'Bekijk alle projecten';
 	export let buttonLink = '/projecten';
 	export let buttonPosition = 'flex-end';
@@ -16,7 +16,7 @@
       {#each projects as project}
         <a href={`/projecten/${project.slug}`}>
           <picture>
-            <source 
+            <source
               type="image/webp"
               srcset={`
                 ${ASSETS_URL}/${project.cover_image}?format=webp&width=250&quality=80&fit=cover 250w,
@@ -30,7 +30,7 @@
             "
             />
 
-            <source 
+            <source
               type="image/avif"
               srcset={`
                 ${ASSETS_URL}/${project.cover_image}?format=avif&width=250&quality=80&fit=cover 250w,
@@ -43,9 +43,9 @@
               33vw
             "
             />
-    
-            <img 
-              src={`${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover`} 
+
+            <img
+              src={`${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover`}
               srcset={`
                 ${ASSETS_URL}/${project.cover_image}?format=jpg&width=250&quality=80&fit=cover 250w,
                 ${ASSETS_URL}/${project.cover_image}?format=jpg&width=400&quality=80&fit=cover 400w,
@@ -60,7 +60,7 @@
               alt={project.title}
             />
           </picture>
-    
+
           <div class="overlay">
             <p>{project.title}</p>
             <span class="arrow"></span>
@@ -71,7 +71,7 @@
 
   <Button href={buttonLink} text={buttonText} position={buttonPosition} />
 </section>
-      
+
 <style>
   div {
       display: grid;
