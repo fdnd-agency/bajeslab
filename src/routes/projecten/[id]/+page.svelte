@@ -1,5 +1,5 @@
 <script>
-    import Button from '$lib/components/ui/Button.svelte';
+    import Button from '$lib/components/atoms/ui/Button.svelte';
     export let data;
 </script>
 
@@ -26,14 +26,14 @@
         {#if data.prev}
             <Button
                 href={`/projecten/${data.prev.id}`}
-                text={`${data.prev.title}`}  
+                text={`${data.prev.title}`}
             />
         {/if}
 
         {#if data.next}
             <Button
                 href={`/projecten/${data.next.id}`}
-                text={`${data.next.title}`} 
+                text={`${data.next.title}`}
             />
         {/if}
     </nav>

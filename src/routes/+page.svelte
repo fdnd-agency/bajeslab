@@ -1,13 +1,13 @@
 <script>
-	  import HeroBlock from '$lib/components/homepage/HeroBlock.svelte';
-	  import ThemalijnenBlock from '$lib/components/homepage/ThemalijnenBlock.svelte';
-	  import NieuwsbriefBlock from '$lib/components/homepage/NieuwsbriefBlock.svelte';
-    import ProjectenBlock from '$lib/components/homepage/ProjectenBlock.svelte';
-	import Overons from '$lib/components/homepage/Overons.svelte';
+	import HeroBlock from '$lib/components/organisms/blocks/HeroBlock.svelte';
+	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
+	import ThemalijnenBlock from '$lib/components/organisms/blocks/ThemalijnenBlock.svelte';
+	import ProjectenBlock from '$lib/components/organisms/blocks/ProjectenBlock.svelte';
+	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
 
     export let data; // komt van +page.server.js
     const { projects } = data;
-  
+
     // Content //
 	  const myThemes = [
 		{
