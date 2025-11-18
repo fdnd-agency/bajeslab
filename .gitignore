@@ -35,3 +35,6 @@ vite.config.ts.timestamp-*
 !.gitignore
 !.nvmrc
 !.phpcs.xml.dist
+
+*storybook.log
+storybook-static

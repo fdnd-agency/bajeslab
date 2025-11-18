@@ -4,7 +4,7 @@
 
   const ASSETS_URL = "https://fdnd-agency.directus.app/assets"
 
-	import Button from "$lib/components/atoms/ui/Button.svelte";
+	import Button from "$lib/components/atoms/Button/Button.svelte";
   export let buttonText = 'Bekijk alle projecten';
 	export let buttonLink = '/projecten';
 	export let buttonPosition = 'flex-end';

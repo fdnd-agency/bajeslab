@@ -1,5 +1,5 @@
 <script>
-    import Button from '$lib/components/atoms/ui/Button.svelte';
+    import Button from '$lib/components/atoms/Button/Button.svelte';
     export let data;
 </script>
 
