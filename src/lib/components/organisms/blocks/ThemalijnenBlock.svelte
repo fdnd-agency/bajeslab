@@ -2,7 +2,7 @@
 	export let title = 'Themalijnen';
 	export let themes = [];
 
-	import Button from '$lib/components/atoms/ui/Button.svelte';
+	import Button from '$lib/components/atoms/Button/Button.svelte';
 	export let buttonText = 'Lees meer';
 	export let buttonLink = '/over-ons#theme-line';
 	export let buttonPosition = 'center';
