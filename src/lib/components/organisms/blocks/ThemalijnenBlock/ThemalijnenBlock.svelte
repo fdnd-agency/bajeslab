@@ -1,7 +1,7 @@
 <script>
-	export let title = 'Themalijnen';
 	export let themes = [];
 
+	export let title = 'Themalijnen';
 	import Button from '$lib/components/atoms/Button/Button.svelte';
 	export let buttonText = 'Lees meer';
 	export let buttonLink = '/over-ons#theme-line';
@@ -13,8 +13,8 @@
 	<ul>
 		{#each themes as theme}
 			<li>
-				<img src={theme.icon} alt={theme.alt} fetchpriority="high" />
-				<p>{theme.text}</p>
+				<img src={theme.illustration} alt="Theme icon" fetchpriority="high" />
+				<p>{theme.titel}</p>
 				<div class="stripe {theme.accent}"></div>
 			</li>
 		{/each}
