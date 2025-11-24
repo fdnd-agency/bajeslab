@@ -9,13 +9,17 @@
 		argTypes: {
 			title: {
 				control: 'text'
+			},
+			buttonPosition: {
+				options: ['flex-start', 'Center', 'flex-end'],
+				control: { type: 'radio' }
 			}
 		},
 		parameters: {
 			docs: {
 				description: {
-					component: ` 
-					
+					component: `
+
 					`
 				}
 			}
@@ -23,6 +27,4 @@
 	});
 </script>
 
-<Story
-	name="Standaard"
-/>
+<Story name="Standaard" />

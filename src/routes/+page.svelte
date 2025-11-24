@@ -17,7 +17,6 @@
 	image="/images/over-ons.png"
 />
 <ThemalijnenBlock
-	title="Themalijnen"
 	{themes}
 	buttonText="Lees meer"
 	buttonLink="/over-ons#theme-line"
