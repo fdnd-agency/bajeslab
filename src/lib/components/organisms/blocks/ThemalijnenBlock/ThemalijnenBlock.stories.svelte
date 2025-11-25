@@ -16,6 +16,10 @@
 			}
 		},
 		parameters: {
+			design: {
+				type: 'figma',
+				url: 'https://www.figma.com/design/doguH52moO2cyA3pT0B6sd/Living-Lab-Bajeskwartier-2025-2026?node-id=3-120&t=IeBjcBYWen78cWmX-1'
+			},
 			docs: {
 				description: {
 					component: `
