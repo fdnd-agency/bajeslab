@@ -1,6 +1,8 @@
 <script>
 	export let themes = [];
 	export let title = 'Themalijnen';
+	export let showIntro = false;
+	export let layout = 'row';
 
 	const ASSETS_URL = 'https://fdnd-agency.directus.app/assets';
 
@@ -12,12 +14,17 @@
 
 <section class="container">
 	<h2 class="title">{title}</h2>
-	<ul>
+	<ul class="{layout}-layout">
 		{#each themes as theme}
 			<li>
-				<img src={`${ASSETS_URL}/${theme.illustration}`} alt="Theme icon" fetchpriority="high" />
-				<p>{theme.titel}</p>
-				<div class="stripe {theme.accent}"></div>
+				<div class="{layout}-wrapper">
+					<img src={`${ASSETS_URL}/${theme.illustration}`} alt="Theme icon" fetchpriority="high" />
+					<p>{theme.titel}</p>
+					{#if showIntro}
+						<p>{theme.intro}</p>
+					{/if}
+				</div>
+				<div class="{layout}-stripe {theme.accent}"></div>
 			</li>
 		{/each}
 	</ul>
@@ -45,18 +52,26 @@
 		text-align: center;
 		list-style-type: none;
 	}
-	section ul li img {
+	ul li img {
 		width: 150px;
 		height: 150px;
 	}
-	section ul li p {
+	ul li p {
 		width: 80%;
 		margin: 0 auto;
 		margin-top: var(--spacing-md);
 	}
 
 	/* Stripe */
-	.stripe {
+	.column-stripe {
+		width: 80%;
+		height: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: var(--spacing-sm);
+		background-color: var(--color-primary-base);
+	}
+	.row-stripe {
 		width: 80%;
 		height: 5px;
 		margin-left: auto;
@@ -80,12 +95,37 @@
 			align-self: start;
 		}
 		section ul {
-			margin: 0 1em;
+			margin: 1em 1em 0 1em;
 			gap: 5px;
+		}
+
+		/* Row styling */
+		.row-layout {
 			flex-direction: row;
 		}
-		section ul :nth-child(even) {
+		.row-layout li:nth-child(even) {
 			margin-top: var(--spacing-lg);
+		}
+
+		/* Column styling */
+		.column-layout {
+			flex-direction: column;
+		}
+		.column-wrapper {
+			display: flex;
+			gap: 2em;
+		}
+		.column-layout li {
+			text-align: left;
+			margin-bottom: 3em;
+		}
+		.column-stripe {
+			width: 100%;
+			height: 5px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: var(--spacing-sm);
+			background-color: var(--color-primary-base);
 		}
 	}
 </style>
