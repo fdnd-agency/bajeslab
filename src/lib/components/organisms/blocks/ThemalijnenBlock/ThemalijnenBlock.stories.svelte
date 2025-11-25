@@ -10,6 +10,14 @@
 			title: {
 				control: 'text'
 			},
+			layout: {
+				options: ['column', 'row'],
+				control: { type: 'radio' }
+			},
+			showIntro: {
+				options: [false, true],
+				control: { type: 'radio' }
+			},
 			buttonPosition: {
 				options: ['flex-start', 'center', 'flex-end'],
 				control: { type: 'radio' }
@@ -55,4 +63,28 @@
 	];
 </script>
 
-<Story name="Standaard" args={{ themes: mockThemesData, buttonPosition: 'flex-end' }} />
+<Story
+	name="Standaard"
+	args={{
+		themes: mockThemesData,
+		title: 'Themalijnen',
+		layout: 'row',
+		showIntro: false,
+		buttonText: 'Lees meer',
+		buttonPosition: 'flex-end',
+		buttonLink: '/over-ons#theme-line'
+	}}
+/>
+
+<Story
+	name="With intro"
+	args={{
+		themes: mockThemesData,
+		title: 'Themalijnen',
+		layout: 'column',
+		showIntro: true,
+		buttonText: 'Lees meer',
+		buttonPosition: 'flex-end',
+		buttonLink: '/over-ons#theme-line'
+	}}
+/>
