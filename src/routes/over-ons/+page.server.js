@@ -1,3 +1,21 @@
+export async function load({ fetch }) {
+	try {
+		const [themeReq] = await Promise.all([
+			fetch('https://fdnd-agency.directus.app/items/hull_themes')
+		]);
+
+		if (themeReq.ok) {
+			const themes = await themeReq.json();
+
+			return {
+				themes: themes.data
+			};
+		}
+	} catch (error) {
+		console.error(error);
+	}
+}
+
 export const actions = {
 	default: async ({ request }) => {
 		const data = await request.formData();
