@@ -11,7 +11,7 @@
 				control: 'text'
 			},
 			buttonPosition: {
-				options: ['flex-start', 'Center', 'flex-end'],
+				options: ['flex-start', 'center', 'flex-end'],
 				control: { type: 'radio' }
 			}
 		},
@@ -25,6 +25,30 @@
 			}
 		}
 	});
+
+	const mockThemesData = [
+		{
+			id: 1,
+			intro:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			titel: 'Community building / gemeenschapsontwikkeling',
+			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+		},
+		{
+			id: 2,
+			intro:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			titel: '(Semi-) openbare (groene) ruimten: gebruik en collectieve beheervormen',
+			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+		},
+		{
+			id: 3,
+			intro:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			titel: 'Rol van sport en bewegen voor de buurt',
+			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+		}
+	];
 </script>
 
-<Story name="Standaard" />
+<Story name="Standaard" args={{ themes: mockThemesData, buttonPosition: 'flex-end' }} />
