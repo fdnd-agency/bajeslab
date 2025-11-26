@@ -44,21 +44,21 @@
 			intro:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			titel: 'Community building / gemeenschapsontwikkeling',
-			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+			illustration: 'bb0f8b90-5870-48f8-bcda-78b5ad79933d'
 		},
 		{
 			id: 2,
 			intro:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			titel: '(Semi-) openbare (groene) ruimten: gebruik en collectieve beheervormen',
-			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+			illustration: '8776ea22-e161-4d71-83b4-c15db052005c'
 		},
 		{
 			id: 3,
 			intro:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			titel: 'Rol van sport en bewegen voor de buurt',
-			illustration: '33972bc5-9f0b-47c8-9aed-77b1b33bca8d'
+			illustration: 'f0b99a26-fd6f-40ec-a507-fe7522fba6fc'
 		}
 	];
 </script>
