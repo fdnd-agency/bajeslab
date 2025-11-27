@@ -30,7 +30,7 @@
 		width: 80%;
 		margin: 0 auto;
 		margin-top: var(--spacing-md);
-        font-size: 20px;
+		font-size: 20px;
 	}
 
 	/* Stripe */
@@ -68,6 +68,7 @@
 		.column-wrapper {
 			display: flex;
 			gap: 2em;
+			align-items: center;
 		}
 		.column-layout li {
 			text-align: left;
