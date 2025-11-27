@@ -7,6 +7,7 @@
 	const ASSETS_URL = 'https://fdnd-agency.directus.app/assets';
 
 	import Button from '$lib/components/atoms/Button/Button.svelte';
+	import ThemeCard from '$lib/components/molecules/ThemeCard/ThemeCard.svelte';
 	export let buttonText = 'Lees meer';
 	export let buttonLink = '/over-ons#theme-line';
 	export let buttonPosition = 'center';
@@ -16,16 +17,7 @@
 	<h2 class="title">{title}</h2>
 	<ul class="{layout}-layout">
 		{#each themes as theme}
-			<li>
-				<div class="{layout}-wrapper">
-					<img src={`${ASSETS_URL}/${theme.illustration}`} alt="Theme icon" fetchpriority="high" />
-					<p>{theme.titel}</p>
-					{#if showIntro}
-						<p>{theme.intro}</p>
-					{/if}
-				</div>
-				<div class="{layout}-stripe {theme.accent}"></div>
-			</li>
+			<ThemeCard {theme} {layout} {showIntro} />
 		{/each}
 	</ul>
 	<Button href={buttonLink} text={buttonText} position={buttonPosition} />
@@ -47,46 +39,7 @@
 		margin-top: var(--spacing-md);
 		margin-bottom: var(--spacing-md);
 		gap: 3em;
-	}
-	section ul li {
-		text-align: center;
-		list-style-type: none;
-	}
-	ul li img {
-		width: 150px;
-		height: 150px;
-	}
-	ul li p {
-		width: 80%;
-		margin: 0 auto;
-		margin-top: var(--spacing-md);
-	}
-
-	/* Stripe */
-	.column-stripe {
-		width: 80%;
-		height: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: var(--spacing-sm);
-		background-color: var(--color-primary-base);
-	}
-	.row-stripe {
-		width: 80%;
-		height: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: var(--spacing-sm);
-		background-color: var(--color-primary-base);
-	}
-	.accent1 {
-		background-color: var(--color-accent1-base);
-	}
-	.accent2 {
-		background-color: var(--color-accent2-base);
-	}
-	.neutral1 {
-		background-color: var(--color-neutral1-base);
+		padding: 0;
 	}
 
 	@media (min-width: 768px) {
@@ -99,33 +52,18 @@
 			gap: 5px;
 		}
 
-		/* Row styling */
+		/* Row layout */
 		.row-layout {
 			flex-direction: row;
 		}
-		.row-layout li:nth-child(even) {
+		/* .row-layout li:nth-child(even) {
 			margin-top: var(--spacing-lg);
-		}
+		} */
 
-		/* Column styling */
+		/* Column layout */
 		.column-layout {
 			flex-direction: column;
-		}
-		.column-wrapper {
-			display: flex;
-			gap: 2em;
-		}
-		.column-layout li {
-			text-align: left;
-			margin-bottom: 3em;
-		}
-		.column-stripe {
-			width: 100%;
-			height: 5px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: var(--spacing-sm);
-			background-color: var(--color-primary-base);
+			gap: var(--spacing-sm);
 		}
 	}
 </style>
