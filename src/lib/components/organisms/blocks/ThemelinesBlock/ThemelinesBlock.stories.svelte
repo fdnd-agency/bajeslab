@@ -1,10 +1,10 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
-	import ThemalijnenBlock from './ThemalijnenBlock.svelte';
+	import ThemelinesBlock from './ThemelinesBlock.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Organisms/Blocks/ThemalijnenBlock',
-		component: ThemalijnenBlock,
+		title: 'Organisms/Blocks/ThemelinesBlock',
+		component: ThemelinesBlock,
 		tags: ['autodocs'],
 		argTypes: {
 			title: {
@@ -64,7 +64,7 @@
 </script>
 
 <Story
-	name="Standaard"
+	name="Horizontal Layout"
 	args={{
 		themes: mockThemesData,
 		title: 'Themalijnen',
@@ -77,7 +77,7 @@
 />
 
 <Story
-	name="With intro"
+	name="Vertical Layout"
 	args={{
 		themes: mockThemesData,
 		title: 'Themalijnen',

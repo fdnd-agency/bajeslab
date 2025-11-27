@@ -1,7 +1,7 @@
 <script>
 	import HeroBlock from '$lib/components/organisms/blocks/HeroBlock.svelte';
 	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
-	import ThemalijnenBlock from '$lib/components/organisms/blocks/ThemalijnenBlock/ThemalijnenBlock.svelte';
+	import ThemalijnenBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
 	import ProjectenBlock from '$lib/components/organisms/blocks/ProjectenBlock.svelte';
 	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
 

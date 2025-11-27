@@ -1,5 +1,5 @@
 <script>
-	import ThemalijnenBlock from '$lib/components/organisms/blocks/ThemalijnenBlock/ThemalijnenBlock.svelte';
+	import ThemalijnenBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
 
 	export let data; // komt van +page.server.js
 	const { themes } = data;
