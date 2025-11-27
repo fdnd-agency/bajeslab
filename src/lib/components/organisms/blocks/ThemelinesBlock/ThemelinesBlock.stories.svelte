@@ -18,6 +18,10 @@
 				options: [false, true],
 				control: { type: 'radio' }
 			},
+			showButton: {
+				options: [false, true],
+				control: { type: 'radio' }
+			},
 			buttonPosition: {
 				options: ['flex-start', 'center', 'flex-end'],
 				control: { type: 'radio' }
@@ -83,6 +87,7 @@
 		title: 'Themalijnen',
 		layout: 'column',
 		showIntro: true,
+		showButton: false,
 		buttonText: 'Lees meer',
 		buttonPosition: 'flex-end',
 		buttonLink: '/over-ons#theme-line'

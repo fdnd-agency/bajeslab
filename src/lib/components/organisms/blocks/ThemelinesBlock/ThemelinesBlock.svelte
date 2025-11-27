@@ -8,6 +8,8 @@
 
 	import Button from '$lib/components/atoms/Button/Button.svelte';
 	import ThemeCard from '$lib/components/molecules/ThemeCard/ThemeCard.svelte';
+
+	export let showButton = true;
 	export let buttonText = 'Lees meer';
 	export let buttonLink = '/over-ons#theme-line';
 	export let buttonPosition = 'center';
@@ -20,7 +22,9 @@
 			<ThemeCard {theme} {layout} {showIntro} />
 		{/each}
 	</ul>
-	<Button href={buttonLink} text={buttonText} position={buttonPosition} />
+	{#if showButton}
+		<Button href={buttonLink} text={buttonText} position={buttonPosition} />
+	{/if}
 </section>
 
 <style>
