@@ -37,8 +37,8 @@
 	font-display: swap;
 }
 
-/* Spacing variabelen */
 html {
+	/* Spacing variabelen */
 	--spacing-xxs: 0.25rem;
 	--spacing-xs: 0.5rem;
 	--spacing-sm: 1rem;
@@ -47,61 +47,75 @@ html {
 	--spacing-xl: 8rem;
 	--spacing-xxl: 16rem;
 
-	/* Primary kleuren */
-	--color-primary-l3: hsl(197, 8%, 45%);
-	--color-primary-l2: hsl(197, 8%, 35%);
-	--color-primary-l1: hsl(197, 8%, 25%);
-	--color-primary-base: hsl(197, 8%, 18%);
-	--color-primary-d1: hsl(197, 8%, 12%);
-	--color-primary-d2: hsl(197, 8%, 8%);
-	--color-primary-d3: hsl(197, 8%, 5%);
-
+	/* Basis kleuren (instelbaar) */
+	--hue-primary: 197;
+	--sat-primary: 8%;
+	--hue-neutral1: 180;
+	--sat-neutral1: 1%;
+	--hue-neutral2: 0;
+	--sat-neutral2: 0%;
+	--hue-accent1: 185;
+	--sat-accent1: 21%;
+	--hue-accent2: 76;
+	--sat-accent2: 43%;
+	--hue-accent3: 76;
+	--sat-accent3: 58%;
+	
+	/* Primary kleuren - dynamisch berekend */
+	--color-primary-l3: hsl(var(--hue-primary), var(--sat-primary), 45%);
+	--color-primary-l2: hsl(var(--hue-primary), var(--sat-primary), 35%);
+	--color-primary-l1: hsl(var(--hue-primary), var(--sat-primary), 25%);
+	--color-primary-base: hsl(var(--hue-primary), var(--sat-primary), 18%);
+	--color-primary-d1: hsl(var(--hue-primary), var(--sat-primary), 12%);
+	--color-primary-d2: hsl(var(--hue-primary), var(--sat-primary), 8%);
+	--color-primary-d3: hsl(var(--hue-primary), var(--sat-primary), 5%);
+	
 	/* Neutral 1 kleuren */
-	--color-neutral1-l3: hsl(180, 1%, 98%);
-	--color-neutral1-l2: hsl(180, 1%, 95%);
-	--color-neutral1-l1: hsl(180, 1%, 91%);
-	--color-neutral1-base: hsl(180, 1%, 87%);
-	--color-neutral1-d1: hsl(180, 1%, 70%);
-	--color-neutral1-d2: hsl(180, 1%, 55%);
-	--color-neutral1-d3: hsl(180, 1%, 40%);
-
+	--color-neutral1-l3: hsl(var(--hue-neutral1), var(--sat-neutral1), 98%);
+	--color-neutral1-l2: hsl(var(--hue-neutral1), var(--sat-neutral1), 95%);
+	--color-neutral1-l1: hsl(var(--hue-neutral1), var(--sat-neutral1), 91%);
+	--color-neutral1-base: hsl(var(--hue-neutral1), var(--sat-neutral1), 87%);
+	--color-neutral1-d1: hsl(var(--hue-neutral1), var(--sat-neutral1), 70%);
+	--color-neutral1-d2: hsl(var(--hue-neutral1), var(--sat-neutral1), 55%);
+	--color-neutral1-d3: hsl(var(--hue-neutral1), var(--sat-neutral1), 40%);
+	
 	/* Neutral 2 kleuren */
-	--color-neutral2-l3: hsl(0, 0%, 90%);
-	--color-neutral2-l2: hsl(0, 0%, 80%);
-	--color-neutral2-l1: hsl(0, 0%, 72%);
-	--color-neutral2-base: hsl(0, 0%, 64%);
-	--color-neutral2-d1: hsl(0, 0%, 50%);
-	--color-neutral2-d2: hsl(0, 0%, 38%);
-	--color-neutral2-d3: hsl(0, 0%, 25%);
-
+	--color-neutral2-l3: hsl(var(--hue-neutral2), var(--sat-neutral2), 90%);
+	--color-neutral2-l2: hsl(var(--hue-neutral2), var(--sat-neutral2), 80%);
+	--color-neutral2-l1: hsl(var(--hue-neutral2), var(--sat-neutral2), 72%);
+	--color-neutral2-base: hsl(var(--hue-neutral2), var(--sat-neutral2), 64%);
+	--color-neutral2-d1: hsl(var(--hue-neutral2), var(--sat-neutral2), 50%);
+	--color-neutral2-d2: hsl(var(--hue-neutral2), var(--sat-neutral2), 38%);
+	--color-neutral2-d3: hsl(var(--hue-neutral2), var(--sat-neutral2), 25%);
+	
 	/* Accent 1 kleuren */
-	--color-accent1-l3: hsl(185, 21%, 85%);
-	--color-accent1-l2: hsl(185, 21%, 70%);
-	--color-accent1-l1: hsl(185, 21%, 63%);
-	--color-accent1-base: hsl(185, 21%, 56%);
-	--color-accent1-d1: hsl(185, 21%, 45%);
-	--color-accent1-d2: hsl(185, 21%, 35%);
-	--color-accent1-d3: hsl(185, 21%, 25%);
-
+	--color-accent1-l3: hsl(var(--hue-accent1), var(--sat-accent1), 85%);
+	--color-accent1-l2: hsl(var(--hue-accent1), var(--sat-accent1), 70%);
+	--color-accent1-l1: hsl(var(--hue-accent1), var(--sat-accent1), 63%);
+	--color-accent1-base: hsl(var(--hue-accent1), var(--sat-accent1), 56%);
+	--color-accent1-d1: hsl(var(--hue-accent1), var(--sat-accent1), 45%);
+	--color-accent1-d2: hsl(var(--hue-accent1), var(--sat-accent1), 35%);
+	--color-accent1-d3: hsl(var(--hue-accent1), var(--sat-accent1), 25%);
+	
 	/* Accent 2 kleuren */
-	--color-accent2-l3: hsl(76, 43%, 85%);
-	--color-accent2-l2: hsl(76, 43%, 70%);
-	--color-accent2-l1: hsl(76, 43%, 62%);
-	--color-accent2-base: hsl(76, 43%, 55%);
-	--color-accent2-d1: hsl(76, 43%, 42%);
-	--color-accent2-d2: hsl(76, 43%, 30%);
-	--color-accent2-d3: hsl(76, 43%, 18%);
-
+	--color-accent2-l3: hsl(var(--hue-accent2), var(--sat-accent2), 85%);
+	--color-accent2-l2: hsl(var(--hue-accent2), var(--sat-accent2), 70%);
+	--color-accent2-l1: hsl(var(--hue-accent2), var(--sat-accent2), 62%);
+	--color-accent2-base: hsl(var(--hue-accent2), var(--sat-accent2), 55%);
+	--color-accent2-d1: hsl(var(--hue-accent2), var(--sat-accent2), 42%);
+	--color-accent2-d2: hsl(var(--hue-accent2), var(--sat-accent2), 30%);
+	--color-accent2-d3: hsl(var(--hue-accent2), var(--sat-accent2), 18%);
+	
 	/* Accent 3 kleuren */
-	--color-accent3-l3: hsl(76, 58%, 75%);
-	--color-accent3-l2: hsl(76, 58%, 55%);
-	--color-accent3-l1: hsl(76, 58%, 40%);
-	--color-accent3-base: hsl(76, 58%, 32%);
-	--color-accent3-d1: hsl(76, 58%, 25%);
-	--color-accent3-d2: hsl(76, 58%, 18%);
-	--color-accent3-d3: hsl(76, 58%, 12%);
+	--color-accent3-l3: hsl(var(--hue-accent3), var(--sat-accent3), 75%);
+	--color-accent3-l2: hsl(var(--hue-accent3), var(--sat-accent3), 55%);
+	--color-accent3-l1: hsl(var(--hue-accent3), var(--sat-accent3), 40%);
+	--color-accent3-base: hsl(var(--hue-accent3), var(--sat-accent3), 32%);
+	--color-accent3-d1: hsl(var(--hue-accent3), var(--sat-accent3), 25%);
+	--color-accent3-d2: hsl(var(--hue-accent3), var(--sat-accent3), 18%);
+	--color-accent3-d3: hsl(var(--hue-accent3), var(--sat-accent3), 12%);
 }
-
+  
 /* Body basis */
 body {
 	font-family: Urbanist, sans-serif;
