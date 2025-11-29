@@ -29,10 +29,13 @@
 
 <style>
 	section {
+		container-type: inline-size;
+		container-name: themes-section;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding: 0 1em;
+		width: 100%;
 	}
 	section h2 {
 		margin-top: var(--spacing-md);
@@ -46,7 +49,8 @@
 		padding: 0;
 	}
 
-	@media (min-width: 768px) {
+	/* Container query */
+	@container themes-section (min-width: 768px) {
 		section h2 {
 			margin-bottom: var(--spacing-sm);
 			align-self: start;
