@@ -1,22 +1,40 @@
 <script>
-  import ProjectCard from "$lib/components/organisms/ProjectCard.svelte";
+  import ProjectCard from "$lib/components/molecules/ProjectCard/ProjectCard.svelte";
 
   let { data } = $props();
   let { projects } = data;
 </script>
 
-<h1>Projecten</h1>
+<section class="container">
+  <h1>Projecten</h1>
 
-<section>
-  {#each projects as project}
-    <ProjectCard {project} />
-  {/each}
+  <section class="projects-grid">
+    {#each projects as project}
+    <ProjectCard {project} spanTwo={project.featured} />
+    {/each}
+  </section>
 </section>
 
 <style>
-  section{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5rem;
+  h1{
+    margin-bottom: var(--spacing-lg);
   }
+  .projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 800px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 </style>
