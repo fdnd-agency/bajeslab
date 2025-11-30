@@ -7,7 +7,7 @@
   } = $props();
 
   // Deze functie draait server-side én client-side
-  function truncateText(text, wordLimit = 20) {
+  function truncateText(text, wordLimit = 19) {
     if (!text) return '';
     const plainText = text.replace(/<[^>]*>/g, '');
     const words = plainText.split(' ');
@@ -15,7 +15,7 @@
     return words.slice(0, wordLimit).join(' ') + '...';
   }
   
-  const shortDescription = truncateText(project.description, 20);
+  const shortDescription = truncateText(project.description, 19);
 </script>
 
   <section>
