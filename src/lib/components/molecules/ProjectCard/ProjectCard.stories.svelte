@@ -1,9 +1,9 @@
 <script module>
     import { defineMeta } from '@storybook/addon-svelte-csf';
-    import ProjectCard from '$lib/components/organisms/ProjectCard.svelte';
+    import ProjectCard from '$lib/components/molecules/ProjectCard/ProjectCard.svelte';
     
     const { Story } = defineMeta({
-      title: 'Organisms/ProjectCard', 
+      title: 'Molecule/ProjectCard', 
       component: ProjectCard,
       tags: ['autodocs'],
       argTypes: {
