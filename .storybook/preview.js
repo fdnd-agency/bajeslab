@@ -1,4 +1,5 @@
 /** @type { import('@storybook/sveltekit').Preview } */
+
 const preview = {
 	parameters: {
 		controls: {
