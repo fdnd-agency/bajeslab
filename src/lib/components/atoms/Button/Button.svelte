@@ -1,6 +1,6 @@
 <script>
-	export let href = '';
 	export let text = 'Lees meer';
+	export let href = '';
 	export let position = 'center';
 	export let className = '';
 
@@ -11,13 +11,13 @@
 
 <style>
 	/* Button positions */
-	:global(.flex-start) {
+	.flex-start {
 		align-self: flex-start;
 	}
-	:global(.center) {
+	.center {
 		align-self: center;
 	}
-	:global(.flex-end) {
+	.flex-end {
 		align-self: flex-end;
 	}
 </style>
