@@ -1,5 +1,6 @@
 <script>
-  import Button from '../ui/Button.svelte';
+	import Button from "$lib/components/atoms/Button/Button.svelte";
+
   export let title;
   export let description;
   export let image;

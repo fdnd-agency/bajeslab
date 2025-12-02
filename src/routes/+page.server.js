@@ -1,9 +1,23 @@
 export async function load({ fetch }) {
-	const response = await fetch('https://fdnd-agency.directus.app/items/hull_projects');
-	const data = await response.json();
+	try {
+		const [projectReq, themeReq] = await Promise.all([
+			fetch('https://fdnd-agency.directus.app/items/hull_projects'),
+			fetch('https://fdnd-agency.directus.app/items/hull_themes')
+		]);
 
-	// console.log(data.data);
-	return { projects: data.data };
+		if (projectReq.ok && themeReq.ok) {
+			const projects = await projectReq.json();
+			const themes = await themeReq.json();
+
+			console.log(themes.data);
+			return {
+				projects: projects.data,
+				themes: themes.data
+			};
+		}
+	} catch (error) {
+		console.error(error);
+	}
 }
 
 export const actions = {
@@ -40,5 +54,3 @@ export const actions = {
 		}
 	}
 };
-
-

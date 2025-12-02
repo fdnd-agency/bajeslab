@@ -1,8 +1,10 @@
 <script>
-  let { children } = $props();
-  import Nav from '$lib/components/homepage/Nav.svelte';
-  import Footer from '$lib/components/layout/Footer.svelte';
+	import Nav from '$lib/components/organisms/layout/Nav.svelte';
+	import Footer from '$lib/components/organisms/layout/Footer.svelte';
+
+	let { children } = $props();
 </script>
+
 <Nav />
 <svelte:head>
 	<link rel="stylesheet" href="/css/app.css" />
