@@ -1,7 +1,6 @@
 <script>
 	import HeroBlock from '$lib/components/organisms/blocks/HeroBlock.svelte';
 	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
-	import ProjectenBlock from '$lib/components/organisms/blocks/ProjectenBlock.svelte';
 	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
 	import ThemelinesBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
 
@@ -22,7 +21,6 @@
 	buttonLink="/over-ons#theme-line"
 	buttonPosition="flex-end"
 />
-<ProjectenBlock {projects} />
 <NieuwsbriefBlock
 	title="Benieuwd naar nog meer projecten?"
 	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
