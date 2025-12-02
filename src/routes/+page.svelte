@@ -3,6 +3,7 @@
 	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
 	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
 	import ThemelinesBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
+	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock.svelte';
 
 	export let data; // komt van +page.server.js
 	const { projects, themes } = data;
@@ -19,6 +20,14 @@
 	{themes}
 	buttonText="Lees meer"
 	buttonLink="/over-ons#theme-line"
+	buttonPosition="flex-end"
+/>
+
+<ProjectsBlock
+	{projects}
+	title="Onze projecten"
+	buttonText="Bekijk alle projecten"
+	buttonLink="/projecten"
 	buttonPosition="flex-end"
 />
 <NieuwsbriefBlock
