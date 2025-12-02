@@ -1,8 +1,6 @@
 <script>
-	export let text = 'Lees meer';
-	export let href = '';
-	export let position = 'center';
-	export let className = '';
+	// Fallback value
+	let { text = 'Lees meer', href = '', position = 'center', className = '' } = $props();
 
 	import ArrowIcon from '../icons/ArrowIcon.svelte';
 </script>
