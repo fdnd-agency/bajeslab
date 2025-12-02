@@ -1,8 +1,6 @@
 <script>
-	export let href = '';
-	export let text = 'Lees meer';
-	export let position = 'center';
-	export let className = '';
+	// Fallback value
+	let { text = 'Lees meer', href = '', position = 'center', className = '' } = $props();
 
 	import ArrowIcon from '../icons/ArrowIcon.svelte';
 </script>
@@ -11,13 +9,13 @@
 
 <style>
 	/* Button positions */
-	:global(.flex-start) {
+	.flex-start {
 		align-self: flex-start;
 	}
-	:global(.center) {
+	.center {
 		align-self: center;
 	}
-	:global(.flex-end) {
+	.flex-end {
 		align-self: flex-end;
 	}
 </style>

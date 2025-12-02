@@ -3,7 +3,7 @@
     import ProjectCard from '$lib/components/molecules/ProjectCard/ProjectCard.svelte';
     
     const { Story } = defineMeta({
-      title: 'Molecule/ProjectCard', 
+      title: 'Molecules/ProjectCard', 
       component: ProjectCard,
       tags: ['autodocs'],
       argTypes: {
