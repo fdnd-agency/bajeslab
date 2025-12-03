@@ -1,3 +1,101 @@
+<script>
+  import { onMount } from "svelte";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+  import { SplitText } from "gsap/SplitText";
+  
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, SplitText);
+  
+  let title = "Creative spike";
+  
+  onMount(() => {
+    const shapes = document.querySelectorAll(".shape");
+    const images = document.querySelectorAll(".img");
+    
+    // SVG tekenen met DrawSVGPlugin
+    gsap.fromTo(
+      shapes,
+      { drawSVG: "0%", fill: "transparent" },
+      { 
+        drawSVG: "100%", 
+        duration: 1, 
+        stagger: 0.2, 
+        ease: "power1.out",
+        onComplete: () => {
+          // Fill animatie na stroke
+          shapes.forEach(shape => {
+            gsap.to(shape, {
+              fill: shape.dataset.fill,
+              duration: 0.3,
+              ease: "power1.out"
+            });
+          });
+        }
+      }
+    );
+    
+    // Foto's vanaf random posities invliegen
+    gsap.from(images, {
+      scale: 0,
+      rotation: () => gsap.utils.random(-180, 180),
+      x: () => gsap.utils.random(-800, 800),
+      y: () => gsap.utils.random(-600, 600),
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.15,
+      ease: "back.out(1.7)",
+      delay: 0.5
+    });
+    
+    // Hover animaties voor foto's
+    images.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        gsap.to(img, {
+          scale: 1.05,
+          rotation: gsap.utils.random(-5, 5),
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      img.addEventListener('mouseleave', () => {
+        gsap.to(img, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+    
+    const split = SplitText.create('.title', { type: "chars" });
+    
+    // Titel animatie met SplitText
+    gsap.from(split.chars, {
+      y: 100,
+      opacity: 0,
+      rotationX: -90,
+      stagger: 0.05,
+      duration: 0.8,
+      ease: "back.out(4)"
+    });
+    
+    // Parallax scroll alleen voor shapes
+    shapes.forEach((shape, i) => {
+      gsap.to(shape, {
+        y: 350 + i * 100,
+        scrollTrigger: {
+          trigger: ".page",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+  });
+</script>
+
 <div class="page">
   <svg class="bg" width="100%" height="100%" viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid meet">
     <!-- Gele cirkel -->
