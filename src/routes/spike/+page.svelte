@@ -1,15 +1,18 @@
 <script>
   import { onMount } from "svelte";
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-  import { SplitText } from "gsap/SplitText";
+  import { browser } from '$app/environment';
   
-  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, SplitText);
+  let { title = "Creative spike" } = $props()
   
-  let title = "Creative spike";
-  
-  onMount(() => {
+  onMount(async () => {
+    // Importeer GSAP alleen in de browser
+    const { gsap } = await import('gsap');
+    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+    const { DrawSVGPlugin } = await import('gsap/DrawSVGPlugin');
+    const { SplitText } = await import('gsap/SplitText');
+    
+    gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, SplitText);
+    
     const shapes = document.querySelectorAll(".shape");
     const images = document.querySelectorAll(".img");
     
@@ -113,11 +116,11 @@
       d="M1020,420 H1240 V640 H1020 Z"
       stroke="#EE6B75" stroke-width="6" data-fill="#EE6B75" />
   </svg>
-
+  
   <div class="img img-left"></div>
   <div class="img img-top"></div>
   <div class="img img-right"></div>
-
+  
   <h1 class="title">
     {title}
   </h1>
@@ -193,9 +196,9 @@
     color: rgb(37, 37, 37); 
     text-transform: uppercase;
     max-width: 90vw;
-    perspective: 400px; /* voor 3D effect */
+    perspective: 400px;
   }
-
+  
   @media (max-width: 1000px) {
     .img-left { 
       top: 8%;
