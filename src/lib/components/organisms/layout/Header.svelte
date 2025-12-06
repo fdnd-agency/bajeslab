@@ -1,10 +1,122 @@
 <script>
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
 	export let title = ' Samen bouwen aan een gezonde wijk';
 
 	// $: Runt waneer 'title' variable veranderd
 	$: words = title.split(' ');
 
-	$: console.log(words);
+	// $: console.log(words);
+
+	onMount(async () => {
+		const tl = gsap.timeline();
+
+		// Words animatie
+		tl.from('span', {
+			opacity: 0,
+			y: 50,
+			duration: 1,
+			stagger: 0.3,
+		});
+
+		// SVG overlays animatie
+		tl.from(
+			'.svg-overlay-1 svg',
+			{
+				scale: 0,
+				rotation: -180,
+				opacity: 0,
+				duration: 1.2,
+				ease: 'back.out(1.7)'
+			},
+			'-=0.8'
+		);
+
+		tl.from(
+			'.svg-overlay-2 svg',
+			{
+				scale: 0,
+				rotation: 180,
+				opacity: 0,
+				duration: 1.2,
+				ease: 'back.out(1.7)'
+			},
+			'-=1'
+		);
+
+		tl.from(
+			'.svg-overlay-3 svg',
+			{
+				x: -100,
+				opacity: 0,
+				duration: 1,
+				ease: 'back.out'
+			},
+			'-=0.8'
+		);
+
+		tl.from(
+			'.svg-overlay-4 svg',
+			{
+				x: 100,
+				opacity: 0,
+				duration: 1,
+				ease: 'back.out'
+			},
+			'-=0.9'
+		);
+
+		tl.from(
+			'.svg-overlay-5 svg',
+			{
+				y: 100,
+				opacity: 0,
+				duration: 1,
+				ease: 'back.out'
+			},
+			'-=0.8'
+		);
+
+		tl.from(
+			'.svg-overlay-6 svg',
+			{
+				y: -100,
+				opacity: 0,
+				duration: 1,
+				ease: 'back.out'
+			},
+			'-=0.9'
+		);
+
+		// Floating animatie
+		gsap.to('.svg-overlay-1 svg', {
+			y: -20,
+			duration: 3,
+			repeat: -1,
+			yoyo: true,
+			ease: 'sine.inOut'
+		});
+
+		gsap.to('.svg-overlay-2 svg', {
+			y: 20,
+			duration: 3.5,
+			repeat: -1,
+			yoyo: true,
+			ease: 'sine.inOut'
+		});
+
+		gsap.to('.svg-overlay-3 svg', {
+			rotation: 360,
+			duration: 20,
+			repeat: -1,
+		});
+
+		gsap.to('.svg-overlay-4 svg', {
+			rotation: -360,
+			duration: 25,
+			repeat: -1,
+		});
+	});
 </script>
 
 <section>
@@ -237,15 +349,14 @@
 		.svg-overlay-5 svg {
 			position: absolute;
 			display: block;
-            bottom: 0;
-            right: 20%;
+			bottom: 0;
+			right: 20%;
 		}
 		.svg-overlay-6 svg {
 			position: absolute;
 			display: block;
-            top: 0;
-            left: 0;
-
+			top: 0;
+			left: 0;
 		}
 		.word-1 {
 			top: 20%;
