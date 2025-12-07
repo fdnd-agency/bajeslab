@@ -1,12 +1,12 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	export let title = ' Samen bouwen aan een gezonde wijk';
+	let { title = 'Creative Coding Spike' } = $props();
 
-	// $: Runt waneer 'title' variable veranderd
-	$: words = title.split(' ');
+	// Splits title bij spaties, update automatisch bij prop wijziging
+	let words = $derived(title.split(' '));
 
-	// $: console.log(words);
+	// console.log(words);
 
 	onMount(async () => {
 		const tl = gsap.timeline();
@@ -16,7 +16,7 @@
 			opacity: 0,
 			y: 50,
 			duration: 1,
-			stagger: 0.3,
+			stagger: 0.3
 		});
 
 		// SVG overlays animatie
@@ -108,13 +108,13 @@
 		gsap.to('.svg-overlay-3 svg', {
 			rotation: 360,
 			duration: 20,
-			repeat: -1,
+			repeat: -1
 		});
 
 		gsap.to('.svg-overlay-4 svg', {
 			rotation: -360,
 			duration: 25,
-			repeat: -1,
+			repeat: -1
 		});
 	});
 </script>
