@@ -1,19 +1,53 @@
 <script>
-	import NewsletterForm from '$lib/components/molecules/NewsletterForm/NewsletterForm.svelte';
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
 
-	let {
-		title = 'Benieuwd naar nog meer projecten?',
-		description = 'Ontvang onze nieuwsbrief en mis geen enkel update.'
-	} = $props();
+	let loading = $state(false);
+	let showFeedback = $state(false);
+
+	// $effect voor Loading en Feedback state
+	$effect(() => {
+		if ($page.form) {
+			showFeedback = true;
+
+			// Stop loading
+			if ($page.form?.success !== undefined) {
+				setTimeout(() => {
+					loading = false;
+				}, 500);
+			}
+
+			// Hide feedback na 4 seconden
+			setTimeout(() => {
+				showFeedback = false;
+			}, 4000);
+		}
+	});
 </script>
 
-<section class="container">
-	<div class="newsletter-section">
-		<h3>{title}</h3>
-		<p>{description}</p>
-		<NewsletterForm />
-	</div>
-</section>
+<form method="post" use:enhance onsubmit={() => (loading = true)}>
+	<label>
+		<input type="email" name="email" placeholder="vul uw email adres in" required />
+	</label>
+	<button type="submit" disabled={loading}>
+		{#if loading}
+			<span class="loader"></span>
+		{:else}
+			<span>Abboneer</span>
+		{/if}
+	</button>
+</form>
+
+<!-- Als form is gesubmit en feedback is shown, check of form succes is dan show message -->
+<div class="form-status">
+	{#if $page.form && showFeedback}
+		{#if $page.form?.success}
+			<p>{$page.form?.message}</p>
+		{:else}
+			<p>{$page.form?.message} Probeer het opnieuw.</p>
+		{/if}
+	{/if}
+</div>
 
 <style>
 	section {
