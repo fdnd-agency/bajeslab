@@ -47,7 +47,7 @@ export const actions = {
 			if (apiResponse.ok) {
 				return { success: true, message: '✓ Ingeschreven!' };
 			} else {
-				return { success: false, message: 'Mislukt!' };
+				return { success: false, message: 'Mislukt!, Probeer het later nog is.' };
 			}
 		} catch (error) {
 			console.error(error);

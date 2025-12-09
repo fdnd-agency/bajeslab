@@ -2,36 +2,39 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	// Loading en showFeedback zit standaard uit
-	let loading = false;
-	let showFeedback = false;
+	let {
+		title = 'Benieuwd naar nog meer projecten?',
+		description = 'Ontvang onze nieuwsbrief en mis geen enkel update.'
+	} = $props();
 
-	// Reset en toon feedback bij nieuwe form submission
-	// Als form gesubmit is zet showFeeback en verwijder na 4 seconden
-	$: if ($page.form) {
-		showFeedback = true;
-		setTimeout(() => {
-			showFeedback = false;
-		}, 4000);
-	}
+	let loading = $state(false);
+	let showFeedback = $state(false);
 
-	// Stop loading
-	$: if ($page.form?.success !== undefined) {
-		setTimeout(() => {
-			loading = false;
-		}, 500);
-	}
+	// $effect voor Loading en Feedback state
+	$effect(() => {
+		if ($page.form) {
+			showFeedback = true;
 
-	export let title = 'Inside informatie?';
-	export let description = 'Ontvang onze nieuwsbrief en mis geen enkel update.';
+			// Stop loading
+			if ($page.form?.success !== undefined) {
+				setTimeout(() => {
+					loading = false;
+				}, 500);
+			}
+
+			// Hide feedback na 4 seconden
+			setTimeout(() => {
+				showFeedback = false;
+			}, 4000);
+		}
+	});
 </script>
 
 <section class="container">
-	<img src="/icons/newsletter-amico-1.svg" alt="Newsletter amico" fetchpriority="high" />
 	<div class="newsletter-section">
 		<h3>{title}</h3>
 		<p>{description}</p>
-		<form method="post" use:enhance on:submit={() => (loading = true)}>
+		<form method="post" use:enhance onsubmit={() => (loading = true)}>
 			<label>
 				<input type="email" name="email" placeholder="vul uw email adres in" required />
 			</label>
@@ -59,7 +62,11 @@
 
 <style>
 	section {
+		container-type: initial;
+		container-name: Newsletter;
+
 		margin: 2em 1em;
+		padding: 1em;
 		background-color: var(--color-accent2-l3);
 		border-color: var(--color-accent2-base);
 		border-radius: 7px;
@@ -116,10 +123,7 @@
 
 	@media (min-width: 768px) {
 		section {
-			display: flex;
-			flex-direction: row-reverse;
-			justify-content: space-between;
-			padding: 0em 3em;
+			padding: 1em 3em;
 			margin: 2em 1em;
 		}
 		section img {

@@ -1,9 +1,9 @@
 <script>
 	import HeroBlock from '$lib/components/organisms/blocks/HeroBlock.svelte';
 	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
-	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
+	import NewsletterBlock from '$lib/components/organisms/blocks/NewsletterBlock/NewsletterBlock.svelte';
 	import ThemelinesBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
-	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock.svelte';
+	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock/ProjectsBlock.svelte';
 
 	export let data; // komt van +page.server.js
 	const { projects, themes } = data;
@@ -30,7 +30,7 @@
 	buttonLink="/projecten"
 	buttonPosition="flex-end"
 />
-<NieuwsbriefBlock
+<NewsletterBlock
 	title="Benieuwd naar nog meer projecten?"
 	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
 />
