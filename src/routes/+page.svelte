@@ -3,7 +3,7 @@
 	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
 	import NieuwsbriefBlock from '$lib/components/organisms/blocks/NieuwsbriefBlock.svelte';
 	import ThemelinesBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
-	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock.svelte';
+	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock/ProjectsBlock.svelte';
 
 	export let data; // komt van +page.server.js
 	const { projects, themes } = data;

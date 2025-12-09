@@ -44,7 +44,7 @@
 		display: flex;
 		flex-direction: column;
 		margin-top: var(--spacing-md);
-		margin-bottom: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
 		gap: 3em;
 		padding: 0;
 	}
@@ -56,7 +56,6 @@
 			align-self: start;
 		}
 		section ul {
-			margin: 1em 1em 0 1em;
 			gap: 5px;
 		}
 
