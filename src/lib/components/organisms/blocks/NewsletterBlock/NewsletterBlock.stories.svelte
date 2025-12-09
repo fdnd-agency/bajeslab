@@ -33,63 +33,14 @@
 		title: 'Benieuwd naar nog meer projecten?',
 		description: 'Ontvang onze nieuwsbrief en mis geen enkel update.'
 	}}
-/>
-
-<Story
-	name="With Loading"
-	args={{
-		title: 'Benieuwd naar nog meer projecten?',
-		description: 'Ontvang onze nieuwsbrief en mis geen enkel update.',
-		loading: true
-	}}
 	parameters={{
+		// Dit probeert $page te mocken
 		sveltekit_experimental: {
 			stores: {
 				page: {
 					form: {
-						success: false
-					}
-				}
-			}
-		}
-	}}
-/>
-
-<Story
-	name="With Success Message"
-	args={{
-		title: 'Benieuwd naar nog meer projecten?',
-		description: 'Ontvang onze nieuwsbrief en mis geen enkel update.',
-		showFeedback: true
-	}}
-	parameters={{
-		sveltekit_experimental: {
-			stores: {
-				page: {
-					form: {
-						success: true,
-						message: 'Je bent succesvol ingeschreven!'
-					}
-				}
-			}
-		}
-	}}
-/>
-
-<Story
-	name="With Failed Message"
-	args={{
-		title: 'Benieuwd naar nog meer projecten?',
-		description: 'Ontvang onze nieuwsbrief en mis geen enkel update.',
-		showFeedback: true
-	}}
-	parameters={{
-		sveltekit_experimental: {
-			stores: {
-				page: {
-					form: {
-						success: true,
-						message: 'Mislukt!, Probeer het later nog is.'
+						success: null,
+						message: ''
 					}
 				}
 			}
