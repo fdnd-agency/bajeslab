@@ -80,7 +80,6 @@
 	/* Form Status */
 	.form-status {
 		display: block;
-		text-align: left;
 		height: 30px;
 	}
 
@@ -91,6 +90,9 @@
 	@media (min-width: 768px) {
 		form {
 			justify-content: flex-start;
+		}
+		.form-status {
+			text-align: left;
 		}
 	}
 	@media (min-width: 1024px) {
