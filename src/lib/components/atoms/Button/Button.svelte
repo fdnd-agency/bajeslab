@@ -15,10 +15,10 @@
 <a 
   class="button button--{direction} {position} {className}"
   {href}
-  {...(reload ? {'data-sveltekit-reload': true} : {})}
+  data-sveltekit-reload={reload || undefined}
 >
-  {text}
-  <ArrowIcon class={className} />
+	{text}
+	<ArrowIcon class={className} />
 </a>
   
 <style>
