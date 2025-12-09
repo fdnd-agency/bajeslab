@@ -25,57 +25,33 @@
 	});
 </script>
 
-<form method="post" use:enhance onsubmit={() => (loading = true)}>
-	<label>
-		<input type="email" name="email" placeholder="vul uw email adres in" required />
-	</label>
-	<button type="submit" disabled={loading}>
-		{#if loading}
-			<span class="loader"></span>
-		{:else}
-			<span>Abboneer</span>
-		{/if}
-	</button>
-</form>
+<div class="form-content-wrapper">
+	<form method="post" use:enhance onsubmit={() => (loading = true)}>
+		<label>
+			<input type="email" name="email" placeholder="vul uw email adres in" required />
+		</label>
+		<button type="submit" disabled={loading}>
+			{#if loading}
+				<span class="loader"></span>
+			{:else}
+				<span>Abboneer</span>
+			{/if}
+		</button>
+	</form>
 
-<!-- Als form is gesubmit en feedback is shown, check of form succes is dan show message -->
-<div class="form-status">
-	{#if $page.form && showFeedback}
-		{#if $page.form?.success}
-			<p>{$page.form?.message}</p>
-		{:else}
-			<p>{$page.form?.message} Probeer het opnieuw.</p>
+	<!-- Als form is gesubmit en feedback is shown, check of form succes is dan show message -->
+	<div class="form-status">
+		{#if $page.form && showFeedback}
+			{#if $page.form?.success}
+				<p>{$page.form?.message}</p>
+			{:else}
+				<p>{$page.form?.message} Probeer het opnieuw.</p>
+			{/if}
 		{/if}
-	{/if}
+	</div>
 </div>
 
 <style>
-	section {
-		container-type: initial;
-		container-name: Newsletter;
-
-		margin: 2em 1em;
-		padding: 1em;
-		background-color: var(--color-accent2-l3);
-		border-color: var(--color-accent2-base);
-		border-radius: 7px;
-		text-align: center;
-		font-family: 'Urbanist';
-		border: 2px solid var(--color-accent2-base);
-	}
-	section img {
-		width: 150px;
-		height: 150px;
-	}
-
-	/* Newsletter section */
-	h3 {
-		font-size: 32px;
-		font-weight: 700;
-	}
-	.newsletter-section p:first-of-type {
-		margin-top: 1em;
-	}
 	form {
 		display: flex;
 		justify-content: center;
@@ -103,6 +79,8 @@
 
 	/* Form Status */
 	.form-status {
+		display: block;
+		text-align: left;
 		height: 30px;
 	}
 
@@ -111,29 +89,11 @@
 	}
 
 	@media (min-width: 768px) {
-		section {
-			padding: 1em 3em;
-			margin: 2em 1em;
-		}
-		section img {
-			width: 300px;
-			height: 300px;
-		}
-		.newsletter-section {
-			align-content: center;
-			text-align: start;
-		}
-		.newsletter-section p {
-			margin-top: 0.5em;
-		}
 		form {
 			justify-content: flex-start;
 		}
 	}
 	@media (min-width: 1024px) {
-		section {
-			margin: 2em auto;
-		}
 		form label input {
 			width: 400px;
 		}

@@ -11,8 +11,8 @@
 	<div class="newsletter-section">
 		<h3>{title}</h3>
 		<p>{description}</p>
-		<NewsletterForm />
 	</div>
+	<NewsletterForm />
 </section>
 
 <style>
@@ -29,61 +29,20 @@
 		font-family: 'Urbanist';
 		border: 2px solid var(--color-accent2-base);
 	}
-	section img {
-		width: 150px;
-		height: 150px;
-	}
 
 	/* Newsletter section */
 	h3 {
 		font-size: 32px;
 		font-weight: 700;
 	}
-	.newsletter-section p:first-of-type {
-		margin-top: 1em;
-	}
-	form {
-		display: flex;
-		justify-content: center;
-		margin: 1em 0;
-		border: none;
-	}
-	form label input {
-		padding: 1em;
-		border-radius: 7px 0px 0px 7px;
-		border: none;
-		height: 42px;
-	}
-	form button {
-		padding: 1em;
-		border-radius: 0px 7px 7px 0px;
-		color: var(--color-primary-base);
-		background-color: var(--color-accent2-base);
-		font-weight: 700;
-		font-family: 'Urbanist';
-		border: none;
-		cursor: pointer;
-		min-width: max-content;
-		height: 42px;
-	}
-
-	/* Form Status */
-	.form-status {
-		height: 30px;
-	}
-
-	.loader {
-		display: inline-block;
+	.newsletter-section p {
+		margin: 1em 0em;
 	}
 
 	@media (min-width: 768px) {
 		section {
 			padding: 1em 3em;
 			margin: 2em 1em;
-		}
-		section img {
-			width: 300px;
-			height: 300px;
 		}
 		.newsletter-section {
 			align-content: center;
@@ -92,19 +51,15 @@
 		.newsletter-section p {
 			margin-top: 0.5em;
 		}
-		form {
-			justify-content: flex-start;
-		}
 	}
 	@media (min-width: 1024px) {
 		section {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1em;
 			margin: 2em auto;
-		}
-		form label input {
-			width: 400px;
-		}
-		form button {
-			padding: 1em 3em;
 		}
 	}
 </style>
