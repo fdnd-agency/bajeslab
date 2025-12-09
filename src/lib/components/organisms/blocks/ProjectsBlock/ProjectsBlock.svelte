@@ -30,6 +30,11 @@
   .title {
     margin-bottom: var(--spacing-lg);
     text-align: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      text-align: left;
+    }
   }
 
   section {

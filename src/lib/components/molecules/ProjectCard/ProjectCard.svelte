@@ -59,10 +59,10 @@
       />
     </picture>
    
-    <h2>{project.title}</h2>
-    <p>{@html shortDescription}</p>
+    <h2 class="subtitle">{project.title}</h2>
+    <p class="text">{@html shortDescription}</p>
     <a href={`/projecten/${project.slug}`}>Bekijk het project
-      <ArrowIcon className="arrow" />
+      <ArrowIcon className="project-arrow" />
     </a>
   </section>
   
