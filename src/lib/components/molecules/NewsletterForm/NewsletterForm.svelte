@@ -27,9 +27,8 @@
 
 <div class="form-content-wrapper">
 	<form method="post" use:enhance onsubmit={() => (loading = true)}>
-		<label>
-			<input type="email" name="email" placeholder="vul uw email adres in" required />
-		</label>
+		<label for="email" class="visually-hidden"> E-mailadres </label>
+		<input type="email" name="email" placeholder="vul uw email adres in" required />
 		<button type="submit" disabled={loading}>
 			{#if loading}
 				<span class="loader"></span>
@@ -55,17 +54,17 @@
 	form {
 		display: flex;
 		justify-content: center;
-		margin: 1em 0;
+		margin: var(--spacing-sm) 0;
 		border: none;
 	}
-	form label input {
-		padding: 1em;
+	form input {
+		padding: var(--spacing-sm);
 		border-radius: 7px 0px 0px 7px;
 		border: none;
 		height: 42px;
 	}
 	form button {
-		padding: 1em;
+		padding: var(--spacing-sm);
 		border-radius: 0px 7px 7px 0px;
 		color: var(--color-primary-base);
 		background-color: var(--color-accent2-base);
@@ -87,6 +86,15 @@
 		display: inline-block;
 	}
 
+	.visually-hidden:not(:focus):not(:active) {
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
 	@media (min-width: 768px) {
 		form {
 			justify-content: flex-start;
@@ -96,7 +104,7 @@
 		}
 	}
 	@media (min-width: 1024px) {
-		form label input {
+		form input {
 			width: 400px;
 		}
 		form button {
