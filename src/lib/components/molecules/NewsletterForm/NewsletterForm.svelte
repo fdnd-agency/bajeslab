@@ -61,7 +61,7 @@
 		padding: var(--spacing-sm);
 		border-radius: 7px 0px 0px 7px;
 		border: none;
-		height: 42px;
+		height: 2.6rem;
 	}
 	form button {
 		padding: var(--spacing-sm);
@@ -73,13 +73,13 @@
 		border: none;
 		cursor: pointer;
 		min-width: max-content;
-		height: 42px;
+		height: 2.6rem;
 	}
 
 	/* Form Status */
 	.form-status {
 		display: block;
-		height: 30px;
+		height: 1.8rem;
 	}
 
 	.loader {
