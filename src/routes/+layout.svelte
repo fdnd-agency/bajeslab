@@ -5,7 +5,7 @@
 	let { children } = $props();
 </script>
 
-<Nav />
+<!-- <Nav /> -->
 <svelte:head>
 	<link rel="stylesheet" href="/css/app.css" />
 	<title>Healthy Urban Living Lab</title>
@@ -18,7 +18,7 @@
 	<main>
 		{@render children()}
 	</main>
-	<Footer />
+	<!-- <Footer /> -->
 </div>
 
 <style>
