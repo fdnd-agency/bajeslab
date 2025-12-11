@@ -4,6 +4,16 @@
 	padding: 0;
 }
 
+
+@font-face {
+	font-family: 'Mystic';
+	src: 
+		url('/fonts/mg.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 /* Tilt Warp */
 @font-face {
 	font-family: 'Tilt Warp';
