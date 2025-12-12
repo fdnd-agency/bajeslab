@@ -1,11 +1,7 @@
 <script>
-	import Nav from '$lib/components/organisms/layout/Nav.svelte';
-	import Footer from '$lib/components/organisms/layout/Footer.svelte';
-
 	let { children } = $props();
 </script>
 
-<Nav />
 <svelte:head>
 	<link rel="stylesheet" href="/css/app.css" />
 	<title>Healthy Urban Living Lab</title>
@@ -18,7 +14,6 @@
 	<main>
 		{@render children()}
 	</main>
-	<Footer />
 </div>
 
 <style>
