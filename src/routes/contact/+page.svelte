@@ -1,12 +1,9 @@
 <script>
     import ContactCard from "$lib/components/molecules/ContactCard/ContactCard.svelte";
     let { 
-        email = "brancovanbeek5@gmail.com",
-        nummer =  "0639646635",
         title = "Contact", 
         data 
     } = $props();
-    let { contact } = data;
 </script>
 
 <section class="container">
@@ -19,12 +16,12 @@
 
         <p class="text">
             Algemene e-mail:
-            <a href="mailto:{email}" class="email">{email}</a>
+            <a href="mailto:" class="email"></a>
         </p>
 
         <p class="text">
             Algemene nummer:
-            <a href="tel:{nummer}" class="number">{nummer}</a>
+            <a href="tel:" class="number"></a>
         </p>
     </section>
 
