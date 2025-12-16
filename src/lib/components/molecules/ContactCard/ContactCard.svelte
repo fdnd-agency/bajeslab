@@ -13,7 +13,7 @@
 <section class="container-card">
     <section class="card">
         {#if imageUrl}
-            <img src="{imageUrl}" alt="{contact.name}" />
+            <img src="{imageUrl}" alt='Photo of {contact.name}' />
         {/if}
         
         <section class="info">
@@ -33,7 +33,6 @@
 <style>
     .container-card{
         padding: var(--spacing-md);
-        /* border: 1px solid black; */
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
@@ -68,7 +67,7 @@
     .contact-item a {
         color: var(--color-link);
         text-decoration: none;
-        
+
         &:hover {
             text-decoration: underline;
         }
