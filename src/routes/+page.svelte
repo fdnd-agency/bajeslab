@@ -25,7 +25,7 @@
 
 <ProjectsBlock
 	{projects}
-	title="Onze projecten"
+	title="Projecten"
 	buttonText="Bekijk alle projecten"
 	buttonLink="/projecten"
 	buttonPosition="flex-end"
