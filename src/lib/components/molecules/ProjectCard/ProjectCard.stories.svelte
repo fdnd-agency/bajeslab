@@ -13,7 +13,7 @@
         }
       }
     });
-  </script>
+</script>
   
   <Story 
     name="Project Kaart Standaard"
