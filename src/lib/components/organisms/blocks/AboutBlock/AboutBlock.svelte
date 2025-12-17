@@ -17,7 +17,8 @@
 	<div class="over-ons-container">
 		<img src={image} alt="Bord met de tekst Welkom bij de Bajestuin" />
 
-		<p class="text">{description}</p>
+		<!-- {@html} zorgt ervoor dat HTML-tags (zoals <p>) correct worden gerenderd -->
+		<div class="text">{@html description}</div>
 
 		{#if showButton}
 			<div class="button-wrapper">
@@ -55,7 +56,11 @@
 
 	.text {
 		grid-area: text;
-		margin-bottom: var(--spacing-sm);
+
+		/* Spacing per nieuwe alinea */
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
 	}
 
 	.button-wrapper {

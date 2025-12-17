@@ -14,11 +14,12 @@
 <AboutBlock
 	buttonLink="/over-ons"
 	title="Over ons"
-
+	description={contentPage.body}
 	variant="preview"
 	image="/images/over-ons.png"
-	showButton="true"
+	showButton={true}
 />
+
 <ThemelinesBlock
 	{themes}
 	buttonText="Lees meer"
