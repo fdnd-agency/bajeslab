@@ -1,20 +1,23 @@
 <script>
 	import HeroBlock from '$lib/components/organisms/blocks/HeroBlock.svelte';
-	import Overons from '$lib/components/organisms/blocks/Overons.svelte';
+	import AboutBlock from '$lib/components/organisms/blocks/AboutBlock/AboutBlock.svelte';
 	import NewsletterBlock from '$lib/components/organisms/blocks/NewsletterBlock/NewsletterBlock.svelte';
 	import ThemelinesBlock from '$lib/components/organisms/blocks/ThemelinesBlock/ThemelinesBlock.svelte';
 	import ProjectsBlock from '$lib/components/organisms/blocks/ProjectsBlock/ProjectsBlock.svelte';
 
 	export let data; // komt van +page.server.js
-	const { projects, themes } = data;
+	const { projects, themes, contentPage } = data;
 </script>
 
 <HeroBlock title="Samen bouwen aan een gezonde wijk" />
-<Overons
+
+<AboutBlock
 	buttonLink="/over-ons"
 	title="Over ons"
-	description="In de voormalige Bijlmer Bajes werken gebiedsontwikkelaar AM, de HvA en verschillende partners sinds 2018 samen in het Healthy Urban Living Lab Bajeskwartier. Het doel is een groene, gezonde en inclusieve buurt voor alle bewoners. Onderzoekers en studenten bekijken samen met bewoners en gebruikers hoe het gebied zo ingericht kan worden dat het bewegen en ontmoeten stimuleert. Dit is belangrijk voor gezondheid en welzijn ..."
+
+	variant="preview"
 	image="/images/over-ons.png"
+	showButton="true"
 />
 <ThemelinesBlock
 	{themes}

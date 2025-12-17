@@ -1,18 +1,22 @@
 export async function load({ fetch }) {
 	try {
-		const [projectReq, themeReq] = await Promise.all([
+		const [projectReq, themeReq, contentPageReq] = await Promise.all([
 			fetch('https://fdnd-agency.directus.app/items/hull_projects'),
-			fetch('https://fdnd-agency.directus.app/items/hull_themes')
+			fetch('https://fdnd-agency.directus.app/items/hull_themes'),
+			fetch('https://fdnd-agency.directus.app/items/hull_content_page')
 		]);
 
-		if (projectReq.ok && themeReq.ok) {
+		if (projectReq.ok && themeReq.ok && contentPageReq.ok) {
 			const projects = await projectReq.json();
 			const themes = await themeReq.json();
+			const contentPage = await contentPageReq.json();
 
-			console.log(themes.data);
+			// console.log(contentPage.data);
+
 			return {
 				projects: projects.data,
-				themes: themes.data
+				themes: themes.data,
+				contentPage: contentPage.data
 			};
 		}
 	} catch (error) {
