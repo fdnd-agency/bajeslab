@@ -11,7 +11,7 @@ export async function load({ fetch }) {
 			const themes = await themeReq.json();
 			const contentPage = await contentPageReq.json();
 
-			console.log(contentPage.data);
+			// console.log(contentPage.data);
 
 			return {
 				projects: projects.data,
