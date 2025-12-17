@@ -9,6 +9,20 @@
 		showButton = false,
 		buttonLink = 'flex-end'
 	} = $props();
+
+	// Deze functie draait server-side én client-side
+	function truncateText(text, wordLimit = 19) {
+		if (!text) return '';
+		const plainText = text.replace(/<[^>]*>/g, '');
+		const words = plainText.split(' ');
+		if (words.length <= wordLimit) return text;
+		return words.slice(0, wordLimit).join(' ') + '...';
+	}
+
+	// $derived: Toont korte tekst bij 'preview', volledige tekst bij 'full'
+	const displayDescription = $derived(
+		variant === 'preview' ? truncateText(description, 65) : description
+	);
 </script>
 
 <section class="container">
@@ -18,7 +32,7 @@
 		<img src={image} alt="Bord met de tekst Welkom bij de Bajestuin" />
 
 		<!-- {@html} zorgt ervoor dat HTML-tags (zoals <p>) correct worden gerenderd -->
-		<div class="text">{@html description}</div>
+		<div class="text">{@html displayDescription}</div>
 
 		{#if showButton}
 			<div class="button-wrapper">
