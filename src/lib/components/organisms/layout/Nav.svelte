@@ -1,5 +1,23 @@
 <script>
-	// ...
+	import { browser } from '$app/environment'; // Belangrijk voor SvelteKit
+
+	let { isOpen } = $props(); // Of je eigen variabele die bijhoudt of het menu open is
+
+	$effect(() => {
+		// Check of we in de browser zijn om 'document is not defined' errors te voorkomen
+		if (!browser) return;
+
+		if (isOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+
+		// Cleanup: herstel scroll als de component wordt afgesloten
+		return () => {
+			if (browser) document.body.style.overflow = 'auto';
+		};
+	});
 </script>
 
 <header>
@@ -79,7 +97,9 @@
 		opacity: 0;
 		transition:
 			transform 350ms ease,
-			opacity 200ms ease;
+			opacity 350ms ease,
+			display 350ms allow-discrete,
+			overlay 350ms allow-discrete;
 		pointer-events: none;
 	}
 
@@ -87,6 +107,14 @@
 		transform: translateY(0);
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	/* Start positie van de opening animatie */
+	@starting-style {
+		[popover]:popover-open {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
 	}
 
 	ul {
