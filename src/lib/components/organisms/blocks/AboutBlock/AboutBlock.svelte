@@ -39,8 +39,13 @@
 	<div class="over-ons-container">
 		<img src={image} alt="Bord met de tekst Welkom bij de Bajestuin" />
 
-		<!-- {@html} zorgt ervoor dat HTML-tags (zoals <p>) correct worden gerenderd -->
-		<div class="text">{@html displayDescription}</div>
+		<div class="text">
+			{#if variant === 'full'}
+				<h3>Samenbouwen aan een gezonde wijk</h3>
+
+				<!-- {@html} zorgt ervoor dat HTML-tags (zoals <p>) correct worden gerenderd -->
+			{/if}{@html displayDescription}
+		</div>
 
 		{#if showButton}
 			<div class="button-wrapper">
@@ -62,7 +67,6 @@
 	.over-ons-container {
 		display: grid;
 		column-gap: var(--spacing-lg);
-		padding-inline: var(--spacing-sm);
 		margin-block-start: var(--spacing-md);
 		text-align: left;
 		grid-template-areas:
@@ -78,7 +82,7 @@
 	img {
 		grid-area: image;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		object-fit: cover;
 		margin-bottom: var(--spacing-md);
 	}
@@ -87,8 +91,12 @@
 		grid-area: text;
 		display: flex;
 		flex-direction: column;
-		gap: var(--spacing-md);
+		gap: var(--spacing-sm);
 		margin-bottom: var(--spacing-md);
+	}
+	.text h3 {
+		font-size: var(--spacing-md);
+		text-wrap: stable;
 	}
 
 	.button-wrapper {
@@ -116,6 +124,7 @@
 		}
 
 		.text {
+			gap: var(--spacing-sm);
 			margin-bottom: 0;
 		}
 
