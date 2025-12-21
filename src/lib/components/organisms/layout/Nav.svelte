@@ -1,10 +1,31 @@
 <script>
-	import { browser } from '$app/environment'; // Belangrijk voor SvelteKit
+	import { browser } from '$app/environment';
 
-	let { isOpen } = $props(); // Of je eigen variabele die bijhoudt of het menu open is
+	// Variabele om het menu element op te slaan
+	let menuElement;
 
+	// State die bijhoudt of het menu open of gesloten is
+	let isOpen = $state(false);
+
+	// Effect 1: Luistert naar wanneer het popover menu open/dicht gaat
+	// en update de isOpen state
 	$effect(() => {
-		// Check of we in de browser zijn om 'document is not defined' errors te voorkomen
+		if (!browser || !menuElement) return;
+
+		const handleToggle = (event) => {
+			isOpen = event.newState === 'open';
+		};
+
+		menuElement.addEventListener('toggle', handleToggle);
+
+		return () => {
+			menuElement?.removeEventListener('toggle', handleToggle);
+		};
+	});
+
+	// Effect 2: Als het menu open is, blokkeer dan scrollen op de body
+	// Als het menu dicht is, sta scrollen weer toe
+	$effect(() => {
 		if (!browser) return;
 
 		if (isOpen) {
@@ -13,7 +34,6 @@
 			document.body.style.overflow = 'auto';
 		}
 
-		// Cleanup: herstel scroll als de component wordt afgesloten
 		return () => {
 			if (browser) document.body.style.overflow = 'auto';
 		};
@@ -23,7 +43,7 @@
 <header>
 	<a href="/" class="logo"><span>Healthy Urban</span>Living Lab</a>
 	<button popovertarget="menu" class="menu-toggle" aria-label="Open menu">☰</button>
-	<nav id="menu" popover>
+	<nav id="menu" popover bind:this={menuElement}>
 		<button
 			popovertarget="menu"
 			popovertargetaction="hide"
@@ -101,6 +121,10 @@
 			display 350ms allow-discrete,
 			overlay 350ms allow-discrete;
 		pointer-events: none;
+
+		/* Voeg dit toe: */
+		overscroll-behavior: contain;
+		overflow: hidden;
 	}
 
 	[popover]:popover-open {
