@@ -39,7 +39,7 @@
 				opacity: 0,
 				y: 50,
 				duration: 0.8,
-				stagger: 0.3,
+				stagger: 0.4,
 				scrollTrigger: {
 					trigger: cardsContainer,
 					start: 'top 80%'
