@@ -113,7 +113,6 @@
 		align-items: center;
 		border: none;
 		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-		transform: translateY(-100%);
 		opacity: 0;
 		transition:
 			transform 350ms ease,
@@ -121,8 +120,6 @@
 			display 350ms allow-discrete,
 			overlay 350ms allow-discrete;
 		pointer-events: none;
-
-		/* Voeg dit toe: */
 		overscroll-behavior: contain;
 		overflow: hidden;
 	}
@@ -136,7 +133,6 @@
 	/* Start positie van de opening animatie */
 	@starting-style {
 		[popover]:popover-open {
-			transform: translateY(-100%);
 			opacity: 0;
 		}
 	}
