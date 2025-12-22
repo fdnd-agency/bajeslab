@@ -183,8 +183,9 @@
 	}
 
 	#target-blip {
-		width: 10px;
-		height: 10px;
+		/* CSS if() feature - Gepubliceerd: 1 juli 2025 - Vanuit Chrome 137*/
+		width: if(media(max-width: 425px): 20px; else: 15px);
+		height: if(media(max-width: 425px): 20px; else: 15px);
 		border-radius: 50%;
 
 		background-color: rgb(var(--neon-rgb));
