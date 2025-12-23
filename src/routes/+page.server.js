@@ -9,7 +9,7 @@ export async function load({ fetch }) {
 			const projects = await projectReq.json();
 			const themes = await themeReq.json();
 
-			console.log(themes.data);
+			// console.log(themes.data);
 			return {
 				projects: projects.data,
 				themes: themes.data

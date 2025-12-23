@@ -1,4 +1,10 @@
 <script>
+	import { onMount } from 'svelte';
+
+	import { browser } from '$app/environment';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 	export let themes = [];
 	export let title = 'Themalijnen';
 	export let showIntro = false;
@@ -13,11 +19,39 @@
 	export let buttonText = 'Lees meer';
 	export let buttonLink = '/over-ons#theme-line';
 	export let buttonPosition = 'center';
+
+	let titleElement;
+	let cardsContainer;
+
+	onMount(async () => {
+		if (browser) {
+			gsap.registerPlugin(ScrollTrigger);
+
+			gsap.from(titleElement, {
+				opacity: 0,
+				y: 50,
+				duration: 1,
+				scrollTrigger: titleElement,
+				start: 'bottom 10%'
+			});
+
+			gsap.from(cardsContainer.children, {
+				opacity: 0,
+				y: 50,
+				duration: 0.8,
+				stagger: 0.4,
+				scrollTrigger: {
+					trigger: cardsContainer,
+					start: 'top 80%'
+				}
+			});
+		}
+	});
 </script>
 
 <section class="container">
-	<h2 class="title">{title}</h2>
-	<ul class="{layout}-layout">
+	<h2 class="title" bind:this={titleElement}>{title}</h2>
+	<ul class="{layout}-layout" bind:this={cardsContainer}>
 		{#each themes as theme}
 			<ThemeCard {theme} {layout} {showIntro} />
 		{/each}
