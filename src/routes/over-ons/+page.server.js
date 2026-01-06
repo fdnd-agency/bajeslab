@@ -1,14 +1,17 @@
 export async function load({ fetch }) {
 	try {
-		const [themeReq] = await Promise.all([
-			fetch('https://fdnd-agency.directus.app/items/hull_themes')
+		const [themeReq, contentPageReq] = await Promise.all([
+			fetch('https://fdnd-agency.directus.app/items/hull_themes'),
+			fetch('https://fdnd-agency.directus.app/items/hull_content_page')
 		]);
 
 		if (themeReq.ok) {
 			const themes = await themeReq.json();
+			const contentPage = await contentPageReq.json();
 
 			return {
-				themes: themes.data
+				themes: themes.data,
+				contentPage: contentPage.data
 			};
 		}
 	} catch (error) {
