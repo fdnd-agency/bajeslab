@@ -155,18 +155,23 @@ button {
 		sans-serif;
 	font-weight: 700;
 	font-size: clamp(2.5rem, 6vw, 4rem); /* min 40px, schaal met 6vw, max 64px */
+	color: var(--color-primary-base);
+	-webkit-text-stroke: 0.05rem var(--color-primary-base); 
 }
 
 .subtitle {
 	font-family: Urbanist, sans-serif;
 	font-weight: 600;
 	font-size: clamp(1.75rem, 5vw, 2.1875rem); /* min 28px, schaal met 5vw, max 35px */
+	color: var(--color-primary-base);
+	-webkit-text-stroke: 0.05rem var(--color-primary-base); 
 }
 
 .text {
 	font-family: Urbanist, sans-serif;
 	font-size: clamp(1.15rem, 1.5vw, 1.25rem); /* min 18,4px, schaal met 1.5vw, max 20px*/
 	line-height: 1.6875; /* 27px */
+	color: var(--color-primary-base);
 }
 
 .container {
