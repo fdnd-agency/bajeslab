@@ -5,8 +5,6 @@ export async function load({ fetch }) {
 	);
   
 	const { data: people } = await res.json();
-
-	console.log(people);
   
 	return { people };
   }
