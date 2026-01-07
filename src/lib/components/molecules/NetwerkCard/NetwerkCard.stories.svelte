@@ -27,7 +27,7 @@
           {
             hull_partners_id: {
               id: 'abc123',
-              name: 'Hogeschool van Amsterdam',
+              title: 'Hogeschool van Amsterdam',
               logo: 'a9a889e7-624f-4ee9-aaf6-03357fb73e2d' 
             }
           }
