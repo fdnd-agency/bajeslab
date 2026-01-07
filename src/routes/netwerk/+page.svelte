@@ -93,6 +93,13 @@
 
 <section class="container">
     <h1 class="title">{title}</h1>
+
+    <div class="scroll-indicator-wrapper">
+        <div class="scroll-indicator">
+            <div class="scroll-progress"></div>
+        </div>
+    </div>
+    
     <section class="netwerk-cards" bind:this={gridRef}>
         {#each data.people as person}
             <div class="card-wrapper">
@@ -106,6 +113,7 @@
     h1{
         margin-bottom: var(--spacing-lg);
     }
+
     .netwerk-cards {
         display: grid;
         gap: 1rem;
@@ -118,6 +126,38 @@
 
     .title {
         margin-bottom: var(--spacing-lg, 2rem);
+    }
+
+    /* Scroll Indicator Styling */
+    .scroll-indicator-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        margin-bottom: 2rem;
+    }
+    
+    .scroll-indicator {
+        width: 100%;
+        height: 1rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .scroll-progress {
+        height: 100%;
+        background: var(--color-accent2-base);
+        width: 0%;
+        animation: scroll-progress linear;
+        animation-timeline: scroll(root);
+    }
+    
+    @keyframes scroll-progress {
+        from {
+            width: 0%;
+        }
+        to {
+            width: 100%;
+        }
     }
     
     /* Offset alleen als de class actief is (4+ kolommen) */
