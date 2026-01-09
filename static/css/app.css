@@ -148,7 +148,7 @@ button {
 		Tilt Warp,
 		sans-serif;
 	font-size: clamp(3rem, 8vw, 6rem); /* min 48px, schaal met 8vw, max 96px */
-	color: white;
+	color: var(--color-neutral1-l3);
 }
 
 .title {
@@ -245,7 +245,7 @@ button {
 
 /* Loader */
 .loader {
-	border: 2px solid #f3f3f3;
+	border: 2px solid var(--color-accent1-l3);
 	border-top: 2px solid var(--color-accent2-base);
 	border-radius: 50%;
 	align-self: center;
