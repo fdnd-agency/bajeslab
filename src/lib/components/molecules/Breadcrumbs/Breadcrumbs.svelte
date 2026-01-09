@@ -3,20 +3,20 @@
 </script>
 
 {#if crumbs.length > 0}
-	<div class="breadcrumbs" aria-label="Breadcrumb">
+	<nav class="breadcrumbs">
 		<ol>
 			{#each crumbs as crumb, index}
 				<li>
 					{#if !crumb.isLast && index !== crumbs.length - 1}
 						<a href={crumb.href}>{crumb.label}</a>
-						<span class="separator" aria-hidden="true">{separator}</span>
+						<span class="separator">{separator}</span>
 					{:else}
-						<span aria-current="page">{crumb.label}</span>
+						<span class="current-page">{crumb.label}</span>
 					{/if}
 				</li>
 			{/each}
 		</ol>
-	</div>
+	</nav>
 {/if}
 
 <style>
@@ -49,7 +49,7 @@
 		text-decoration: underline;
 	}
 
-	.breadcrumbs [aria-current='page'] {
+	.breadcrumbs .current-page {
 		color: black;
 		font-weight: 600;
 	}
