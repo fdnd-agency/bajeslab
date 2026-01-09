@@ -7,21 +7,10 @@
     ASSETS_URL = "https://fdnd-agency.directus.app/assets"
   } = $props();
 
-  // Tekst inkorten tot een bepaald aantal woorden
-  function truncateText(text, wordLimit = 19) {
-    if (!text) return '';
-    const plainText = text.replace(/<[^>]*>/g, '');
-    const words = plainText.split(' ');
-    if (words.length <= wordLimit) return text;
-    return words.slice(0, wordLimit).join(' ') + '...';
-  }
-
   // foto inlaad animatie met gsap
   let pictureElement;
   let imageContainer;
-  
-  const shortDescription = truncateText(project.description, 19);
-  
+
   onMount(async () => {
     const { gsap } = await import('gsap');
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
@@ -78,7 +67,7 @@
   </div>
   
   <h2 class="subtitle">{project.title}</h2>
-  <p class="text">{@html shortDescription}</p>
+  <p class="text">{@html project.description}</p>
   <a href={`/projecten/${project.slug}`} class="project-link">
     Bekijk het project
     <span class="arrow-container">
@@ -178,5 +167,11 @@
     grid-row: 3; 
     line-height: 1.5; 
     margin-bottom: var(--spacing-md); 
+    /* De truncate logica voor exact 4 regels */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>
