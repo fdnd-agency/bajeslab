@@ -1,4 +1,7 @@
 <script>
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	
 	import Button from '$lib/components/atoms/Button/Button.svelte';
 
 	let {
@@ -24,10 +27,37 @@
 	const displayDescription = $derived(
 		variant === 'preview' ? truncateText(description, 65) : description
 	);
+
+	let titleElement;
+
+	onMount(async () => {
+		if (browser) {
+			const { gsap } = await import('gsap');
+			const { SplitText } = await import('gsap/SplitText');
+			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+
+			gsap.registerPlugin(ScrollTrigger);
+			gsap.registerPlugin(SplitText);
+
+			// We splitsen de tekst in karakters
+			const split = new SplitText(titleElement, { type: 'chars' });
+
+			gsap.from(split.chars, {
+				y: '100%', // Start precies onder de regel
+				opacity: 0, // Subtiele fade-in erbij
+				duration: 1.2, // Iets langer voor een rustig gevoel
+				scrollTrigger: titleElement,
+				start: 'bottom 10%',
+				stagger: 0.03, // Heel kort achter elkaar voor een vloeiende beweging
+				ease: 'power4.out', // De meest 'high-end' easing (start vlot, eindigt heel traag)
+				delay: 0.1
+			});
+		}
+	});
 </script>
 
 <section class="container">
-	<h2 class="title">{title}</h2>
+	<h2 class="title" bind:this={titleElement}>{title}</h2>
 
 	{#if variant === 'full'}
 		<video class="video-full" controls>
