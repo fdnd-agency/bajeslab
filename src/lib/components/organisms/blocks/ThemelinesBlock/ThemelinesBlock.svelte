@@ -2,8 +2,6 @@
 	import { onMount } from 'svelte';
 
 	import { browser } from '$app/environment';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	export let themes = [];
 	export let title = 'Themalijnen';
@@ -25,14 +23,25 @@
 
 	onMount(async () => {
 		if (browser) {
-			gsap.registerPlugin(ScrollTrigger);
+			const { gsap } = await import('gsap');
+			const { SplitText } = await import('gsap/SplitText');
+			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
-			gsap.from(titleElement, {
-				opacity: 0,
-				y: 50,
-				duration: 1,
+			gsap.registerPlugin(ScrollTrigger);
+			gsap.registerPlugin(SplitText);
+
+			// We splitsen de tekst in karakters
+			const split = new SplitText(titleElement, { type: 'chars' });
+
+			gsap.from(split.chars, {
+				y: '100%', // Start precies onder de regel
+				opacity: 0, // Subtiele fade-in erbij
+				duration: 1.2, // Iets langer voor een rustig gevoel
 				scrollTrigger: titleElement,
-				start: 'bottom 10%'
+				start: 'bottom 10%',
+				stagger: 0.03, // Heel kort achter elkaar voor een vloeiende beweging
+				ease: 'power4.out', // De meest 'high-end' easing (start vlot, eindigt heel traag)
+				delay: 0.1
 			});
 
 			gsap.from(cardsContainer.children, {
