@@ -2,6 +2,26 @@
 	import Nav from '$lib/components/organisms/layout/Nav.svelte';
 	import Footer from '$lib/components/organisms/layout/Footer.svelte';
 
+	import Breadcrumbs from '$lib/components/molecules/Breadcrumbs/Breadcrumbs.svelte';
+	import { page } from '$app/stores';
+
+	// Gebruik $derived voor reactive waarden
+	const fullCrumbs = $derived.by(() => {
+		const pathname = $page.url.pathname;
+
+		// Split path en maak breadcrumbs
+		const crumbs = pathname
+			.split('/')
+			.filter(Boolean)
+			.map((segment, index, arr) => ({
+				label: segment.charAt(0).toUpperCase() + segment.slice(1),
+				href: '/' + arr.slice(0, index + 1).join('/')
+			}));
+
+		// Voeg Home toe als eerste item
+		return [{ label: 'Home', href: '/' }, ...crumbs];
+	});
+
 	let { children } = $props();
 </script>
 
@@ -16,6 +36,12 @@
 </svelte:head>
 <div class="layout">
 	<main>
+		{#if fullCrumbs.length > 1}
+			<div class="container">
+				<Breadcrumbs crumbs={fullCrumbs} />
+			</div>
+		{/if}
+
 		{@render children()}
 	</main>
 	<Footer />
@@ -30,5 +56,9 @@
 
 	main {
 		flex: 1;
+	}
+
+	.container {
+		margin-top: 0rem;
 	}
 </style>

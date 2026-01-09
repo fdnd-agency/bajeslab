@@ -60,7 +60,7 @@ html {
 	--sat-accent2: 43%;
 	--hue-accent3: 76;
 	--sat-accent3: 58%;
-	
+
 	/* Primary kleuren - dynamisch berekend */
 	--color-primary-l3: hsl(var(--hue-primary), var(--sat-primary), 45%);
 	--color-primary-l2: hsl(var(--hue-primary), var(--sat-primary), 35%);
@@ -69,7 +69,7 @@ html {
 	--color-primary-d1: hsl(var(--hue-primary), var(--sat-primary), 12%);
 	--color-primary-d2: hsl(var(--hue-primary), var(--sat-primary), 8%);
 	--color-primary-d3: hsl(var(--hue-primary), var(--sat-primary), 5%);
-	
+
 	/* Neutral 1 kleuren */
 	--color-neutral1-l3: hsl(var(--hue-neutral1), var(--sat-neutral1), 98%);
 	--color-neutral1-l2: hsl(var(--hue-neutral1), var(--sat-neutral1), 95%);
@@ -78,7 +78,7 @@ html {
 	--color-neutral1-d1: hsl(var(--hue-neutral1), var(--sat-neutral1), 70%);
 	--color-neutral1-d2: hsl(var(--hue-neutral1), var(--sat-neutral1), 55%);
 	--color-neutral1-d3: hsl(var(--hue-neutral1), var(--sat-neutral1), 40%);
-	
+
 	/* Neutral 2 kleuren */
 	--color-neutral2-l3: hsl(var(--hue-neutral2), var(--sat-neutral2), 90%);
 	--color-neutral2-l2: hsl(var(--hue-neutral2), var(--sat-neutral2), 80%);
@@ -87,7 +87,7 @@ html {
 	--color-neutral2-d1: hsl(var(--hue-neutral2), var(--sat-neutral2), 50%);
 	--color-neutral2-d2: hsl(var(--hue-neutral2), var(--sat-neutral2), 38%);
 	--color-neutral2-d3: hsl(var(--hue-neutral2), var(--sat-neutral2), 25%);
-	
+
 	/* Accent 1 kleuren */
 	--color-accent1-l3: hsl(var(--hue-accent1), var(--sat-accent1), 85%);
 	--color-accent1-l2: hsl(var(--hue-accent1), var(--sat-accent1), 70%);
@@ -96,7 +96,7 @@ html {
 	--color-accent1-d1: hsl(var(--hue-accent1), var(--sat-accent1), 45%);
 	--color-accent1-d2: hsl(var(--hue-accent1), var(--sat-accent1), 35%);
 	--color-accent1-d3: hsl(var(--hue-accent1), var(--sat-accent1), 25%);
-	
+
 	/* Accent 2 kleuren */
 	--color-accent2-l3: hsl(var(--hue-accent2), var(--sat-accent2), 85%);
 	--color-accent2-l2: hsl(var(--hue-accent2), var(--sat-accent2), 70%);
@@ -105,7 +105,7 @@ html {
 	--color-accent2-d1: hsl(var(--hue-accent2), var(--sat-accent2), 42%);
 	--color-accent2-d2: hsl(var(--hue-accent2), var(--sat-accent2), 30%);
 	--color-accent2-d3: hsl(var(--hue-accent2), var(--sat-accent2), 18%);
-	
+
 	/* Accent 3 kleuren */
 	--color-accent3-l3: hsl(var(--hue-accent3), var(--sat-accent3), 75%);
 	--color-accent3-l2: hsl(var(--hue-accent3), var(--sat-accent3), 55%);
@@ -115,7 +115,7 @@ html {
 	--color-accent3-d2: hsl(var(--hue-accent3), var(--sat-accent3), 18%);
 	--color-accent3-d3: hsl(var(--hue-accent3), var(--sat-accent3), 12%);
 }
-  
+
 /* Body basis */
 body {
 	font-family: Urbanist, sans-serif;
@@ -129,7 +129,9 @@ a {
 	cursor: pointer;
 }
 
-ul, ol, li {
+ul,
+ol,
+li {
 	list-style: none;
 }
 
@@ -156,7 +158,7 @@ button {
 	font-weight: 700;
 	font-size: clamp(2.5rem, 6vw, 4rem); /* min 40px, schaal met 6vw, max 64px */
 	color: var(--color-primary-base);
-	-webkit-text-stroke: 0.05rem var(--color-primary-base); 
+	-webkit-text-stroke: 0.05rem var(--color-primary-base);
 }
 
 .subtitle {
@@ -164,7 +166,7 @@ button {
 	font-weight: 600;
 	font-size: clamp(1.75rem, 5vw, 2.1875rem); /* min 28px, schaal met 5vw, max 35px */
 	color: var(--color-primary-base);
-	-webkit-text-stroke: 0.05rem var(--color-primary-base); 
+	-webkit-text-stroke: 0.05rem var(--color-primary-base);
 }
 
 .text {
@@ -189,9 +191,9 @@ button {
 
 /* button */
 .button {
-	display: flex;                 
-	align-items: center;          
-	justify-content: center;      
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	text-align: center;
 	text-decoration: none;
@@ -199,17 +201,17 @@ button {
 	font-weight: 700;
 	border-radius: 7px;
 	padding: var(--spacing-sm);
-	padding-right: 2.5rem;        
+	padding-right: 2.5rem;
 	background-color: var(--color-accent3-l2);
-	position: relative;           
+	position: relative;
 	transition: all 0.3s ease-in-out;
 }
-  
+
 .button svg {
-	position: absolute;             
-	right: var(--spacing-sm);       
-	top: 50%;                       
-	transform: translateY(-50%);   
+	position: absolute;
+	right: var(--spacing-sm);
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* Styling voor previous button (pijl links) */
