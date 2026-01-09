@@ -178,14 +178,14 @@ button {
 
 .container {
 	margin: 0 auto;
-	margin-top: var(--spacing-lg);
+	margin-top: var(--spacing-md);
 	padding: 0 1rem;
 }
 @media (min-width: 1024px) {
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
-		margin-top: var(--spacing-lg);
+		margin-top: var(--spacing-md);
 	}
 }
 

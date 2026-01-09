@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	
+
 	import Button from '$lib/components/atoms/Button/Button.svelte';
 
 	let {
@@ -131,6 +131,7 @@
 
 	.button-wrapper {
 		grid-area: button;
+		margin-top: var(--spacing-lg);
 	}
 
 	/* DESKTOP LAYOUT */

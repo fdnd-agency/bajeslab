@@ -126,10 +126,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	}
 
-	.container {
-		padding: var(--spacing-md, 2rem);
-	}
-
 	.title {
 		margin-bottom: var(--spacing-lg, 2rem);
 	}
