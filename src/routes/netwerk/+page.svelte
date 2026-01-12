@@ -9,6 +9,7 @@
 
 	// Referentie naar het grid element in de DOM
 	let gridRef;
+	let titleElement;
 
 	// Lifecycle hook: wordt uitgevoerd na component mount
 	onMount(async () => {
@@ -16,9 +17,11 @@
 			// Importeer GSAP en ScrollTrigger dynamisch (code splitting)
 			const { gsap } = await import('gsap');
 			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+			const { SplitText } = await import('gsap/SplitText');
 
 			// Registreer ScrollTrigger plugin bij GSAP
 			gsap.registerPlugin(ScrollTrigger);
+			gsap.registerPlugin(SplitText);
 
 			// Functie die de scroll animaties toepast
 			const applyAnimations = () => {
@@ -36,6 +39,7 @@
 
 				// Selecteer alle cards
 				const allCards = gridRef.querySelectorAll('.card-wrapper');
+				const split = new SplitText(titleElement, { type: 'chars' });
 
 				// Als er 4 of meer kolommen zijn, pas effect toe
 				if (columnCount >= 4) {
@@ -77,6 +81,15 @@
 					});
 					gsap.set(allCards, { clearProps: 'all' });
 				}
+
+				gsap.from(split.chars, {
+					y: '100%', // Start precies onder de regel
+					opacity: 0, // Subtiele fade-in erbij
+					duration: 1.2, // Iets langer voor een rustig gevoel
+					stagger: 0.03, // Heel kort achter elkaar voor een vloeiende beweging
+					ease: 'power4.out', // De meest 'high-end' easing (start vlot, eindigt heel traag)
+					delay: 0.1
+				});
 			};
 
 			// Voer animaties uit bij component mount
@@ -98,7 +111,9 @@
 </script>
 
 <section class="container">
-	<h1 class="title">{title}</h1>
+	<section class="title-wrapper">
+		<h1 class="title" bind:this={titleElement}>{title}</h1>
+	</section>
 
 	<div class="scroll-indicator-wrapper">
 		<div class="scroll-indicator">
@@ -116,18 +131,10 @@
 </section>
 
 <style>
-	h1 {
-		margin-bottom: var(--spacing-lg);
-	}
-
 	.netwerk-cards {
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	}
-
-	.title {
-		margin-bottom: var(--spacing-lg, 2rem);
 	}
 
 	/* Scroll Indicator Styling */

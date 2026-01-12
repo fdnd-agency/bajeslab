@@ -58,7 +58,9 @@
 </script>
 
 <section class="container">
-	<h2 class="title" bind:this={titleElement}>{title}</h2>
+	<section class="title-wrapper">
+		<h2 class="title" bind:this={titleElement}>{title}</h2>
+	</section>
 	<ul class="{layout}-layout" bind:this={cardsContainer}>
 		{#each themes as theme}
 			<ThemeCard {theme} {layout} {showIntro} />

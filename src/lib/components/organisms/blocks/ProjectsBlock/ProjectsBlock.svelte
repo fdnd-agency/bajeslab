@@ -45,7 +45,9 @@
 </script>
 
 <section class="container">
-	<h2 class="title" bind:this={titleElement}>{title}</h2>
+	<section class="title-wrapper">
+		<h2 class="title" bind:this={titleElement}>{title}</h2>
+	</section>
 
 	<div class="projects-grid">
 		{#each highlightedProjects as project}
@@ -58,7 +60,6 @@
 
 <style>
 	.title {
-		margin-bottom: var(--spacing-lg);
 		text-align: center;
 
 		@media (min-width: 768px) {

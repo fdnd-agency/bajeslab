@@ -187,6 +187,20 @@ button {
 	}
 }
 
+.title-wrapper {
+	/* Het masker dat de letters verbergt tot ze omhoog komen */
+	overflow: hidden;
+	margin-bottom: var(--spacing-sm);
+	padding-bottom: 5px;
+}
+@media (min-width: 1024px) {
+	.title-wrapper {
+		overflow: hidden;
+		margin-bottom: var(--spacing-lg);
+		padding-bottom: 5px;
+	}
+}
+
 /* button */
 .button {
 	display: flex;

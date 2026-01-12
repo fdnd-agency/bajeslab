@@ -57,7 +57,9 @@
 </script>
 
 <section class="container">
-	<h2 class="title" bind:this={titleElement}>{title}</h2>
+	<section class="title-wrapper">
+		<h2 class="title" bind:this={titleElement}>{title}</h2>
+	</section>
 
 	{#if variant === 'full'}
 		<video class="video-full" controls>
@@ -104,7 +106,6 @@
 			'image'
 			'button';
 	}
-
 	h2 {
 		text-align: center;
 	}
