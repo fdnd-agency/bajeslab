@@ -66,7 +66,7 @@
 	}
 	.info {
 		margin-bottom: var(--spacing-lg);
-		margin-top: var(--spacing-lg);
+		margin-top: var(--spacing-sm);
 		p {
 			margin-bottom: var(--spacing-sm);
 		}

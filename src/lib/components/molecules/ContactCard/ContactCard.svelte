@@ -32,7 +32,6 @@
 
 <style>
     .container-card{
-        padding: var(--spacing-md);
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
