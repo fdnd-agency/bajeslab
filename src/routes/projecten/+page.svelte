@@ -46,6 +46,14 @@
 </section>
 
 <style>
+	.title{
+		text-align: center;
+		
+			@media (min-width: 768px) {
+			justify-content: flex-start;
+			text-align: left;
+			}
+		}
 	h1 {
 		margin: 0;
 		font-weight: 700;

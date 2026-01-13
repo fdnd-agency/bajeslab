@@ -131,6 +131,13 @@
 </section>
 
 <style>
+	.title{
+		text-align: center;
+			@media (min-width: 768px) {
+			justify-content: flex-start;
+			text-align: left;
+			}
+  	}
 	.netwerk-cards {
 		display: grid;
 		column-gap: var(--spacing-md);
