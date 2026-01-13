@@ -142,7 +142,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		margin-bottom: 2rem;
+		margin-bottom: var(--spacing-lg);
 	}
 
 	.scroll-indicator {

@@ -50,7 +50,6 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100%;
-  margin-top: var(--spacing-lg);
 }
 
 .image-container {
@@ -76,7 +75,6 @@
   display: flex;
   justify-content: center;
   margin-bottom: var(--spacing-lg);
-
 }
 
 .partner-logo {
