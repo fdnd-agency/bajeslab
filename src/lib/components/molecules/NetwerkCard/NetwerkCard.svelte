@@ -48,7 +48,7 @@
 .card {
   text-align: center;
   display: grid;
-  grid-template-rows: max-content 10rem max-content;
+  grid-template-rows: auto 1fr auto;
   height: 100%;
   margin-top: var(--spacing-lg);
 }
@@ -62,7 +62,6 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
 }
 
 .person-placeholder {
@@ -70,24 +69,17 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   margin-top: var(--spacing-sm);
 }
 
 .partners {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-end;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+
 }
 
 .partner-logo {
-  width: auto;
   height: 4.7rem;
-  object-fit: contain;
 }
 </style>
