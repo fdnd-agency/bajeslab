@@ -230,7 +230,7 @@
 		width: 100%;
 		padding-top: 2em;
 		background-color: var(--color-primary-base);
-		color: white;
+		color: var(--color-neutral1-l3);
 	}
 	.footer-wrapper {
 		max-width: 1200px;
@@ -244,16 +244,16 @@
 	nav {
 		display: flex;
 		justify-content: space-evenly;
-		margin-top: 4em;
+		margin-top: 4rem;
 	}
 	nav ul {
 		list-style: none;
 	}
 	nav ul li {
-		margin-top: 10px;
+		margin-top: 0.5rem;
 	}
 	nav ul li a {
-		color: white;
+		color: var(--color-neutral1-l3);
 		transition: all 0.1s ease;
 	}
 	nav ul li a:hover,
@@ -266,9 +266,9 @@
 	}
 	.contact-info-item {
 		display: flex;
-		gap: 1em;
-		padding: 0.5em 0em;
-		color: white;
+		gap: 0.5rem;
+		padding: 0.5rem 0;
+		color: var(--color-neutral1-l3);
 		transition: all 0.1s ease;
 	}
 	.contact-info-item:hover,
@@ -276,32 +276,35 @@
 		color: var(--color-accent2-base);
 	}
 	.contact-info-item svg {
-		width: 30px;
-		height: 20px;
-		color: white;
+		width: 25px;
+		height: 25px;
+		color: var(--color-neutral1-l3);
 	}
 
 	/* Newsletter section */
 	.newsletter-section {
 		text-align: center;
-		margin-top: 4em;
+		margin-top: var(--spacing-lg);
 	}
 
 	.newsletter-section h3 {
 		margin-bottom: 0.5em;
 	}
+	
 	form {
 		display: flex;
 		justify-content: center;
 		margin: 1em 0;
 		border: none;
 	}
+
 	form label input {
 		padding: 1em;
 		border-radius: 7px 0px 0px 7px;
 		border: none;
 		height: 42px;
 	}
+	
 	form button {
 		padding: 1em;
 		border-radius: 0px 7px 7px 0px;
@@ -321,10 +324,10 @@
 
 	/* Footer Copyright */
 	.footer-copyright {
-		margin-top: 3em;
+		margin: var(--spacing-sm);
 	}
 	.footer-copyright svg {
-		width: min(100%, 20em);
+		width: 100%;
 	}
 	.footer-copyright p {
 		margin-top: 1em;
