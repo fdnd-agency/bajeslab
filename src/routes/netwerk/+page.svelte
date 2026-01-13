@@ -133,7 +133,8 @@
 <style>
 	.netwerk-cards {
 		display: grid;
-		gap: 1rem;
+		column-gap: var(--spacing-md);
+		row-gap: var(--spacing-lg);
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	}
 

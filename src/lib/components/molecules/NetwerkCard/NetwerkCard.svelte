@@ -74,7 +74,7 @@
 .partners {
   display: flex;
   justify-content: center;
-  margin-bottom: var(--spacing-lg);
+  /* margin-bottom: var(--spacing-lg); */
 }
 
 .partner-logo {

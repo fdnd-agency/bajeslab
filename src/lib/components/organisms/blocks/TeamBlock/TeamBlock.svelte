@@ -62,6 +62,8 @@
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
   }
 </style>
