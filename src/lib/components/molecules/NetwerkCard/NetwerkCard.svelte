@@ -69,12 +69,12 @@
 
 .content {
   margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 .partners {
   display: flex;
   justify-content: center;
-  /* margin-bottom: var(--spacing-lg); */
 }
 
 .partner-logo {
