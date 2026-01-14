@@ -6,6 +6,9 @@ export async function load({ fetch }) {
   
 	const { data: people } = await res.json();
   
-	return { people };
-  }
-  
+	return { 
+		people,
+		title: "Netwerk",
+		description: "Ontdek het uitgebreide netwerk van het Healthy Urban Living Lab, inclusief onze gewaardeerde partners en samenwerkingsverbanden die bijdragen aan innovatieve stedelijke oplossingen."
+	};
+}
