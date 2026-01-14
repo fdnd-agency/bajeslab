@@ -1,9 +1,10 @@
 <script>
 	import Nav from '$lib/components/organisms/layout/Nav.svelte';
 	import Footer from '$lib/components/organisms/layout/Footer.svelte';
-
 	import Breadcrumbs from '$lib/components/molecules/Breadcrumbs/Breadcrumbs.svelte';
 	import { page } from '$app/stores';
+
+	let { children } = $props();
 
 	// Gebruik $derived voor reactive waarden
 	const fullCrumbs = $derived.by(() => {
@@ -64,6 +65,12 @@
     <meta property="twitter:description" content={description} />
    
 </svelte:head>
+
+<svelte:element this={'script'} type="application/ld+json">
+	{JSON.stringify(breadcrumbSchema)}
+</svelte:element>
+
+<Nav />
 <div class="layout">
 	<main>
 		{#if fullCrumbs.length > 1}
