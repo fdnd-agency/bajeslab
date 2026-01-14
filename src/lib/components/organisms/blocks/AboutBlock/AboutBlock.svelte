@@ -69,7 +69,7 @@
 	{/if}
 
 	<div class="over-ons-container">
-		<img src={image} alt="Bord met de tekst Welkom bij de Bajestuin" />
+		<img src={image} alt="About us"/>
 
 		<div class="text">
 			{#if variant === 'full'}
