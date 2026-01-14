@@ -23,6 +23,20 @@
 	});
 
 	let { children } = $props();
+	// SEO Structured Data (JSON-LD) voor Google zoekresultaten
+    const breadcrumbSchema = $derived.by(() => {
+        return {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": fullCrumbs.map((crumb, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": crumb.label,
+                "item": `${$page.url.origin}${crumb.href}`
+            }))
+        };
+    });
+
 </script>
 
 <Nav />
