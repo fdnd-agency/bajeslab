@@ -22,7 +22,6 @@
 		return [{ label: 'Home', href: '/' }, ...crumbs];
 	});
 
-	let { children } = $props();
 	// SEO Structured Data (JSON-LD) voor Google zoekresultaten
     const breadcrumbSchema = $derived.by(() => {
         return {
@@ -37,6 +36,11 @@
         };
     });
 
+	// Dynamische SEO variabelen
+	const title = $derived($page.data?.title 
+        ? `${$page.data.title} | Healthy Urban Living Lab` 
+        : 'Healthy Urban Living Lab');
+    const description = $derived($page.data?.description || "Healthy Urban Living Lab is een living lab van de Hogeschool van Amsterdam dat onderzoek doet naar het Bajeskwartier.");
 </script>
 
 <Nav />
