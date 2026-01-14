@@ -43,14 +43,26 @@
     const description = $derived($page.data?.description || "Healthy Urban Living Lab is een living lab van de Hogeschool van Amsterdam dat onderzoek doet naar het Bajeskwartier.");
 </script>
 
-<Nav />
 <svelte:head>
-	<link rel="stylesheet" href="/css/app.css" />
-	<title>Healthy Urban Living Lab</title>
-	<meta
-		name="description"
-		content="Healthy Urban Living Lab is een living lab van de Hogeschool van Amsterdam, dat samen met haar partners de ontwikkeling van het Bajeskwartier in Amsterdam ondersteunt door middel van onderzoeksprojecten met studenten en partners."
-	/>
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={$page.url.href} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={$page.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="{$page.url.origin}/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={$page.url.href} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+   
 </svelte:head>
 <div class="layout">
 	<main>
