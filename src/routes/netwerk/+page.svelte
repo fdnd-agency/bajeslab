@@ -131,9 +131,17 @@
 </section>
 
 <style>
+	.title{
+		text-align: center;
+			@media (min-width: 768px) {
+			justify-content: flex-start;
+			text-align: left;
+			}
+  	}
 	.netwerk-cards {
 		display: grid;
-		gap: 1rem;
+		column-gap: var(--spacing-md);
+		row-gap: var(--spacing-lg);
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	}
 
@@ -142,7 +150,7 @@
 		position: sticky;
 		top: 0;
 		z-index: 100;
-		margin-bottom: 2rem;
+		margin-bottom: var(--spacing-lg);
 	}
 
 	.scroll-indicator {

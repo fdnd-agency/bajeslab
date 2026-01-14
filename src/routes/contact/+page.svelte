@@ -56,6 +56,14 @@
 </section>
 
 <style>
+	.title{
+		text-align: center;
+			@media (min-width: 768px) {
+			justify-content: flex-start;
+			text-align: left;
+			}
+  	}
+	
 	.email,
 	.number {
 		font-weight: bold;
@@ -66,7 +74,7 @@
 	}
 	.info {
 		margin-bottom: var(--spacing-lg);
-		margin-top: var(--spacing-lg);
+		margin-top: var(--spacing-sm);
 		p {
 			margin-bottom: var(--spacing-sm);
 		}

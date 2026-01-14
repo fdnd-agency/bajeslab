@@ -35,6 +35,6 @@
 	buttonPosition="flex-end"
 />
 <NewsletterBlock
-	title="Benieuwd naar nog meer projecten?"
-	description="Abboneer op onze nieuwsbrief om op de hoogte te blijven."
+	title="Blijf verbonden met het Lab"
+	description="Ontvang de nieuwste inzichten en projectupdates van het Healthy Urban Living Lab direct in je inbox!"
 />

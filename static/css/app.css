@@ -177,13 +177,13 @@ button {
 }
 
 .container {
-	margin: var(--spacing-md) auto;
+	margin: var(--spacing-lg) auto;
 	padding: 0 1rem;
 }
 @media (min-width: 1024px) {
 	.container {
 		max-width: 1200px;
-		margin: var(--spacing-md) auto;
+		margin: var(--spacing-xl) auto;
 	}
 }
 
