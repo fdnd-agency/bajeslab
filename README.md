@@ -12,7 +12,12 @@ Het Bajeskwartier wordt een inspirerende buurt binnen de ring van Amsterdam. Om 
 Gebiedsontwikkelaar AM, de Hogeschool van Amsterdam en diverse praktijkpartners werken sinds 2018 samen in het Healthy Urban Living Lab Bajeskwartier aan de ambitie om een groene, gezonde en inclusieve buurt te realiseren. Als Living Lab werken we samen met studenten, onderzoekers, bewoners en praktijkpartners.
 
 ## Features
--
+- **Projectoverzicht:** Interactieve weergave van alle lopende en afgeronde projecten binnen het HULL
+- **Netwerkoverzicht:** Informatie over betrokken organisaties
+- **Responsive Design:** Optimaal bruikbaar op desktop, tablet en mobiel
+- **CMS Integratie:** Content beheer via Directus voor eenvoudige updates
+- **Toegankelijkheid:** Ontworpen met aandacht voor toegankelijkheid en gebruiksvriendelijkheid
+- **Storybook:** Component library voor ontwikkeling van herbruikbare UI componenten
 
 ## Design
 Het ontwerp van Bajeslab is gemaakt in Figma en weerspiegelt het innovatieve en veelzijdige karakter van het Healthy Urban Living Lab Bajeskwartier (HULL).
@@ -20,35 +25,78 @@ Het ontwerp van Bajeslab is gemaakt in Figma en weerspiegelt het innovatieve en 
 Je kunt het volledige ontwerp hier bekijken: [Figma Design](https://www.figma.com/design/doguH52moO2cyA3pT0B6sd/Living-Lab-Bajeskwartier-2025-2026?node-id=3-120&p=f&t=cDUMQyYOKp0r8CXw-0)
 
 ## Tech Stack
-- HTML, CSS, JavaScript
-- Sveltekit
-- Node.js
-- Directus
-- npm
+- **Frontend:** HTML, CSS, JavaScript
+- **Framework:** Sveltekit
+- **Runtime:** Node.js
+- **CMS:** Directus
+- **Package Manager:** npm
+- **Hosting:** Netlify
+
+### Project Structure
+
+<img width="314" height="864" alt="image" src="https://github.com/user-attachments/assets/6fc62a90-f17b-4896-a5cb-980bc15cfc90" />
+
+### Development Workflow
+
+#### Git Workflow
+
+1. **Main branch:** Productie-klare code, deployed naar Netlify
+2. **Development branch:** Ontwikkelingswerk
+3. **Feature branches:** Voor nieuwe features (feature/feature-naam)
+
+   
+```bash
+# Maak een nieuwe feature branch
+git checkout -b feature/nieuwe-feature
+
+# Maak je wijzigingen
+# Commit regelmatig met duidelijke messages
+git add .
+git commit -m "feat: beschrijving van de feature"
+
+# Push naar remote
+git push origin feature/nieuwe-feature
+
+# Maak een Pull Request op GitHub/GitLab
+```
+#### Commit Conventions
+
+We gebruiken conventional commits:
+
+- **feat:** - Nieuwe feature
+- **fix:** - Bug fix
+- **docs:** - Documentatie wijzigingen
+- **refactor:** - Code refactoring
+- **chore:** - Onderhoudswerk, dependencies updates
+
 
 ## Installation
-Everything you need to build a Svelte project, powered by sv.
 
-### Creating a project
+### Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+Prerequisites (voor Installation):
+- Node.js (versie 18.x of hoger)
+- npm (versie 9.x of hoger)
+- Git
 
+
+1. Clone de repository
 ```
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+git clone https://github.com/fdnd-agency/bajeslab.git
+cd bajeslab
 ```
-
-### Developing
-Once you've created a project and installed dependencies with npm install (or pnpm install or yarn), start a development server:
-
+2. Installeer dependencies
+```
+npm install
+```
+4. Start de development server
 ```
 npm run dev
+```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+5. Start Storybook:
+```bash
+npm run storybook
 ```
 
 ## Licentie
