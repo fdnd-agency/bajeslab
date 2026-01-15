@@ -90,6 +90,7 @@
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+	<meta name="google-site-verification" content="k9HBPb2To9cyQqQ0xKz--GEdxUUBE_IqnJBX-pdo6rg" />
     <link rel="canonical" href={$page.url.href} />
     
     <!-- Open Graph / Facebook -->
