@@ -4,5 +4,9 @@ export async function load({ fetch }) {
     );
     const data = await response.json();
 
-    return { contacts: data.data }; 
-}
+    return { 
+        contacts: data.data,
+        title: "Contact",
+        description: "Neem contact op met het Healthy Urban Living Lab voor vragen over onderzoek."
+    }; 
+};
