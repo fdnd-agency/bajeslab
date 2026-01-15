@@ -29,37 +29,48 @@ export async function load({ fetch }) {
 }
 
 export const actions = {
-    default: async ({ request }) => {
+    newsletter: async ({ request }) => {
         const data = await request.formData();
         const email = data.get('email');
 
-        const ANON_KEY =
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnY2lrZ2p5a3dldXRlZmV4d2xtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MDA4MjgsImV4cCI6MjA2ODA3NjgyOH0.PJYtzz6nUErRhJZnck2dugwcjnJ6p2dBqpZsJfbK7aU';
+        // Validatie
+        if (!email || !email.toString().includes('@')) {
+            return { success: false, message: 'Vul een geldig e-mailadres in.' };
+        }
 
         try {
+            const apiKey = import.meta.env.VITE_API_KEY;
             const apiResponse = await fetch(
-                'https://lgcikgjykweutefexwlm.supabase.co/rest/v1/hull_newsletter_subscriptions',
+                'https://lgcikgjykwuetfexwlm.supabase.co/rest/v1/hull_newsletter_subscriptions',
                 {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        apikey: ANON_KEY,
-                        Authorization: `Bearer ${ANON_KEY}`
+                        apikey: apiKey,
+                        Authorization: `Bearer ${apiKey}`,
+                        'Prefer': 'resolution=merge-duplicates'
                     },
-                    body: JSON.stringify({
-                        email: email
-                    })
+                    body: JSON.stringify({ email: email })
                 }
             );
 
             if (apiResponse.ok) {
-                return { success: true, message: '✓ Ingeschreven!' };
-            } else {
-                return { success: false, message: 'Mislukt!' };
+                return { 
+                    success: true, 
+                    message: '✓ Je bent succesvol aangemeld!' 
+                };
+            } 
+            
+            const errorData = await apiResponse.json();
+            if (apiResponse.status === 409 || errorData.code === '23505') {
+                return { success: false, message: 'Dit e-mailadres is al bekend bij ons.' };
             }
+
+            return { success: false, message: 'Er ging iets mis. Probeer het later nog eens.' };
+
         } catch (error) {
-            console.error(error);
-            return { success: false, message: 'Fout bij inschrijven!' };
+            console.error('Newsletter error:', error);
+            return { success: false, message: 'Serverfout. Controleer je verbinding.' };
         }
     }
 };
