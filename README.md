@@ -31,7 +31,7 @@ Je kunt het volledige ontwerp hier bekijken: [Figma Design](https://www.figma.co
 ## Pagina overzicht
 - **Home:** Introductie tot Bajeslab met een kort "Over ons" blok, samenvatting van themalijnen, 3 uitgelichte projecten en nieuwsbrief aanmelding.
 - **Over ons:** Volledige weergave van de organisatie, het team en alle themalijnen met uitgebreide informatie.
-- **Projecten:** Overzichtspagina met alle projecten van het HULL, filterbaar op status en thema.
+- **Projecten:** Overzichtspagina met alle projecten van het HULL.
 - **Project detail:** Detailpagina voor een individueel project met volledige beschrijving.
 - **Netwerk pagina:** Overzicht van alle partners en samenwerkingsorganisaties binnen het HULL.
 - **Contact pagina:** Contactpersonen en manieren om in contact te komen met het team.
@@ -41,6 +41,8 @@ Voor volgende ontwikkelteams zijn er enkele backlog items die de website verder 
 - **HeroBlock rebuild:** Het ontwerp voor een vernieuwde heroBlock sectie is al goedgekeurd door de opdrachtgever (Suus) en moet nog geïmplementeerd worden.
 - **Interactive audio map:** Een interactieve kaart van het Bajeskwartier waar gebruikers kunnen klikken op verschillende locaties om audiofragmenten te horen met verhalen van bewoners, projectupdates of achtergrondinformatie over specifieke onderwerpen.
 - **Kleurenpalet implementeren:** De kleuren uit de redesign ontwerp omzetten naar de huidige stylesheet met CSS variabelen.
+- **Projecten filter:** De functionaliteit voor het filteren van projecten.
+- **Projecten Grid Layout:** Het implementeren van het speciale grid-ontwerp.
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
