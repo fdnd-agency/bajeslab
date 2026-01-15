@@ -1,71 +1,84 @@
 <script>
-    export let title = " Samen bouwen aan een gezonde wijk";
+    export let title = "Samen bouwen aan een gezonde wijk";
 </script>
 
 <section>
-    <h1 class="hero">
-        {title}
-    </h1>
+    <picture class="hero-container">
+        <source 
+            media="(min-width: 1200px)" 
+            srcset="/images/hero-desktop.avif 1x, /images/hero-desktop.webp 1x" 
+            type="image/avif">
+        <source 
+            media="(min-width: 1200px)" 
+            srcset="/images/hero-desktop.jpg">
+
+        <source 
+            media="(min-width: 750px)" 
+            srcset="/images/hero-tablet.avif 1x, /images/hero-tablet.webp 1x" 
+            type="image/avif">
+        <source 
+            media="(min-width: 750px)" 
+            srcset="/images/hero-tablet.jpg">
+
+        <img 
+            src="/images/hero-mobile.jpg"
+            srcset="/images/hero-mobile.avif 1x, /images/hero-mobile.webp 1x"
+            fetchpriority="high"
+            alt=""
+            class="hero-img"
+        />
+    </picture>
+    
+    <h1 class="hero">{title}</h1>
 </section>
 
 <style>
+section {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.hero {
+    z-index: 2;
+    text-transform: uppercase;
+    color: var(--color-neutral1-l3);
+}
+
+@media (min-width: 750px) {
+    .hero-img {
+        object-position: center;
+    }
+}
+
+@media (min-width: 1200px) {
     section {
-        /* fallback voor alle browsers die image-set niet ondersteunen */
-        background-image: url("/images/hero-mobile.jpg");
-
-        background-image: image-set(
-        url("/images/hero-mobile.webp") type("image/webp"),
-        url("/images/hero-mobile.avif") type("image/avif")
-        );
-        background-size: cover;
-        background-position: top;
-        background-repeat: no-repeat;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
+        min-height: 100vh;
     }
-
-    section::before {
-        content: "";
-        position: absolute;
-        inset: 0; 
-        background: rgba(0, 0, 0, 0.45);
-        z-index: 0; 
-    }
-
-    h1{
-        z-index: 1;
-        text-transform: uppercase;
-    }
-
-    /* Tablet */
-    @media (min-width: 750px) {
-        section {
-            background-image: url("/images/hero-tablet.jpg"); /* fallback */
-            background-image: image-set(
-            url("/images/hero-tablet.webp") type("image/webp"),
-            url("/images/hero-tablet.avif") type("image/avif")
-            );
-            background-position: center;
-        }
-    }
-
-    /* Desktop */
-    @media (min-width: 1200px) {
-        section {
-            background-image: url("/images/hero-desktop.jpg"); /* fallback */
-            background-image: image-set(
-            url("/images/hero-desktop.webp") type("image/webp"),
-            url("/images/hero-desktop.avif") type("image/avif")
-            );
-            min-height: 100vh;
-            background-position: center;
-        }
-        section::before{
-            min-height: 100vh;
-        }
-    }
+}
 </style>

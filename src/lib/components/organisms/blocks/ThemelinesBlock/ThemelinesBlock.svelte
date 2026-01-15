@@ -78,7 +78,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 0 1em;
 		width: 100%;
 	}
 	section h2 {
