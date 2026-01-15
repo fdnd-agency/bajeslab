@@ -28,19 +28,19 @@ Je kunt het volledige ontwerp hier bekijken: [Figma Design](https://www.figma.co
 - **Storybook:** Component library voor ontwikkeling van herbruikbare UI componenten
 - **SEO & Geo-geoptimaliseerd:** Volledige zoekmachineoptimalisatie met lokalisatiemogelijkheden
 
-## Pagina overzicht
-- **Home:** Introductie tot Bajeslab met een kort "Over ons" blok, samenvatting van themalijnen, 3 uitgelichte projecten en nieuwsbrief aanmelding.
+## Paginaoverzicht
+- **Home:** Introductie tot Bajeslab met een kort "Over ons" blok, samenvatting van themalijnen, 3 uitgelichte projecten en nieuwsbriefaanmelding.
 - **Over ons:** Volledige weergave van de organisatie, het team en alle themalijnen met uitgebreide informatie.
 - **Projecten:** Overzichtspagina met alle projecten van het HULL.
-- **Project detail:** Detailpagina voor een individueel project met volledige beschrijving.
-- **Netwerk pagina:** Overzicht van alle partners en samenwerkingsorganisaties binnen het HULL.
-- **Contact pagina:** Contactpersonen en manieren om in contact te komen met het team.
+- **Projectdetail:** Detailpagina voor een individueel project met volledige beschrijving.
+- **Netwerkpagina:** Overzicht van alle partners en samenwerkingsorganisaties binnen het HULL.
+- **Contactpagina:** Contactpersonen en manieren om in contact te komen met het team.
 
-## Toekomstige ontwikkeling
+## Toekomstige ontwikkelingen
 Voor volgende ontwikkelteams zijn er enkele backlog items die de website verder kunnen verbeteren:
 - **HeroBlock rebuild:** Het ontwerp voor een vernieuwde heroBlock sectie is al goedgekeurd door de opdrachtgever (Suus) en moet nog geïmplementeerd worden.
 - **Interactive audio map:** Een interactieve kaart van het Bajeskwartier waar gebruikers kunnen klikken op verschillende locaties om audiofragmenten te horen met verhalen van bewoners, projectupdates of achtergrondinformatie over specifieke onderwerpen.
-- **Kleurenpalet implementeren:** De kleuren uit de redesign ontwerp omzetten naar de huidige stylesheet met CSS variabelen.
+- **Kleurenpalet implementeren:** De kleuren uit het redesign-ontwerp omzetten naar de huidige stylesheet met CSS-variabelen.
 - **Projecten filter:** De functionaliteit voor het filteren van projecten.
 - **Projecten Grid Layout:** Het implementeren van het speciale grid-ontwerp.
 
@@ -61,7 +61,7 @@ Voor volgende ontwikkelteams zijn er enkele backlog items die de website verder 
 
 #### Git Workflow
 
-1. **Main branch:** Productie-klare code, deployed naar Netlify
+1. **Main branch:** productieklare code, deployed naar Netlify
 2. **Development branch:** Ontwikkelingswerk
 3. **Feature branches:** Voor nieuwe features (feature/feature-naam)
 
@@ -92,7 +92,7 @@ We gebruiken conventional commits:
 
 
 #### Storybook
-Storybook is een open-source tool voor het ontwikkelen van UI-componenten. Het stelt ons in staat om componenten te bouwen, testen en documenteren zonder de complexiteit van de volledige applicatie. Dit geeft ook een gestructureerde overzicht van de componenten.
+Storybook is een open-source tool voor het ontwikkelen van UI-componenten. Het stelt ons in staat om componenten te bouwen, testen en documenteren zonder de complexiteit van de volledige applicatie. Dit geeft ook een gestructureerd overzicht van de componenten.
 
 De template folder bevat een complete starter kit:
 - **Component Story:** Basis Svelte component met props
