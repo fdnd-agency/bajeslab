@@ -69,12 +69,11 @@
 	{/if}
 
 	<div class="over-ons-container">
-		<img src={image} alt="About us"/>
+		<img src={image} alt="A sign that says 'Welcome to the Bajestuin'"/>
 
 		<div class="text">
 			{#if variant === 'full'}
 				<h3>Samenbouwen aan een gezonde wijk</h3>
-
 				<!-- {@html} zorgt ervoor dat HTML-tags (zoals <p>) correct worden gerenderd -->
 			{/if}{@html displayDescription}
 		</div>

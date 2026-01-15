@@ -38,7 +38,6 @@
 				"@id": `${$page.url.origin}/#organization`,
 				"name": "Healthy Urban Living Lab",
 				"url": $page.url.origin,
-				"logo": `${$page.url.origin}/logo.svg`,
 				"address": {
 					"@type": "PostalAddress",
 					"addressLocality": "Amsterdam",
@@ -98,7 +97,6 @@
     <meta property="og:url" content={$page.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="{$page.url.origin}/og-image.jpg" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />

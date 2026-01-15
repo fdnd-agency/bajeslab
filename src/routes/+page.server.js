@@ -29,23 +29,22 @@ export const actions = {
         const data = await request.formData();
         const email = data.get('email');
 
-        // Validatie aan de serverkant
+        // Validatie
         if (!email || !email.toString().includes('@')) {
             return { success: false, message: 'Vul een geldig e-mailadres in.' };
         }
 
-        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxnY2lrZ2p5a3dldXRlZmV4d2xtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MDA4MjgsImV4cCI6MjA2ODA3NjgyOH0.PJYtzz6nUErRhJZnck2dugwcjnJ6p2dBqpZsJfbK7aU'; // Jouw volledige key
-
         try {
+            const apiKey = import.meta.env.VITE_API_KEY;
             const apiResponse = await fetch(
-                'https://lgcikgjykweutefexwlm.supabase.co/rest/v1/hull_newsletter_subscriptions',
+                'https://lgcikgjykwuetfexwlm.supabase.co/rest/v1/hull_newsletter_subscriptions',
                 {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        apikey: ANON_KEY,
-                        Authorization: `Bearer ${ANON_KEY}`,
-                        'Prefer': 'resolution=merge-duplicates' // Optioneel: negeer dubbele inschrijvingen
+                        apikey: apiKey,
+                        Authorization: `Bearer ${apiKey}`,
+                        'Prefer': 'resolution=merge-duplicates'
                     },
                     body: JSON.stringify({ email: email })
                 }
@@ -58,7 +57,6 @@ export const actions = {
                 };
             } 
             
-            // Specifieke check voor Supabase/PostgREST error codes (indien nodig)
             const errorData = await apiResponse.json();
             if (apiResponse.status === 409 || errorData.code === '23505') {
                 return { success: false, message: 'Dit e-mailadres is al bekend bij ons.' };
