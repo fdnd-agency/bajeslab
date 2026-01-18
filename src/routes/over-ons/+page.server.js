@@ -1,19 +1,24 @@
 export async function load({ fetch }) {
     try {
-        const [themeReq, contentPageReq] = await Promise.all([
+        const peopleUrl = 'https://fdnd-agency.directus.app/items/hull_people' + 
+            '?fields=*,partners.hull_partners_id.*' + 
+            '&filter[partners][hull_partners_id][id][_eq]=1';
+
+
+        const [themeReq, contentPageReq, peopleReq] = await Promise.all([
             fetch('https://fdnd-agency.directus.app/items/hull_themes'),
-            fetch('https://fdnd-agency.directus.app/items/hull_content_page')
+            fetch('https://fdnd-agency.directus.app/items/hull_content_page'),
+            fetch(peopleUrl)
         ]);
 
-        // We halen de data op, maar zorgen voor een fallback naar lege arrays/objecten als het mislukt
-        const themes = themeReq.ok ? await themeReq.json() : { data: [] };
-        const contentPage = contentPageReq.ok ? await contentPageReq.json() : { data: {} };
+        const themes = await themeReq.json();
+        const contentPage = await contentPageReq.json();
+        const people = await peopleReq.json();
 
-        // ALLES in één return object
         return {
             themes: themes.data,
             contentPage: contentPage.data,
-            // SEO SET
+            people: people.data,
             title: "Over ons",
             description: "Leer meer over het Healthy Urban Living Lab, onze missie, visie en het team dat zich inzet voor innovatieve stedelijke oplossingen."
         };
@@ -22,11 +27,12 @@ export async function load({ fetch }) {
         return {
             themes: [],
             contentPage: {},
+            people: [],
             title: "Over ons",
             description: "Informatie over Healthy Urban Living Lab."
         };
     }
-}
+}   
 
 export const actions = {
     newsletter: async ({ request }) => {
