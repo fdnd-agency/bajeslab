@@ -48,7 +48,7 @@
   });
 </script>
 
-<section class="project-card">
+<article class="project-card">
   <div class="picture-wrapper" bind:this={imageContainer}>
     <div class="diagonal-line"></div>
     
@@ -74,10 +74,10 @@
       <ArrowIcon className="project-arrow" />
     </span>
   </a>
-</section>
+</article>
 
 <style>
-  section {
+  article {
     width: 100%;
     display: grid;
     grid-template-rows: subgrid;
@@ -128,7 +128,7 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  section:hover img {
+  article:hover img {
     transform: scale(1.05);
   }
 
@@ -150,7 +150,7 @@
     will-change: transform;
   }
 
-  section:hover .arrow-container {
+  article:hover .arrow-container {
     transform: translateX(10px); 
   }
 
