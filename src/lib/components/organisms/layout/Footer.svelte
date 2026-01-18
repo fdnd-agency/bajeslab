@@ -5,13 +5,13 @@
 <footer>
     <div class="footer-wrapper">
         <div class="footer-brand">
-            <h3 class="subtitle">Healthy Urban Living Lab</h3>
+            <p class="subtitle">Healthy Urban Living Lab</p>
             <p>Samen bouwen aan een gezonde, stedelijke toekomst.</p>
         </div>
 
         <nav>
             <div class="nav-group">
-                <h4>Navigatie</h4>
+                <h3>Navigatie</h3>
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/over-ons">Over ons</a></li>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="contact-info">
-                <h4>Contact</h4>
+                <h3>Contact</h3>
                 <a class="contact-info-item" href="https://www.google.com/maps/search/Bijlmerbajes,+H.J.E.+Wenckebachweg+48,+1096+AH+Amsterdam/@52.3369631,4.9225222,17z?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                     <svg width="24" height="24" viewBox="0 0 27 29" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.0566 25.8059C12.8027 25.8059 12.5851 25.7277 12.4038 25.5713C12.2225 25.4149 12.0865 25.2096 11.9958 24.9554C11.6512 23.8606 11.216 22.8343 10.6902 21.8763C10.1824 20.9184 9.46613 19.7943 8.5413 18.504C7.61648 17.2137 6.86393 15.982 6.28365 14.809C5.7215 13.636 5.44043 12.2187 5.44043 10.5569C5.44043 8.26958 6.17485 6.33413 7.64368 4.75059C9.13065 3.14749 10.935 2.34595 13.0566 2.34595C15.1783 2.34595 16.9735 3.14749 18.4423 4.75059C19.9293 6.33413 20.6728 8.26958 20.6728 10.5569C20.6728 12.336 20.3555 13.8218 19.7208 15.0143C19.1042 16.1873 18.3879 17.3505 17.5719 18.504C16.5927 19.9116 15.8492 21.0846 15.3415 22.023C14.8519 22.9418 14.4438 23.9193 14.1174 24.9554C14.0268 25.2291 13.8817 25.4442 13.6822 25.6006C13.5009 25.7374 13.2923 25.8059 13.0566 25.8059ZM13.0566 13.4894C13.8182 13.4894 14.462 13.2059 14.9879 12.639C15.5137 12.072 15.7767 11.378 15.7767 10.5569C15.7767 9.73582 15.5137 9.0418 14.9879 8.47485C14.462 7.9079 13.8182 7.62443 13.0566 7.62443C12.295 7.62443 11.6512 7.9079 11.1254 8.47485C10.5995 9.0418 10.3365 9.73582 10.3365 10.5569C10.3365 11.378 10.5995 12.072 11.1254 12.639C11.6512 13.2059 12.295 13.4894 13.0566 13.4894Z" fill="currentColor"/>
@@ -67,13 +67,13 @@
         max-width: 1200px;
         margin: 0 auto;
     }
-    footer h3 {
+    footer .subtitle {
         margin-bottom: 0.5rem;
 		color: var(--color-accent2-base);
 		-webkit-text-stroke: 0.05rem var(--color-accent2-base);
     }
 
-    footer h4 {
+    footer h3 {
         margin-bottom: 1rem;
         color: var(--color-accent2-base);
         font-size: 1.1rem;
