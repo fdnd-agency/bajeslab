@@ -66,9 +66,9 @@
     </picture>
   </div>
   
-  <h2 class="subtitle">{project.title}</h2>
+  <h2 id={project.title} class="subtitle">{project.title}</h2>
   <p class="text">{@html project.description}</p>
-  <a href={`/projecten/${project.slug}`} class="project-link">
+  <a href={`/projecten/${project.slug}`} class="project-link" aria-labelledby={project.title} >
     Bekijk het project
     <span class="arrow-container">
       <ArrowIcon className="project-arrow" />
