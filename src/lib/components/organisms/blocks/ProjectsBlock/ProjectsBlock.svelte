@@ -1,47 +1,48 @@
 <script>
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-
-	import ProjectCard from '$lib/components/molecules/ProjectCard/ProjectCard.svelte';
-	import Button from '$lib/components/atoms/Button/Button.svelte';
-
-	let {
-		ASSETS_URL = 'https://fdnd-agency.directus.app/assets',
-		projects = [],
-		title = 'Projecten',
-		buttonText = 'Bekijk alle projecten',
-		buttonLink = '/projecten',
-		buttonPosition = 'flex-end'
-	} = $props();
-
-	let highlightedProjects = $derived(projects.filter((project) => project.highlighted === true));
-
-	let titleElement;
-
-	onMount(async () => {
-		if (browser) {
-			const { gsap } = await import('gsap');
-			const { SplitText } = await import('gsap/SplitText');
-			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-
-			gsap.registerPlugin(ScrollTrigger);
-			gsap.registerPlugin(SplitText);
-
-			// We splitsen de tekst in karakters
-			const split = new SplitText(titleElement, { type: 'chars' });
-
-			gsap.from(split.chars, {
-				y: '100%', // Start precies onder de regel
-				opacity: 0, // Subtiele fade-in erbij
-				duration: 1.2, // Iets langer voor een rustig gevoel
-				scrollTrigger: titleElement,
-				start: 'bottom 10%',
-				stagger: 0.03, // Heel kort achter elkaar voor een vloeiende beweging
-				ease: 'power4.out', // De meest 'high-end' easing (start vlot, eindigt heel traag)
-				delay: 0.1
-			});
-		}
-	});
+    import { onMount } from 'svelte';
+    import { browser } from '$app/environment';
+    import { gsap } from '$lib/gsap-config'; 
+    import ProjectCard from '$lib/components/molecules/ProjectCard/ProjectCard.svelte';
+    import Button from '$lib/components/atoms/Button/Button.svelte';
+    
+    let {
+        ASSETS_URL = 'https://fdnd-agency.directus.app/assets',
+        projects = [],
+        title = 'Projecten',
+        buttonText = 'Bekijk alle projecten',
+        buttonLink = '/projecten',
+        buttonPosition = 'flex-end'
+    } = $props();
+    
+    let highlightedProjects = $derived(projects.filter((project) => project.highlighted === true));
+    let titleElement;
+    
+    onMount(async () => {
+        if (browser) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!prefersReducedMotion) {
+                const { SplitText } = await import('gsap/SplitText');
+                const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+                gsap.registerPlugin(SplitText);
+                gsap.registerPlugin(ScrollTrigger);
+                
+                const split = new SplitText(titleElement, { type: 'chars' });
+                gsap.from(split.chars, {
+                    y: '100%',
+                    opacity: 0,
+                    duration: 1.2,
+                    stagger: 0.03,
+                    ease: 'power4.out',
+                    delay: 0.1,
+                    scrollTrigger: {
+                        trigger: titleElement,
+                        start: 'top 80%'
+                    }
+                });
+            }
+        }
+    });
 </script>
 
 <section class="container">

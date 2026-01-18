@@ -1,59 +1,59 @@
 <script>
-	import { onMount } from 'svelte';
-	import { browser } from '$app/environment';
-
-	import Button from '$lib/components/atoms/Button/Button.svelte';
-
-	let {
-		title = 'Over ons',
-		description = 'In de voormalige Bijlmer Bajes werken gebiedsontwikkelaar AM, de HvA en verschillende partners sinds 2018 samen in het Healthy Urban Living Lab Bajeskwartier. Het doel is een groene, gezonde en inclusieve buurt voor alle bewoners. Onderzoekers en studenten bekijken samen met bewoners en gebruikers hoe het gebied zo ingericht kan worden dat het bewegen en ontmoeten stimuleert. Dit is belangrijk voor gezondheid en welzijn. Sinds 2023 bevindt de ontwikkeling van het Bajeskwartier zich in een nieuwe fase. De eerste gebouwen zijn opgeleverd, en uiteindelijk komen er 2.500 tot 3.500 mensen te wonen, verdeeld over 1.350 appartementen (huur en koop). De sociale huurwoningen bieden plek aan een diverse groep bewoners: studenten, ouderen, statushouders en mensen die extra begeleiding nodig hebben vanwege sociale of psychische problemen. Daarnaast zijn de middelbare school Spinoza 21st en Hotel Jansen, een verblijf voor internationale studenten en expats, in de wijk gevestigd.',
-		variant = 'full',
-		image = '/images/over-ons.png',
-		videoSrc = '/videos/about.mp4',
-		showButton = false,
-		buttonLink = '/over-ons'
-	} = $props();
-
-	// Deze functie draait server-side én client-side
-	function truncateText(text, wordLimit = 65) {
-		if (!text) return '';
-		const plainText = text.replace(/<[^>]*>/g, '');
-		const words = plainText.split(' ');
-		if (words.length <= wordLimit) return text;
-		return words.slice(0, wordLimit).join(' ') + '...';
-	}
-
-	// $derived: Toont korte tekst bij 'preview', volledige tekst bij 'full'
-	const displayDescription = $derived(
-		variant === 'preview' ? truncateText(description, 65) : description
-	);
-
-	let titleElement;
-
-	onMount(async () => {
-		if (browser) {
-			const { gsap } = await import('gsap');
-			const { SplitText } = await import('gsap/SplitText');
-			const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-
-			gsap.registerPlugin(ScrollTrigger);
-			gsap.registerPlugin(SplitText);
-
-			// We splitsen de tekst in karakters
-			const split = new SplitText(titleElement, { type: 'chars' });
-
-			gsap.from(split.chars, {
-				y: '100%', // Start precies onder de regel
-				opacity: 0, // Subtiele fade-in erbij
-				duration: 1.2, // Iets langer voor een rustig gevoel
-				scrollTrigger: titleElement,
-				start: 'bottom 10%',
-				stagger: 0.03, // Heel kort achter elkaar voor een vloeiende beweging
-				ease: 'power4.out', // De meest 'high-end' easing (start vlot, eindigt heel traag)
-				delay: 0.1
-			});
-		}
-	});
+    import { onMount } from 'svelte';
+    import { browser } from '$app/environment';
+    import { gsap } from '$lib/gsap-config'; 
+    import Button from '$lib/components/atoms/Button/Button.svelte';
+    
+    let {
+        title = 'Over ons',
+        description = '...',
+        variant = 'full',
+        image = '/images/over-ons.png',
+        videoSrc = '/videos/about.mp4',
+        showButton = false,
+        buttonLink = '/over-ons'
+    } = $props();
+    
+    function truncateText(text, wordLimit = 65) {
+        if (!text) return '';
+        const plainText = text.replace(/<[^>]*>/g, '');
+        const words = plainText.split(' ');
+        if (words.length <= wordLimit) return text;
+        return words.slice(0, wordLimit).join(' ') + '...';
+    }
+    
+    const displayDescription = $derived(
+        variant === 'preview' ? truncateText(description, 65) : description
+    );
+    
+    let titleElement;
+    
+    onMount(async () => {
+        if (browser) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!prefersReducedMotion) {
+                const { SplitText } = await import('gsap/SplitText');
+                const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+                gsap.registerPlugin(SplitText);
+                gsap.registerPlugin(ScrollTrigger);
+                
+                const split = new SplitText(titleElement, { type: 'chars' });
+                gsap.from(split.chars, {
+                    y: '100%',
+                    opacity: 0,
+                    duration: 1.2,
+                    stagger: 0.03,
+                    ease: 'power4.out',
+                    delay: 0.1,
+                    scrollTrigger: {
+                        trigger: titleElement,
+                        start: 'top 80%'
+                    }
+                });
+            }
+        }
+    });
 </script>
 
 <section class="container">
