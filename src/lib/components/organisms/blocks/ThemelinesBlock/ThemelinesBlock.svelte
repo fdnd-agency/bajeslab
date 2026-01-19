@@ -7,8 +7,6 @@
 	export let showIntro = false;
 	export let layout = 'row';
 
-	const ASSETS_URL = 'https://fdnd-agency.directus.app/assets';
-
 	import Button from '$lib/components/atoms/Button/Button.svelte';
 	import ThemeCard from '$lib/components/molecules/ThemeCard/ThemeCard.svelte';
 

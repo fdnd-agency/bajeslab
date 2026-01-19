@@ -1,4 +1,6 @@
 <script>
+	import { PUBLIC_ASSETS_URL } from '$env/static/public';
+
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 

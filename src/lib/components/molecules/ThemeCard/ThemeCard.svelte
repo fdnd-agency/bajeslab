@@ -1,13 +1,14 @@
 <script>
+	import { PUBLIC_ASSETS_URL } from '$env/static/public';
+
 	export let theme;
 	export let showIntro = false;
 	export let layout = 'row';
-	const ASSETS_URL = 'https://fdnd-agency.directus.app/assets';
 </script>
 
 <li>
 	<div class="{layout}-wrapper">
-		<img src={`${ASSETS_URL}/${theme.illustration}`} alt="Theme icon" fetchpriority="high" />
+		<img src={`${PUBLIC_ASSETS_URL}/${theme.illustration}`} alt="Theme icon" fetchpriority="high" />
 		<p>{theme.titel}</p>
 		{#if showIntro}
 			<p>{theme.intro}</p>
