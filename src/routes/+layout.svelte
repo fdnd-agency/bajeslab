@@ -10,6 +10,10 @@
 	// View Transitions voor SvelteKit navigatie
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
+		
+		// Respecteer prefers-reduced-motion
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (prefersReducedMotion) return;
 
 		return new Promise((resolve) => {
 			document.startViewTransition(async () => {
@@ -18,7 +22,7 @@
 			});
 		});
 	});
-
+	
 	// Dynamische SEO variabelen
 	const title = $derived($page.data?.title 
         ? `${$page.data.title} | Healthy Urban Living Lab` 
