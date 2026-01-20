@@ -3,8 +3,21 @@
 	import Footer from '$lib/components/organisms/layout/Footer.svelte';
 	import Breadcrumbs from '$lib/components/molecules/Breadcrumbs/Breadcrumbs.svelte';
 	import { page } from '$app/stores';
+	import { onNavigate } from '$app/navigation';
 
 	let { children } = $props();
+
+	// View Transitions voor SvelteKit navigatie
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 
 	// Dynamische SEO variabelen
 	const title = $derived($page.data?.title 
@@ -126,6 +139,34 @@
 </div>
 
 <style>
+	:global(::view-transition-old(root)),
+	:global(::view-transition-new(root)) {
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+	}
+
+	:global(::view-transition-old(root)) {
+		animation-name: fade-blur-out;
+	}
+
+	:global(::view-transition-new(root)) {
+		animation-name: fade-blur-in;
+	}
+
+	@keyframes fade-blur-out {
+		to {
+			opacity: 0;
+			filter: blur(8px);
+		}
+	}
+
+	@keyframes fade-blur-in {
+		from {
+			opacity: 0;
+			filter: blur(8px);
+		}
+	}
+
 	.layout {
 		display: flex;
 		flex-direction: column;
