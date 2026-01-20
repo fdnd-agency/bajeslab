@@ -2,8 +2,8 @@
     import NewsletterForm from '$lib/components/molecules/NewsletterForm/NewsletterForm.svelte';
 
     let {
-        title = 'Benieuwd naar nog meer projecten?'
-		, description = 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte van het laatste nieuws en updates.'
+        title = 'Benieuwd naar nog meer projecten?', 
+        description = 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte van het laatste nieuws en updates.'
     } = $props();
 </script>
 

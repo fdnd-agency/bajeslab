@@ -1,51 +1,59 @@
 <script>
-  import { onMount } from 'svelte';
-  import ArrowIcon from '$lib/components/atoms/icons/ArrowIcon.svelte'
-  
-  let {
-    project,
-    ASSETS_URL = "https://fdnd-agency.directus.app/assets"
-  } = $props();
+import { onMount } from 'svelte';
+import { browser } from '$app/environment';
+import ArrowIcon from '$lib/components/atoms/icons/ArrowIcon.svelte'
+import { gsap } from '$lib/gsap-config'; 
 
-  // foto inlaad animatie met gsap
-  let pictureElement;
-  let imageContainer;
+let {
+  project,
+  ASSETS_URL = "https://fdnd-agency.directus.app/assets"
+} = $props();
 
-  onMount(async () => {
-    const { gsap } = await import('gsap');
-    const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+let pictureElement;
+let imageContainer;
+
+onMount(async () => {
+  if (browser) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const img = imageContainer.querySelector('img');
-    
-    const startAnimation = () => {
-      gsap.fromTo(
-        pictureElement,
-        { clipPath: 'inset(100% 100% 0% 0%)' },
-        {
-          clipPath: 'inset(0% 0% 0% 0%)',
-          duration: 1.2,
-          ease: 'power4.out',
-          delay: 0.1,
-          scrollTrigger: {
-            trigger: imageContainer,
-            start: 'top 90%',
-            once: true
+    if (!prefersReducedMotion) {
+      // Alleen animeren als reduced motion UIT staat
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsap.registerPlugin(ScrollTrigger);
+      
+      const img = imageContainer.querySelector('img');
+      
+      const startAnimation = () => {
+        gsap.fromTo(
+          pictureElement,
+          { clipPath: 'inset(100% 100% 0% 0%)' },
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            duration: 1.2,
+            ease: 'power4.out',
+            delay: 0.1,
+            scrollTrigger: {
+              trigger: imageContainer,
+              start: 'top 90%',
+              once: true
+            }
           }
+        );
+      };
+      
+      if (img) {
+        if (img.complete) {
+          startAnimation();
+        } else {
+          img.addEventListener('load', startAnimation);
         }
-      );
-    };
-    
-    // kijken of de afbeelding al geladen is
-    if (img) {
-      if (img.complete) {
-        startAnimation();
-      } else {
-        img.addEventListener('load', startAnimation);
       }
+    } else {
+      // Bij reduced motion: verwijder clipPath zodat afbeelding zichtbaar is
+      gsap.set(pictureElement, { clipPath: 'inset(0% 0% 0% 0%)' });
     }
-  });
+  }
+});
 </script>
 
 <article class="project-card">
@@ -66,9 +74,9 @@
     </picture>
   </div>
   
-  <h2 class="subtitle">{project.title}</h2>
+  <h2 id={project.title} class="subtitle">{project.title}</h2>
   <p class="text">{@html project.description}</p>
-  <a href={`/projecten/${project.slug}`} class="project-link">
+  <a href={`/projecten/${project.slug}`} class="project-link" aria-labelledby={project.title} >
     Bekijk het project
     <span class="arrow-container">
       <ArrowIcon className="project-arrow" />
