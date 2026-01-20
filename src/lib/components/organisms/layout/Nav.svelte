@@ -43,7 +43,7 @@
 <header>
 	<a href="/" class="logo"><span>Healthy Urban</span>Living Lab</a>
 	<button popovertarget="menu" class="menu-toggle" aria-label="Open menu">☰</button>
-	<nav id="menu" popover bind:this={menuElement}>
+	<nav id="menu" popover bind:this={menuElement} aria-label="Hoofdnavigatie">
 		<button
 			popovertarget="menu"
 			popovertargetaction="hide"
@@ -87,6 +87,18 @@
 		line-height: 1.1;
 		white-space: nowrap;
 		font-weight: 400;
+	}
+
+	.logo:focus-visible {
+		outline: 3px solid var(--color-accent2-d1);
+		outline-offset: 4px;
+		border-radius: 4px;
+	}
+
+	a:focus-visible {
+		outline: 3px solid var(--color-accent2-d1);
+		outline-offset: -3px;
+		border-radius: 4px;
 	}
 
 	/* ---- MOBILE MENU BUTTONS  ---- */
