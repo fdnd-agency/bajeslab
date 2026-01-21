@@ -3,7 +3,7 @@
 </script>
 
 {#if crumbs.length > 0}
-	<nav class="breadcrumbs">
+	<nav class="breadcrumbs" aria-label="Breadcrumb navigatie">
 		<ol>
 			{#each crumbs as crumb, index}
 				<li>

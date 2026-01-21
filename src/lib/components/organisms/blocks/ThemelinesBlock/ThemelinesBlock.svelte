@@ -1,12 +1,13 @@
 <script>
+	import { PUBLIC_ASSETS_URL } from '$env/static/public';
 	import Button from '$lib/components/atoms/Button/Button.svelte';
     import ThemeCard from '$lib/components/molecules/ThemeCard/ThemeCard.svelte';
     import { onMount } from 'svelte';
     import { browser } from '$app/environment';
-    import { gsap } from '$lib/gsap-config'; 
+    import { gsap } from '$lib/gsap-config';
 
-    
-	let { 
+
+	let {
 		themes = [],
 		title = 'Themalijnen',
 		showIntro = false,
@@ -14,24 +15,22 @@
 		showButton = true,
 		buttonText = 'Lees meer',
 		buttonLink = '/over-ons#theme-line',
-		buttonPosition = 'center'	
+		buttonPosition = 'center'
 	} = $props();
-   
-    const ASSETS_URL = 'https://fdnd-agency.directus.app/assets';
-    
+
     let cardsContainer;
     let titleElement;
-    
+
     onMount(async () => {
         if (browser) {
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            
+
             if (!prefersReducedMotion) {
                 const { SplitText } = await import('gsap/SplitText');
                 const { ScrollTrigger } = await import('gsap/ScrollTrigger');
                 gsap.registerPlugin(ScrollTrigger);
                 gsap.registerPlugin(SplitText);
-                
+
                 const split = new SplitText(titleElement, { type: 'chars' });
                 gsap.from(split.chars, {
                     y: '100%',
@@ -45,7 +44,7 @@
                         start: 'top 80%'
                     }
                 });
-                
+
                 gsap.from(cardsContainer.children, {
                     opacity: 0,
                     y: 50,

@@ -1,59 +1,59 @@
 <script>
-    import { onMount } from 'svelte';
-    import { browser } from '$app/environment';
-    import { gsap } from '$lib/gsap-config'; 
-    import Button from '$lib/components/atoms/Button/Button.svelte';
-    
-    let {
-        title = 'Over ons',
-        description = '...',
-        variant = 'full',
-        image = '/images/over-ons.png',
-        videoSrc = '/videos/about.mp4',
-        showButton = false,
-        buttonLink = '/over-ons'
-    } = $props();
-    
-    function truncateText(text, wordLimit = 65) {
-        if (!text) return '';
-        const plainText = text.replace(/<[^>]*>/g, '');
-        const words = plainText.split(' ');
-        if (words.length <= wordLimit) return text;
-        return words.slice(0, wordLimit).join(' ') + '...';
-    }
-    
-    const displayDescription = $derived(
-        variant === 'preview' ? truncateText(description, 65) : description
-    );
-    
-    let titleElement;
-    
-    onMount(async () => {
-        if (browser) {
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            
-            if (!prefersReducedMotion) {
-                const { SplitText } = await import('gsap/SplitText');
-                const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-                gsap.registerPlugin(SplitText);
-                gsap.registerPlugin(ScrollTrigger);
-                
-                const split = new SplitText(titleElement, { type: 'chars' });
-                gsap.from(split.chars, {
-                    y: '100%',
-                    opacity: 0,
-                    duration: 1.2,
-                    stagger: 0.03,
-                    ease: 'power4.out',
-                    delay: 0.1,
-                    scrollTrigger: {
-                        trigger: titleElement,
-                        start: 'top 80%'
-                    }
-                });
-            }
-        }
-    });
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { gsap } from '$lib/gsap-config';
+	import Button from '$lib/components/atoms/Button/Button.svelte';
+
+	let {
+		title = 'Over ons',
+		description = '...',
+		variant = 'full',
+		image = '/images/over-ons.png',
+		videoSrc = '/videos/about.mp4',
+		showButton = false,
+		buttonLink = '/over-ons'
+	} = $props();
+
+	function truncateText(text, wordLimit = 65) {
+		if (!text) return '';
+		const plainText = text.replace(/<[^>]*>/g, '');
+		const words = plainText.split(' ');
+		if (words.length <= wordLimit) return text;
+		return words.slice(0, wordLimit).join(' ') + '...';
+	}
+
+	const displayDescription = $derived(
+		variant === 'preview' ? truncateText(description, 65) : description
+	);
+
+	let titleElement;
+
+	onMount(async () => {
+		if (browser) {
+			const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			if (!prefersReducedMotion) {
+				const { SplitText } = await import('gsap/SplitText');
+				const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+				gsap.registerPlugin(SplitText);
+				gsap.registerPlugin(ScrollTrigger);
+
+				const split = new SplitText(titleElement, { type: 'chars' });
+				gsap.from(split.chars, {
+					y: '100%',
+					opacity: 0,
+					duration: 1.2,
+					stagger: 0.03,
+					ease: 'power4.out',
+					delay: 0.1,
+					scrollTrigger: {
+						trigger: titleElement,
+						start: 'top 80%'
+					}
+				});
+			}
+		}
+	});
 </script>
 
 <section class="container">
@@ -69,7 +69,7 @@
 	{/if}
 
 	<div class="over-ons-container">
-		<img src={image} alt="A sign that says 'Welcome to the Bajestuin'"/>
+		<img src={image} alt="A sign that says 'Welcome to the Bajestuin'" />
 
 		<div class="text">
 			{#if variant === 'full'}
