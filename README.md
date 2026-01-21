@@ -1,5 +1,10 @@
 # Bajeslab
 
+#### Developers
+-Branco van Beek: https://github.com/Brancovanbeek
+
+-Saif Muhamad: https://github.com/Saif8599
+
 [Livelink](https://bajeslab.netlify.app/)
 
 **Design challenge: Ontwerp en ontwikkel een webapplicatie die de veelzijdigheid en het innovatieve karakter van het Healthy Urban Living Lab Bajeskwartier (HULL) weerspiegelt.**
