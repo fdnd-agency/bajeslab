@@ -48,7 +48,7 @@ Voor volgende ontwikkelteams zijn er enkele backlog items die de website verder 
 - **Kleurenpalet implementeren:** De kleuren uit het redesign-ontwerp omzetten naar de huidige stylesheet met CSS-variabelen.
 - **Projecten filter:** De functionaliteit voor het filteren van projecten.
 - **Projecten Grid Layout:** Het implementeren van het speciale grid-ontwerp.
-
+- **Nieuwsbrief aanmelding werkent krijgen serverside**
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
 - **Framework:** Sveltekit
