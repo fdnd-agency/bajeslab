@@ -43,7 +43,7 @@
 <header>
 	<a href="/" class="logo"><span>Healthy Urban</span>Living Lab</a>
 	<button popovertarget="menu" class="menu-toggle" aria-label="Open menu">☰</button>
-	<nav id="menu" popover bind:this={menuElement} aria-label="Hoofdnavigatie">
+	<nav id="menu" popover bind:this={menuElement} aria-label="Header navigatie">
 		<button
 			popovertarget="menu"
 			popovertargetaction="hide"
