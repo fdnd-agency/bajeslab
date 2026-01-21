@@ -92,7 +92,7 @@ html {
 	--color-accent1-l3: hsl(var(--hue-accent1), var(--sat-accent1), 85%);
 	--color-accent1-l2: hsl(var(--hue-accent1), var(--sat-accent1), 70%);
 	--color-accent1-l1: hsl(var(--hue-accent1), var(--sat-accent1), 63%);
-	--color-accent1-base: hsl(var(--hue-accent1), var(--sat-accent1), 56%);
+	--color-accent1-base: hsl(var(--hue-accent1), var(--sat-accent1), 40%);
 	--color-accent1-d1: hsl(var(--hue-accent1), var(--sat-accent1), 45%);
 	--color-accent1-d2: hsl(var(--hue-accent1), var(--sat-accent1), 35%);
 	--color-accent1-d3: hsl(var(--hue-accent1), var(--sat-accent1), 25%);
