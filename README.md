@@ -53,10 +53,6 @@ Voor volgende ontwikkelteams zijn er enkele backlog items die de website verder 
 - **Package Manager:** npm
 - **Hosting:** Netlify
 
-### Project Structure
-
-<img width="314" height="864" alt="image" src="https://github.com/user-attachments/assets/6fc62a90-f17b-4896-a5cb-980bc15cfc90" />
-
 ### Development Workflow
 
 #### Git Workflow
