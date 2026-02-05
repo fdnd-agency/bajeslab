@@ -1,5 +1,7 @@
 title: "Bajes Lab"
-status: "in progress"
+client: "Healthy Urban Living Lab Bajeskwartier"
+status: "inactive"
+years: [2]
 main_link: "https://bajeslab.agency.fdnd.nl/"
 dev_link: "https://bajeslab.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
